@@ -1,0 +1,2 @@
+* dot-files repository
+All the dot-files for my arch-linux installation with i3 config.
