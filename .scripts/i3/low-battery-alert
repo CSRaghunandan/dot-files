@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+[ "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ] && exit
+
+battery_level=$(cat /sys/class/power_supply/BAT0/capacity)
+
+if [ "$battery_level" -lt 15 ]; then
+    notify-send "Battery low: $battery_level" -u critical
+fi
+
+if [ "$battery_level" -lt 5 ]; then
+    notify-send "Battery critically low: $battery_level" "Your computer will suspend soon unless plugged into a power outlet." -u critical
+    sleep 2
+    systemctl suspend
+fi

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# TODO: check for latitude and longitude settings and don't change it unless new
+# lat and lon values are different. Only show a notification if location
+# coordinates were changed.
+
+
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+
+# grab IP information from ifconfig.co
+data=$(curl -s ifconfig.co/json)
+
+# if data is empty, exit the script
+# data will be empty if there is no active internet connection
+[[ -z $data ]] && exit 0
+
+lat=$(echo "$data" | grep -Po '"latitude":\K[0-9.]+')
+lon=$(echo "$data" | grep -Po '"longitude":\K[0-9.]+')
+
+echo "Setting latitude at $lat and longitude at $lon"
+sed -i "/lat/c\lat=$lat" ~/.config/redshift.conf
+sed -i "/lon/c\lon=$lon" ~/.config/redshift.conf
+
+echo "Successfully changed location in redshift.conf"
+sleep 1
+notify-send "Redshift" "Successfully changed location in redshift.conf" -u low

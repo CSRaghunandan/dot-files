@@ -1,0 +1,17 @@
+#!/bin/bash
+
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+
+# caps to control and left control to hyper
+xmodmap ~/.Xmodmap
+
+# Enable sticky keys without lock feature for x11
+xkbset accessx sticky -twokey -latchlock
+
+# do not expire the sticky keys without lock feature
+xkbset exp 1 '=accessx' '=sticky' '=twokey' '=latchlock'
+
+echo "Keyboard settings configured"
+sleep 1
+notify-send "Keyboard" "settings configured" -u low

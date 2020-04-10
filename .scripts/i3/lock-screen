@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# exit if i3lock is alreayd on
+[[ -z "$(pgrep i3lock)" ]] || exit
+
+# lock screen using i3lock
+i3lock -i ~/Pictures/lock.png -f -e

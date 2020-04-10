@@ -1,0 +1,340 @@
+# Use super key as the modifier for i3
+set $mod Mod4
+# Use hyper key as a second modifier
+set $mod2 Mod3
+
+font pango:Noto Sans 8
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec --no-startup-id alacritty
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start rofi (a program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show drun
+# use alt tab to switch between windows
+bindsym Mod1+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show combi
+
+# Needed for i3-gaps
+for_window [class="^.*"] border pixel 2
+gaps inner 10
+gaps outer 5
+
+# change focus
+bindsym $mod2+h focus left
+bindsym $mod2+j focus down
+bindsym $mod2+k focus up
+bindsym $mod2+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+# toggle fullscreen across all monitors
+bindsym $mod+g fullscreen toggle global
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+# focus the child container
+bindsym $mod+Shift+a focus child
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1: Shell"
+set $ws2 "2: Browser"
+set $ws3 "3: Emacs"
+set $ws4 "4: SSH"
+set $ws5 "5: Media"
+set $ws6 "6: Misc"
+set $ws7 "7: Office"
+set $ws8 "8: Books"
+set $ws9 "9: Prod"
+set $ws10 "10: Chat"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# open applicants in specific workspaces
+assign [class="Emacs"] $ws3
+assign [class="firefoxdeveloperedition"] $ws2
+assign [class="Zeal"] $ws9
+assign [class="Sourcetrial"] $ws9
+assign [class="DBeaver"] $ws9
+assign [class="Zathura"] $ws8
+assign [class="Com.github.babluboy.bookworm"] $ws8
+assign [class="Skype"] $ws10
+assign [class="discord"] $ws10
+assign [class="vlc"] $ws5
+assign [class="libreoffice-writer"] $ws7
+assign [class="libreoffice-calc"] $ws7
+assign [class="TeamViewer"] $ws7
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Set here your locker
+# If you use a wrapper, make sure that it accepts the no fork(-n) flag
+set $Locker /home/csraghunandan/.scripts/i3/lock-screen
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker , mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id  systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+e mode "$mode_system"
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# power management and screenlock
+# lock after 10 minutes of inactivity
+exec --no-startup-id xautolock -time 30 -locker "systemctl suspend"
+# kickstart i3lock when suspended or lid closed
+exec --no-startup-id xss-lock -- $Locker
+# lock screen key binding
+bindsym ctrl+$mod+l exec --no-startup-id $Locker
+# add binding to toggle lock
+bindsym $mod2+s exec --no-startup-id ~/.scripts/i3/toggle-lock
+
+# avy like switching windows for i3
+bindsym $mod+y exec --no-startup-id ~/.cargo/bin/wmfocus
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+set $mode_gaps gaps
+set $mode_gaps_outer outer gaps
+set $mode_gaps_inner inner gaps
+bindsym $mod+Shift+g mode "$mode_gaps"
+mode "$mode_gaps" {
+    bindsym o      mode "$mode_gaps_outer"
+    bindsym i      mode "$mode_gaps_inner"
+
+    bindsym 0      mode "default", exec --no-startup-id i3-msg "gaps inner current set 0" && i3-msg "gaps outer current set 0"
+    bindsym d      mode "default", exec --no-startup-id i3-msg "gaps inner current set $default_gaps_inner" && i3-msg "gaps outer current set $default_gaps_outer"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+    bindsym plus  gaps inner current plus 5
+    bindsym minus gaps inner current minus 5
+    bindsym 0     mode "default", gaps inner current set 0
+    bindsym d     mode "default", gaps inner current set $default_gaps_inner
+
+    bindsym Shift+plus  gaps inner all plus 5
+    bindsym Shift+minus gaps inner all minus 5
+    bindsym Shift+0     mode "default", gaps inner all set 0
+    bindsym Shift+d     mode "default", gaps inner all set $default_gaps_inner
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+    bindsym plus  gaps outer current plus 5
+    bindsym minus gaps outer current minus 5
+    bindsym 0     mode "default", gaps outer current set 0
+    bindsym d     mode "default", gaps outer current set $default_gaps_outer
+
+    bindsym Shift+plus  gaps outer all plus 5
+    bindsym Shift+minus gaps outer all minus 5
+    bindsym Shift+0     mode "default", gaps outer all set 0
+    bindsym Shift+d     mode "default", gaps outer all set $default_gaps_outer
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# change display brightness up or down
+bindsym XF86MonBrightnessDown exec "light -U 10 ; notify-send 'Brightness down'"
+bindsym $mod2+F2 exec "light -U 10 ; notify-send 'Brightness down'"
+bindsym XF86MonBrightnessUp exec "light -A 10 ; notify-send 'Brightness up'"
+bindsym $mod2+F3 exec "light -A 10 ; notify-send 'Brightness up'"
+
+# configure playback volume buttons
+# toggle volume up
+bindsym XF86AudioRaiseVolume exec --no-startup-id "/usr/bin/pulseaudio-ctl up" 
+bindsym $mod2+F8  exec --no-startup-id "/usr/bin/pulseaudio-ctl up"
+# toggle volume down
+bindsym XF86AudioLowerVolume exec --no-startup-id "/usr/bin/pulseaudio-ctl down"
+bindsym $mod2+F7 exec --no-startup-id "/usr/bin/pulseaudio-ctl down"
+# toggle mute on/off
+bindsym XF86AudioMute exec /usr/bin/pulseaudio-ctl mute
+bindsym $mod2+F6 exec /usr/bin/pulseaudio-ctl mute
+
+# media controls
+bindsym XF86AudioNext exec playerctl next # next media
+bindsym $mod2+F11 exec playerctl next # next media
+bindsym XF86AudioPrev exec playerctl previous # previous media
+bindsym $mod2+F9 exec playerctl previous # previous media
+bindsym XF86AudioPlay exec playerctl play-pause # pause/play media
+bindsym $mod2+F10 exec playerctl play-pause # pause/play media
+
+# toggle touchpad
+bindsym $mod2+F4 exec --no-startup-id ~/.scripts/i3/toggle-touchpad
+bindsym XF86Display exec --no-startup-id ~/.scripts/i3/toggle-touchpad
+
+# screenshot shortcuts
+# full desktop screenshot
+bindsym --release Ctrl+Print exec --no-startup-id ~/.scripts/i3/desktop-screenshot
+# select a region for screenshot
+bindsym --release Shift+Print exec --no-startup-id ~/.scripts/i3/region-screenshot
+# select the current window for screenshot
+bindsym --release $mod+Print exec --no-startup-id ~/.scripts/i3/window-screenshot
+# take a screenshot and copy it to clipboard
+bindsym --release $mod2+Print exec --no-startup-id ~/.scripts/i3/clipboard-screenshot
+
+bindsym $mod+Shift+b floating toggle; sticky toggle; exec --no-startup-id ~/.scripts/i3/bottomleft
+bindsym $mod+Shift+n floating toggle; sticky toggle; exec --no-startup-id ~/.scripts/i3/bottomright
+
+# passthrough mode: disable all i3 hotkeys temporarily; press the binding again
+mode  "Passthrough Mode - Press Alt+F12 to exit" {
+        bindsym $mod+F12 mode "default"
+}
+bindsym $mod+F12 mode "Passthrough Mode - Press Alt+F12 to exit"
+
+bar {
+        status_command i3blocks
+        position top
+}
+
+workspace_auto_back_and_forth yes
+force_display_urgency_hint 0 ms
+focus_on_window_activation urgent
+
+# enable switching back and forth from workspaces
+bindsym $mod+Tab workspace back_and_forth
+
+floating_minimum_size -1 x -1
+floating_maximum_size -1 x -1
+
+# more windows/applications popups, bubble and dialogs to float windows
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="About"] floating enable
+
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [window_type="splash"] floating enable
+
+for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
+for_window [class="(?i)VirtualBox"] floating enable
+for_window [class="(?i)pavucontrol"] floating enable, move position mouse
+# for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down $height px
+for_window [class="Lxappearance"] floating enable
+
+# enable floating for xev application
+for_window [title="^Event Tester$"] floating enable
+
+# set wallpaper for i3
+exec_always --no-startup-id feh --bg-scale ~/Pictures/beauty.png
+
+# Starts dunst for notifications:
+exec --no-startup-id dunst
+
+# Unclutter makes the mouse invisible after a brief period
+exec --no-startup-id unclutter
+
+# Enable numlock functionality
+exec --no-startup-id numlockx on
+
+# start compton
+exec --no-startup-id compton
+
+# configure the keyboard settings
+exec --no-startup-id ~/.scripts/system/keeb
+
+# start udiskie along with i3
+exec --no-startup-id udiskie --tray --use-udisks2
