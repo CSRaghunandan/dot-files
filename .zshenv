@@ -25,8 +25,6 @@ export BROWSER="firefox-developer-edition"
 export READER="zathura"
 export EDITOR="emacs"
 
-export XDG_CONFIG_HOME="/home/csraghunandan"
-
 # use intel-media-driver for video acceleration
 export LIBVA_DRIVER_NAME="iHD"
 # export VDPAU_DRIVER="nvidia"
