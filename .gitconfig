@@ -1,0 +1,8 @@
+[user]
+	email = rnraghunandan@gmail.com
+	name = CSRaghunandan
+[credential]
+	helper = store
+[core]
+	excludesfile = /home/csraghunandan/.gitignore_global
+	editor = emacs
