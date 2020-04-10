@@ -330,8 +330,8 @@ exec --no-startup-id unclutter
 # Enable numlock functionality
 exec --no-startup-id numlockx on
 
-# start compton
-exec --no-startup-id compton
+# start picom
+exec --no-startup-id picom
 
 # configure the keyboard settings
 exec --no-startup-id ~/.scripts/system/keeb
