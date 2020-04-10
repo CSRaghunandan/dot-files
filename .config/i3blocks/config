@@ -32,6 +32,17 @@ signal=1
 ## SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
 #SUBSCRIBE=0
 
+[cpu_usage2]
+command=/home/csraghunandan/.config/i3blocks-contrib/cpu_usage2/cpu_usage2
+markup=pango
+interval=persist
+LABEL= 
+REFRESH_TIME=2
+WARN_PERCENT=50
+CRIT_PERCENT=80
+#min_width=CPU 100.00%
+#DECIMALS=2
+
 [wifi]
 command=/home/csraghunandan/.config/i3blocks-contrib/wifi/wifi
 label=  
@@ -52,10 +63,10 @@ LABEL=IP:
 color=#00FF00
 interval=10
 
-[battery]
-command=/home/csraghunandan/.config/i3blocks-contrib/battery/battery
+[battery2]
+command=/home/csraghunandan/.config/i3blocks-contrib/battery2/battery2
+markup=pango
 interval=30
-LABEL=⚡
 
 [time]
 label= 
