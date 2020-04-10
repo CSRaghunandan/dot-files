@@ -64,7 +64,7 @@ zstyle ':zim:input' double-dot-expand yes
 # Set a custom terminal title format using prompt expansion escape sequences.
 # See http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Simple-Prompt-Escapes
 # If none is provided, the default '%n@%m: %~' is used.
-#zstyle ':zim:termtitle' format '%1~'
+zstyle ':zim:termtitle' format '%1~'
 
 #
 # zsh-autosuggestions
@@ -135,30 +135,9 @@ export PATH="/home/csraghunandan/.pyenv/bin:$PATH"
 #eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
 
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.scripts/i3:$PATH"
-export PATH="$HOME/.scripts/system:$PATH"
-
-
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
 # opam configuration
 # test -r /home/csraghunandan/.opam/opam-init/init.sh && . /home/csraghunandan/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
-# use alacritty as the default terminal
-export TERM="alacritty"
-export TERMINAL="alacritty"
-export BROWSER="firefox-developer-edition"
-export READER="zathura"
-export EDITOR="emacs"
-
-
-export XDG_CONFIG_HOME="/home/csraghunandan"
-# use eless as a pager for linux
-# export PAGER="eless"
 
 # initialize fasd
 eval "$(fasd --init auto)"
@@ -193,10 +172,6 @@ fi
 
 # Change umask to make directory sharing easier
 umask 0002
-
-# use intel-media-driver for video acceleration
-export LIBVA_DRIVER_NAME="iHD"
-# export VDPAU_DRIVER="nvidia"
 
 # load z.sh files
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
