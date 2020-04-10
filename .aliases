@@ -14,3 +14,5 @@ alias el="TERM=xterm-256color eless"
 alias ec='emacsclient -nc -a ""'
 alias eg='emacsclient -n -a ""'
 alias et='TERM="xterm-256color" emacsclient -t -a ""'
+
+alias ssh="TERM=screen-256-color ssh"
