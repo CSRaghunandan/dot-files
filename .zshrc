@@ -198,6 +198,8 @@ umask 0002
 export LIBVA_DRIVER_NAME="iHD"
 # export VDPAU_DRIVER="nvidia"
 
+# load z.sh files
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 fortune ; echo
 
