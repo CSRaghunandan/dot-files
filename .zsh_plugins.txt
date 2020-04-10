@@ -1,2 +1,0 @@
-zdharma/history-search-multi-word
-hlissner/zsh-autopair
