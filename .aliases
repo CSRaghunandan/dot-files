@@ -1,0 +1,16 @@
+# general aliases
+alias c=clear
+alias u=cd ~/
+alias o=pwd
+
+# system commands
+alias p="sudo pacman"
+alias ssh="TERM=screen-256color ssh"
+alias SS="sudo systemctl"
+alias ka="killall"
+
+# emacs related aliases
+alias el="TERM=xterm-256color eless"
+alias ec='emacsclient -nc -a ""'
+alias eg='emacsclient -n -a ""'
+alias et='TERM="xterm-256color" emacsclient -t -a ""'
