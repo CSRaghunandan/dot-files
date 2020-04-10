@@ -1,0 +1,63 @@
+# i3blocks config goes here
+
+# Global properties
+separator=true
+separator_block_width=15
+
+[mediaplayer]
+command=/home/csraghunandan/.config/i3blocks-contrib/mediaplayer/mediaplayer
+instance=mpd
+interval=5
+signal=10
+
+[volume-pulseaudio]
+command=/home/csraghunandan/.config/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio
+interval=once
+signal=1
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+##exposed format variables: ${SYMB}, ${VOL}, ${INDEX}, ${NAME}
+#LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
+#SHORT_FORMAT="${SYMB} ${VOL}% [${INDEX}]"
+#AUDIO_HIGH_SYMBOL='  '
+#AUDIO_MED_THRESH=50
+#AUDIO_MED_SYMBOL='  '
+#AUDIO_LOW_THRESH=0
+#AUDIO_LOW_SYMBOL='  '
+#AUDIO_DELTA=5
+#DEFAULT_COLOR="#ffffff"
+#MUTED_COLOR="#a0a0a0"
+#USE_ALSA_NAME=0
+#USE_DESCRIPTION=0
+## SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
+#SUBSCRIBE=0
+
+[wifi]
+command=/home/csraghunandan/.config/i3blocks-contrib/wifi/wifi
+label=  
+INTERFACE=wlp2s0
+interval=30
+separator=false
+
+[ssid]
+command=/home/csraghunandan/.config/i3blocks-contrib/ssid/ssid
+INTERFACE=wlp2s0
+interval=60
+
+[iface]
+command=/home/csraghunandan/.config/i3blocks-contrib/iface/iface
+LABEL=IP: 
+#IFACE=wlan0
+#ADDRESS_FAMILY=inet6?
+color=#00FF00
+interval=10
+
+[battery]
+command=/home/csraghunandan/.config/i3blocks-contrib/battery/battery
+interval=30
+LABEL=⚡
+
+[time]
+label= 
+command=date '+%a %Y-%m-%d %H:%M:%S'
+interval=1

@@ -315,6 +315,8 @@ for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 # for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down $height px
 for_window [class="Lxappearance"] floating enable
 
+for_window [class="Yad"] floating enable
+
 # enable floating for xev application
 for_window [title="^Event Tester$"] floating enable
 
