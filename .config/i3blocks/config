@@ -61,3 +61,12 @@ LABEL=⚡
 label= 
 command=date '+%a %Y-%m-%d %H:%M:%S'
 interval=1
+
+[dunst]
+command=/home/csraghunandan/.config/i3blocks-contrib/dunst/dunst
+interval=once
+format=json
+markup=pango
+#min_width=50
+#align=center
+#DUNST_MUTE=off
