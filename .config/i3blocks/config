@@ -12,7 +12,7 @@ signal=10
 
 [volume-pulseaudio]
 command=/home/csraghunandan/.config/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio
-interval=once
+interval=2
 signal=1
 #MIXER=[determined automatically]
 #SCONTROL=[determined automatically]

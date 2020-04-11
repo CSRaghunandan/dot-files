@@ -166,9 +166,6 @@ bindsym ctrl+$mod+l exec --no-startup-id $Locker
 # add binding to toggle lock
 bindsym $mod2+s exec --no-startup-id ~/.scripts/i3/toggle-lock
 
-# avy like switching windows for i3
-bindsym $mod+y exec --no-startup-id ~/.cargo/bin/wmfocus
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
         bindsym h resize shrink width 10 px or 10 ppt
@@ -237,10 +234,10 @@ mode "$mode_gaps_outer" {
 }
 
 # change display brightness up or down
-bindsym XF86MonBrightnessDown exec "light -U 10 ; notify-send 'Brightness down'"
-bindsym $mod2+F2 exec "light -U 10 ; notify-send 'Brightness down'"
-bindsym XF86MonBrightnessUp exec "light -A 10 ; notify-send 'Brightness up'"
-bindsym $mod2+F3 exec "light -A 10 ; notify-send 'Brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10 ; notify-send 'Brightness down'"
+bindsym $mod2+F2 exec "xbacklight -dec 10 ; notify-send 'Brightness down'"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10 ; notify-send 'Brightness up'"
+bindsym $mod2+F3 exec "xbacklight -inc 10 ; notify-send 'Brightness up'"
 
 # configure playback volume buttons
 # toggle volume up
