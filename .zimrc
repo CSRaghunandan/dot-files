@@ -37,7 +37,7 @@ zmodule zsh-users/zsh-autosuggestions
 # zdharma/fast-syntax-highlighting must be sourced after completion
 zmodule zdharma/fast-syntax-highlighting
 # Fish-like history search (up arrow) for Zsh.
-zmodule zdharma/history-search-multi-word
+zmodule zsh-users/zsh-history-substring-search
 # add zsh autopairs
 zmodule hlissner/zsh-autopair
 # }}} End configuration added by Zim install
