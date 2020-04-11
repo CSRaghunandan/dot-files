@@ -7,7 +7,9 @@ All the dot-files for my arch-linux installation with *i3* as the tiling window 
 + Install ~zimfw~ by following the instructions as defined [[https://github.com/zimfw/zimfw][here]]
 + After installation, run ~zimfw install~ followed by ~zimfw uninstall~, to modify the plugins for ~zimfw~.
 + Install ~xorg-xmodmap~ and ~xkbset~ to setup keyboard. Left control is now =hyper= and Caps Lock is now =control= and sticky keys are enabled without locking.
++ Install =redshift= to warn the screen during night times to reduce eye strain
 + Enable ~redshift~  by running ~systemctl --user enable redshift-gtk.service~ and start it by running ~systemctl --user start redshift-gtk.service~. Enable the redshift location script by copying the ~location-redshift.service~ file to ~/etc/systemd/user/location-redshift.service~ and run ~sudo systemctl daemon-reload && systemctl --user enable location-redshift.service~.
++ copy =low-battery-alert.service= and =low-battery-alert.timer= to =/etc/systemd/system/= and enable both of them by running =sudo systemctl enable low-battery-alert.service= and =sudo systemctl enable low-battery-alert.timer=.
 + Run ~mkdir -p ~/.config/mpd/playlists~ and  enable ~mpd~ service by running: ~sudo systemctl enable mpd.service~. Use ~ncmpcpp~ as the client for 
 + Install ~dunst~ for getting notifications for  *i3*.
 + Install ~alacritty~ as the default terminal.
@@ -16,4 +18,8 @@ All the dot-files for my arch-linux installation with *i3* as the tiling window 
 + Use =feh= to set the wallpaper background.
 + Use [[https://github.com/yshui/picom/][picom]] as the display compositor for i3.
 + Use ~udiskie~ to get notifications and manage devices connected to the system.
-+ Use =i3lock= as the lockscreen for i3.
++ Use =i3lock= as the lockscreen for i3. Install =xss-lock= and =xautolock= for power management during lock.
++ Use =maim= and =xdotool= to take desktop screenshots. =xdotool= is also used to get picture in picture effect using i3.
++ Install =playerctl= and =pulseaudio-ctl= for media controls
++ Install =light= for controlling the brightness of the screen
++ Install =xorg-xinput= for enabling/disabling touchpad
