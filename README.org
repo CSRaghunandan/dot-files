@@ -1,2 +1,13 @@
 * dot-files repository
-All the dot-files for my arch-linux installation with i3 config.
+All the dot-files for my arch-linux installation with *i3* as the tiling window manager.
+
+** configuring the system
+
++ Install ~zimfw~ by following the instructions as defined [[https://github.com/zimfw/zimfw][here]]
++ After installation, run ~zimfw install~ followed by ~zimfw uninstall~, to modify the plugins for ~zimfw~.
++ Enable ~redshift~  by running ~systemctl --user enable redshift-gtk.service~ and start it by running ~systemctl --user start redshift-gtk.service~.
+   Enable the redshift location script by copying the ~location-redshift.service~ file to ~/etc/systemd/user/location-redshift.service~ and run ~sudo systemctl daemon-reload && systemctl --user enable location-redshift.service~.
+ + Run ~mkdir -p ~/.config/mpd/playlists~ and  enable ~mpd~ service by running: ~sudo systemctl enable mpd.service~. Use ~ncmpcpp~ as the client for 
+ + Install ~dunst~ for getting notifications for  *i3*.
+ + Install ~alacritty~ as the default terminal.
+ + Install ~rofi~ as the application launcher.
