@@ -12,3 +12,8 @@ All the dot-files for my arch-linux installation with *i3* as the tiling window 
 + Install ~dunst~ for getting notifications for  *i3*.
 + Install ~alacritty~ as the default terminal.
 + Install ~rofi~ as the application launcher.
++ Use =unclutter= to hide mouse pointer after a few seconds of idle time.
++ Use =feh= to set the wallpaper background.
++ Use [[https://github.com/yshui/picom/][picom]] as the display compositor for i3.
++ Use ~udiskie~ to get notifications and manage devices connected to the system.
++ Use =i3lock= as the lockscreen for i3.
