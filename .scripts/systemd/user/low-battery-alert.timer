@@ -1,0 +1,8 @@
+[Unit]
+Description=Check battery status every minute and darken screen / shutdown system
+
+[Timer]
+OnUnitInactiveSec=10
+
+[Install]
+WantedBy=timers.target

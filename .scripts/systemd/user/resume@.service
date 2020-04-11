@@ -1,0 +1,13 @@
+[Unit]
+Description=User resume actions
+After=suspend.target
+
+[Service]
+User=csraghunandan
+Type=simple
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/bash /home/csraghunandan/.scripts/system/keeb
+ExecStartPost=/usr/bin/bash /home/csraghunandan/.scripts/system/location-redshift
+
+[Install]
+WantedBy=suspend.target
