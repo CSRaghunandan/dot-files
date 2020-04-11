@@ -21,8 +21,8 @@ bindsym Mod1+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show 
 
 # Needed for i3-gaps
 for_window [class="^.*"] border pixel 2
-gaps inner 10
-gaps outer 5
+gaps inner 12
+gaps outer 8
 
 # change focus
 bindsym $mod2+h focus left
@@ -160,7 +160,7 @@ bindsym $mod+minus scratchpad show
 # lock after 10 minutes of inactivity
 exec --no-startup-id xautolock -time 30 -locker "systemctl suspend"
 # kickstart i3lock when suspended or lid closed
-exec --no-startup-id xss-lock -- $Locker
+exec --no-startup-id xss-lock --transfer-sleep-lock  -- $Locker --nofork
 # lock screen key binding
 bindsym ctrl+$mod+l exec --no-startup-id $Locker
 # add binding to toggle lock
