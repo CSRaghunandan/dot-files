@@ -21,5 +21,5 @@ All the dot-files for my arch-linux installation with *i3* as the tiling window 
 + Use =i3lock= as the lockscreen for i3. Install =xss-lock= and =xautolock= for power management during lock.
 + Use =maim= and =xdotool= to take desktop screenshots. =xdotool= is also used to get picture in picture effect using i3.
 + Install =playerctl= and =pulseaudio-ctl= for media controls
-+ Install =light= for controlling the brightness of the screen
++ Install =xorg-backlight= brightness of the screen
 + Install =xorg-xinput= for enabling/disabling touchpad
