@@ -13,6 +13,10 @@ zmodule input
 zmodule termtitle
 # Utility aliases and functions. Adds colour to ls, grep and less.
 zmodule utility
+# add aliases for pacman
+zmodule pacman
+# easy archive and unarchiving
+zmodule archive
 
 #
 # Prompt
@@ -30,11 +34,10 @@ zmodule completion
 # Fish-like autosuggestions for Zsh.
 zmodule zsh-users/zsh-autosuggestions
 # Fish-like syntax highlighting for Zsh.
-# zsh-users/zsh-syntax-highlighting must be sourced after completion
-zmodule zsh-users/zsh-syntax-highlighting
+# zdharma/fast-syntax-highlighting must be sourced after completion
+zmodule zdharma/fast-syntax-highlighting
 # Fish-like history search (up arrow) for Zsh.
-# zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
-zmodule zsh-users/zsh-history-substring-search
+zmodule zdharma/history-search-multi-word
 # add zsh autopairs
 zmodule hlissner/zsh-autopair
 # }}} End configuration added by Zim install
