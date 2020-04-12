@@ -176,6 +176,14 @@ umask 0002
 # load z.sh files
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
-fortune ; echo
+# hook for direnv
+eval "$(direnv hook zsh)"
 
-source /home/csraghunandan/broot/launcher/bash/br
+# load the script for broot to work
+source /home/csraghunandan/.config/broot/launcher/bash/br
+
+# zsh-bd
+. $HOME/.zsh/plugins/bd/bd.zsh
+
+# start the shell with a new fortune cookie :)
+fortune ; echo

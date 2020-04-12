@@ -40,5 +40,6 @@ zmodule zdharma/fast-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 # add zsh autopairs
 zmodule hlissner/zsh-autopair
+# add fzf support for z
+zmodule changyuheng/fz
 # }}} End configuration added by Zim install
-

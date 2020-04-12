@@ -16,3 +16,10 @@ alias eg='emacsclient -n -a ""'
 alias et='TERM="xterm-256color" emacsclient -t -a ""'
 
 alias ssh="TERM=screen-256-color ssh"
+
+# aliases for lsd
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
