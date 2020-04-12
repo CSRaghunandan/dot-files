@@ -8,10 +8,31 @@ All the dot-files for my Arch Linux installation with *i3-gaps* as the tiling wi
   + Install ~zimfw~ by following the instructions as defined [[https://github.com/zimfw/zimfw][here]]
   + After installation, run ~zimfw install~ followed by ~zimfw uninstall~, to modify the plugins for ~zimfw~.
   + Install ~alacritty~ as the default terminal.
-+ Keyboard configuration:
++ Keyboard configuration and mouse:
   + Install ~xorg-xmodmap~ and ~xkbset~ to setup keyboard.
   + Left control is now =hyper= and Caps Lock is now =control= 
   + sticky keys are enabled without locking.
+  + reverse mouse scroll direction in i3
+
+     By modifying libinput drivers for mouse/pointer in the file
+     =/usr/share/X11/xorg.conf.d/40-libinput.conf=
+
+     #+BEGIN_SRC conf
+Section "InputClass"
+Identifier "libinput pointer catchall"
+MatchIsPointer "on"
+MatchDevicePath "/dev/input/event*"
+Option "NaturalScrolling" "on"
+Driver "libinput"
+EndSection
+     #+END_SRC
+  + Add right click option to touchpad for double tap fingers and natural
+     scrolling by adding to the same file above, the line:
+     #+BEGIN_SRC conf
+Option "Tapping" "on"                # enables tapping
+Option "ClickMethod" "clickfinger"   # replaces synaptics tapping setup
+Option "NaturalScrolling" "on"
+#+END_SRC
 + Install =redshift= to warn the screen during night times to reduce eye strain
   + Enable ~redshift~  by running ~systemctl --user enable redshift-gtk.service~ and start it by running ~systemctl --user start redshift-gtk.service~
   + In order to allow access Redshift to use GeoClue2, add the following lines to ~/etc/geoclue/geoclue.conf~: 
@@ -38,3 +59,7 @@ users=
 + Use =maim= and =xdotool= to take desktop screenshots. =xdotool= is also used to get picture in picture effect using i3.
 + Install =xorg-backlight= brightness of the screen
 + Install =xorg-xinput= for enabling/disabling touchpad
++ Dictionary and thesaurus config:
+  + Install =artha= as the thesarus for linux. Bind its shortcut to =Hyper+Alt+t=
+  + Install =goldendict= with websters 1828 dictionary by following: [[http://eduardosanchez.me/2015/09/07/installing-websters-revised-unabridged-dictionary-on-ubuntu-gnulinux/][this guide]] . Bind its shortcut to =Meta+Alt+t=
++ Use [[https://github.com/cdown/clipmenu][clipmenu]] as the clipboard manager for Linux
