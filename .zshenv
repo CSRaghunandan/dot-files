@@ -28,3 +28,6 @@ export EDITOR="emacs"
 # use intel-media-driver for video acceleration
 export LIBVA_DRIVER_NAME="iHD"
 # export VDPAU_DRIVER="nvidia"
+
+# use rofi as clipmenu frontend
+export CM_LAUNCHER=rofi
