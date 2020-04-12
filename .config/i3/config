@@ -17,7 +17,7 @@ bindsym $mod+Shift+q kill
 # start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun -font "Iosevka SS08 10"
 # use alt tab to switch between windows
-bindsym Mod1+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show combi
+bindsym Mod1+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show combi -font "Iosevka SS08 10"
 
 # Needed for i3-gaps
 for_window [class="^.*"] border pixel 2
@@ -318,8 +318,8 @@ for_window [title="^Event Tester$"] floating enable
 # set wallpaper for i3
 exec_always --no-startup-id feh --bg-scale ~/Pictures/beauty.png
 
-# Starts dunst for notifications:
-exec --no-startup-id dunst
+# Starts deadd for notifications:
+exec --no-startup-id deadd-notification-center
 
 # Unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
@@ -328,7 +328,7 @@ exec --no-startup-id unclutter
 exec --no-startup-id numlockx on
 
 # start picom
-exec --no-startup-id picom --config ~/.config/picom.conf
+exec --no-startup-id picom --config ~/.config/picom.conf --experimental-backends
 
 # configure the keyboard settings
 exec --no-startup-id ~/.scripts/system/keeb
