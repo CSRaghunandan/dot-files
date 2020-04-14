@@ -15,13 +15,13 @@ bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun -font "Iosevka SS08 10"
+bindsym $mod+d exec --no-startup-id rofi -show drun -matching fuzzy
 # search in a variety of sources using rofi
 bindsym $mod2+g exec --no-startup-id ~/.scripts/i3/web-search
 # use alt tab to switch between windows
-bindsym Mod1+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show combi -font "Iosevka SS08 10"
+bindsym Mod1+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show combi -matching fuzzy
 # clipboard manager using rofi
-bindsym $mod2+c exec CM_LAUNCHER=rofi clipmenu -font "Iosevka SS08 10"
+bindsym $mod2+c exec CM_LAUNCHER=rofi clipmenu -matching fuzzy
 
 # Needed for i3-gaps
 for_window [class="^.*"] border pixel 2
