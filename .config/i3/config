@@ -107,6 +107,7 @@ bindsym $mod+0 workspace $ws10
 # open applicants in specific workspaces
 assign [class="Emacs"] $ws3
 assign [class="firefoxdeveloperedition"] $ws2
+assign [class="Chromium"] $ws2
 assign [class="Zeal"] $ws9
 assign [class="Sourcetrial"] $ws9
 assign [class="DBeaver"] $ws9
@@ -115,9 +116,12 @@ assign [class="Com.github.babluboy.bookworm"] $ws8
 assign [class="Skype"] $ws10
 assign [class="discord"] $ws10
 assign [class="vlc"] $ws5
-assign [class="libreoffice-writer"] $ws7
-assign [class="libreoffice-calc"] $ws7
+assign [class="(?i)libreoffice-writer$"]$ ws7
+assign [class="(?i)soffice"] $ws7
+assign [class="(?i)libreoffice-calc"] $ws7
+assign [class="(?i)libreoffice.*"] $ws7
 assign [class="TeamViewer"] $ws7
+assign [class="zoom"] $ws7
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
