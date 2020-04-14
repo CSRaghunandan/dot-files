@@ -341,3 +341,6 @@ exec --no-startup-id ~/.scripts/system/keeb
 
 # start udiskie along with i3
 exec --no-startup-id udiskie --tray
+
+# start nm-applet for NetworkManager
+exec --no-startup-id nm-applet
