@@ -23,3 +23,9 @@ alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+
+# use bat instead of cat
+alias cat=bat
+
+# use broot as the alias for tree
+alias tree=broot

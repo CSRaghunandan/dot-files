@@ -31,3 +31,11 @@ export LIBVA_DRIVER_NAME="iHD"
 
 # use rofi as clipmenu frontend
 export CM_LAUNCHER=rofi
+
+# Modify the pager defaults: The -R option is needed to interpret ANSI colors
+# correctly. The second option (-F) instructs less to exit immediately if the
+# output size is smaller than the vertical size of the terminal.
+export PAGER="less -RF"
+
+# colorize man pages using bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
