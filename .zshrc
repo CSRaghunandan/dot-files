@@ -173,9 +173,6 @@ fi
 # Change umask to make directory sharing easier
 umask 0002
 
-# load z.sh files
-[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
-
 # hook for direnv
 eval "$(direnv hook zsh)"
 
