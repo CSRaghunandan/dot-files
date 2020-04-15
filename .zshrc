@@ -188,5 +188,13 @@ eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced once fzf)"
 # integrate z.lua with the native module for faster performance
 source ~/github/czmod/czmod.zsh
 
+# fix some docsets not rendering on Zeal. Run this command whenever you run into
+# an issue with zeal docsets
+zeal-docs-fix() {
+    pushd "$HOME/.local/share/Zeal/Zeal/docsets" >/dev/null || return
+    find . -iname 'react-main*.js' -exec rm '{}' \;
+    popd >/dev/null || exit
+}
+
 # start the shell with a new fortune cookie :)
 fortune ; echo
