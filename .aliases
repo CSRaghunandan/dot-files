@@ -29,3 +29,13 @@ alias cat=bat
 
 # use broot as the alias for tree
 alias tree=broot
+
+# aliases for z.lua
+alias zz='z -c'      # restrict matches to subdirs of $PWD
+alias zi='z -i'      # cd with interactive selection
+alias zf='z -I'      # use fzf to select in multiple matches
+alias zb='z -b'      # quickly cd to the parent directory
+
+# use prettyping instead of ping
+# https://github.com/denilsonsa/prettyping
+alias ping=prettyping

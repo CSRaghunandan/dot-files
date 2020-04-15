@@ -139,9 +139,6 @@ export PATH="/home/csraghunandan/.pyenv/bin:$PATH"
 # test -r /home/csraghunandan/.opam/opam-init/init.sh && . /home/csraghunandan/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
 
-# initialize fasd
-eval "$(fasd --init auto)"
-
 function vterm_printf(){
     if [ -n "$TMUX" ]; then
         # tell tmux to pass the escape sequences through
@@ -186,6 +183,10 @@ source /home/csraghunandan/.config/broot/launcher/bash/br
 # to setup resh, run: curl -fsSL https://raw.githubusercontent.com/curusarn/resh/master/scripts/rawinstall.sh | bash
 [ -f ~/.resh/shellrc ] && source ~/.resh/shellrc # this line was added by RESH
 
+# initiate z.lua
+eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced once fzf)"
+# integrate z.lua with the native module for faster performance
+source ~/github/czmod/czmod.zsh
 
 # start the shell with a new fortune cookie :)
 fortune ; echo

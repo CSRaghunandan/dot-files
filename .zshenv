@@ -37,10 +37,11 @@ export CM_LAUNCHER=rofi
 # output size is smaller than the vertical size of the terminal.
 export PAGER="less -RF"
 
+# use UTF-8 charset for less
+export LESSCHARSET=utf-8
+
 # colorize man pages using bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-#  fasd + fzf integration
-export FZF_TMUX_HEIGHT='40%'    # default height is 40%
-export FZF_DEFAULT_OPTS='--height 80%'
-export FZF_FASD_OPTS='--prompt "fasd_cd> "'
+# use z.lua as the command for fz
+export FZ_HISTORY_CD_CMD="_zlua"
