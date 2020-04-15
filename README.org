@@ -1,13 +1,44 @@
 * dot-files repository
-All the dot-files for my Arch Linux installation with *i3-gaps* as the tiling window manager.
+All the dot-files for my Arch Linux installation with *i3-gaps* as the tiling
+window manager.
 
 ** configuring the system
 
 + Configure *ZSH*:
   + Install and use ~zsh~ as the default shell by running ~chsh -s $(which zsh)~.
   + Install ~zimfw~ by following the instructions as defined [[https://github.com/zimfw/zimfw][here]]
-  + After installation, run ~zimfw install~ followed by ~zimfw uninstall~, to modify the plugins for ~zimfw~.
+  + After installation, run ~zimfw install~ followed by ~zimfw uninstall~, to
+    modify the plugins for ~zimfw~.
   + Install ~alacritty~ as the default terminal.
+
++  Enable syntax highlighting for nano by adding the following lines in your
+   config file =~/.nanorc=:
+  #+begin_src conf
+
+set titlecolor brightwhite,blue
+set statuscolor brightwhite,green
+set errorcolor brightwhite,red
+set selectedcolor brightwhite,magenta
+set stripecolor ,yellow
+set numbercolor cyan
+set keycolor cyan
+set functioncolor green
+include "/usr/share/nano/*.nanorc"
+  #+end_src
+
++ Configure =ntp=:
+  - Install =ntp= package and enable the ntp service
+  - Run the following commands to disable =systemd-timesyncd=
+    #+begin_src bash
+    systemctl stop systemd-timesyncd
+    systemctl disable systemd-timesyncd
+    sudo timedatectl set-ntp False
+    #+end_src
+
+  - =sudo systemctl enable ntpd.service= -> to start ntpd at boot
+  - enable logs and statistics for ntp
+  - =ntpq -pn= -> show the status of ntp  
+  
 + Keyboard configuration and mouse:
   + Install ~xorg-xmodmap~ and ~xkbset~ to setup keyboard.
   + Left control is now =hyper= and Caps Lock is now =control= 
@@ -26,6 +57,7 @@ Option "NaturalScrolling" "on"
 Driver "libinput"
 EndSection
      #+END_SRC
+     
   + Add right click option to touchpad for double tap fingers and natural
      scrolling by adding to the same file above, the line:
      #+BEGIN_SRC conf
@@ -33,33 +65,98 @@ Option "Tapping" "on"                # enables tapping
 Option "ClickMethod" "clickfinger"   # replaces synaptics tapping setup
 Option "NaturalScrolling" "on"
 #+END_SRC
+
++ Power management:
+  + modify the following lines in ~/etc/systemd/logind.conf~:
+    
+    #+BEGIN_SRC conf
+HandlePowerKey=suspend
+HandleLidSwitch=suspend
+HoldoffTimeoutSec=30s
+IdleAction=suspend
+IdleActionSec=30min  
+#+END_SRC
+
+    This will enable the system to:
+    + =suspend= when pressed the power button instead of shutdown
+    + If the system is idle for 30minutes, =suspend=
+    + If the laptop lid is closed, =suspend= the system
+    + Hold off on suspending the system for =30s= after closing the lid
+  + Use =i3lock= as the lockscreen for i3. Install =xss-lock= and =xautolock=
+    for power management during lock.
+  + =TLP= and =thermald= for power management for laptops:
+    - Enable =tlp.servce=
+    - mask the systemd service =systemd-rfkill.service= and socket =systemd-rfkill.socket=
+    - enable =thermald.service=. This will reduce the CPU clock if temperature
+      exceeds a threshold
+  + copy =low-battery-alert.service= and =low-battery-alert.timer= to
+    =/etc/systemd/system/= and enable both of them by running =sudo systemctl
+    enable low-battery-alert.service= and =sudo systemctl enable
+    low-battery-alert.timer=.
+    
 + Install =redshift= to warn the screen during night times to reduce eye strain
-  + Enable ~redshift~  by running ~systemctl --user enable redshift-gtk.service~ and start it by running ~systemctl --user start redshift-gtk.service~
-  + In order to allow access Redshift to use GeoClue2, add the following lines to ~/etc/geoclue/geoclue.conf~: 
+  + Enable ~redshift~ by running ~systemctl --user enable redshift-gtk.service~
+    and start it by running ~systemctl --user start redshift-gtk.service~
+  + In order to allow access Redshift to use GeoClue2, add the following lines
+    to ~/etc/geoclue/geoclue.conf~:
 #+begin_src conf
 [redshift]
 allowed=true
 system=false
 users=
 #+end_src
-+ copy =low-battery-alert.service= and =low-battery-alert.timer= to =/etc/systemd/system/= and enable both of them by running =sudo systemctl enable low-battery-alert.service= and =sudo systemctl enable low-battery-alert.timer=.
-+ Configure media
-  + Run ~mkdir -p ~/.config/mpd/playlists~ and  enable ~mpd~ service by running: ~sudo systemctl enable mpd.service~
-  + Use ~ncmpcpp~ as the client for mpd
-  + Install ~mpDris2~ (from AUR) and enable it by running ~systemctl --user enable mpDris2~
+
++ Configure =media=
+  + Run ~mkdir -p ~/.config/mpd/playlists~ and enable ~mpd~ service by running:
+    ~sudo systemctl enable mpd.service~
+  + Use ~ncmpcpp~ as the client for =mpd=
+  + Install ~mpDris2~ (from AUR) and enable it by running ~systemctl --user
+    enable mpDris2~
   + Install =playerctl= and =pulseaudio-ctl= for media controls
-+ Install ~deadd-notification-center~ for getting notifications for  *i3*
-+ Install ~rofi~ as the application launcher.
-+ Use =unclutter= to hide mouse pointer after a few seconds of idle time.
-+ Use =feh= to set the wallpaper background.
-+ Use [[https://github.com/yshui/picom/][picom]] as the display compositor for i3. Install from `git`, for Archlinux, install using `picom-git` from AUR.
-  + Use experimental backends option when running picom, otherwise the `glx` backend will not work.
-+ Use ~udiskie~ to get notifications and manage devices connected to the system.
-+ Use =i3lock= as the lockscreen for i3. Install =xss-lock= and =xautolock= for power management during lock.
-+ Use =maim= and =xdotool= to take desktop screenshots. =xdotool= is also used to get picture in picture effect using i3.
-+ Install =xorg-backlight= brightness of the screen
-+ Install =xorg-xinput= for enabling/disabling touchpad
-+ Dictionary and thesaurus config:
-  + Install =artha= as the thesarus for linux. Bind its shortcut to =Hyper+Alt+t=
-  + Install =goldendict= with websters 1828 dictionary by following: [[http://eduardosanchez.me/2015/09/07/installing-websters-revised-unabridged-dictionary-on-ubuntu-gnulinux/][this guide]] . Bind its shortcut to =Meta+Alt+t=
-+ Use [[https://github.com/cdown/clipmenu][clipmenu]] as the clipboard manager for Linux
+  + Use =VLC= as the media player for videos. Enable hardware acceleration for
+    decoding by installing: =intel-media-driver=, =libva-utils=,
+    =xf86-video-intel= and selecting the VAAPI backend for hardware decoding in
+    settings for VLC
+  + =pavucontrol= (controlling audio through UI)
+  + Other media tools:
+    + Gstreamer
+    + ffmpeg, libav
+    + imagemagick, graphicsmagick
+    + graphviz
+    + flac, faac
+    + x264, x265
+    + youtube-dl (download from youtube and other media sites)
+
++ =Reader= applications:    
+  + Use =Zathura= as the default reader
+    + Install the following packages: =zathura-pdf-mupdf=, =zathura-djvu=, =zathura-cb=
+    + Enable copy to clipboard by adding to =~/.config/zathura/zathurarc=:
+  + Use =libreoffice-fresh= package for installing libreoffice
+  + Dictionary and thesaurus config:
+    + Install =artha= as the thesarus for linux. Bind its shortcut to =Hyper+Alt+t=
+    + Install =goldendict= with websters 1828 dictionary by following: [[http://eduardosanchez.me/2015/09/07/installing-websters-revised-unabridged-dictionary-on-ubuntu-gnulinux/][this guide]] . Bind its shortcut to =Meta+Alt+t=
+  + Install =hunspell=, =hunspell-en_US=, =hunspell-en_GB= for spell checker
+  + Install =dictd= for English to other language dictionary translations
+  + Install =texlive-most= and =pygments= for a complete latex environment
+  + Install =pandoc= for converting documents from one format to other 
+
++ Tools for *i3wm*    
+  + Install ~deadd-notification-center~ for getting notifications for  *i3*
+  + Install ~rofi~ as the application launcher
+  + Use =i3blocks= as the bar for i3wm
+  + Use =numlockx= to enable numlock functionality
+  + Use =unclutter= to hide mouse pointer after a few seconds of idle time.
+  + Use =feh= to set the wallpaper background
+  + Use =Iosevka SS08= as the default monospace font
+  + Use =i3lock= as the locker for i3wm
+  + Use [[https://github.com/yshui/picom/][picom]] as the display compositor for i3. Install from =git=, for Archlinux,
+    install using =picom-git= from AUR.
+    + Use =experimental backends= option when running picom, otherwise the =glx=
+      backend will not work.
+  + Use ~udiskie~ to get notifications and manage devices connected to the system.
+  + Use =maim= and =xdotool= to take desktop screenshots. =xdotool= is also used
+    to get picture in picture effect using i3.
+  + Install =xorg-backlight= brightness of the screen
+  + Install =xorg-xinput= for enabling/disabling touchpad
+  + Use [[https://github.com/cdown/clipmenu][clipmenu]] as the clipboard manager for Linux
+  + Use =nm-applet= which will provide a tray for NetworkManger
