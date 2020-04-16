@@ -1,4 +1,4 @@
-% ffmpeg
+% ffmpeg, media
 
 # getting audio/video file information
 ffmpeg -i video.mp4 -hide_banner

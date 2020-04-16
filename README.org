@@ -11,21 +11,6 @@ window manager.
     modify the plugins for ~zimfw~.
   + Install ~alacritty~ as the default terminal.
 
-+  Enable syntax highlighting for nano by adding the following lines in your
-   config file =~/.nanorc=:
-  #+begin_src conf
-
-set titlecolor brightwhite,blue
-set statuscolor brightwhite,green
-set errorcolor brightwhite,red
-set selectedcolor brightwhite,magenta
-set stripecolor ,yellow
-set numbercolor cyan
-set keycolor cyan
-set functioncolor green
-include "/usr/share/nano/*.nanorc"
-  #+end_src
-
 + Configure =ntp=:
   - Install =ntp= package and enable the ntp service
   - Run the following commands to disable =systemd-timesyncd=
@@ -40,9 +25,30 @@ include "/usr/share/nano/*.nanorc"
   - =ntpq -pn= -> show the status of ntp  
   
 + Keyboard configuration and mouse:
-  + Install ~xorg-xmodmap~ and ~xkbset~ to setup keyboard.
-  + Left control is now =hyper= and Caps Lock is now =control= 
-  + sticky keys are enabled without locking.
+  + Install ~xorg-xmodmap~ for keyboard configuration: Left control is now
+    =hyper= and Caps Lock is now =control=
+  + Enable sticky keys are enabled without locking using =xkbset=
+  + Add hook to suspend so that =xmodmap= is run and =sticky keys= are enabled
+    after computer is resumed. This is necessary because X keyboard settings are
+    reset after suspend.
+
+    Create a file =/etc/systemd/system/resume@csraghunandan.service=
+    #+BEGIN_SRC conf
+[Unit]
+Description=User resume actions
+After=suspend.target
+
+[Service]
+User=csraghunandan
+Type=simple
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/bash /home/csraghunandan/.scripts/system/keeb
+
+[Install]
+WantedBy=suspend.target
+    #+END_SRC
+And run =sudo systemctl enable resume@.service=
+    
   + reverse mouse scroll direction in i3
 
      By modifying libinput drivers for mouse/pointer in the file
@@ -93,10 +99,16 @@ IdleActionSec=30min
     =/etc/systemd/system/= and enable both of them by running =sudo systemctl
     enable low-battery-alert.service= and =sudo systemctl enable
     low-battery-alert.timer=.
+    + Install =acpi= for fetching laptop battery status    
     
 + Install =redshift= to warn the screen during night times to reduce eye strain
-  + Enable ~redshift~ by running ~systemctl --user enable redshift-gtk.service~
-    and start it by running ~systemctl --user start redshift-gtk.service~
+  + Enable and start: ~redshift~ by running
+
+    #+BEGIN_SRC bash
+systemctl --user enable redshift-gtk.service --now  
+#+END_SRC
+
+
   + In order to allow access Redshift to use GeoClue2, add the following lines
     to ~/etc/geoclue/geoclue.conf~:
 #+begin_src conf
@@ -126,6 +138,20 @@ users=
     + flac, faac
     + x264, x265
     + youtube-dl (download from youtube and other media sites)
++ Bluetooth configuration:
+  + Install =bluez=, =bluez-utils= and =blueman= (front end for bluetooth)
+  + Enable and start bluetooth service:
+
+    #+BEGIN_SRC bash
+sudo systemctl enable bluetooth.service --now  
+#+END_SRC
+
++ Security:
+  + KeepassXC as the default password manager for linux. Also, enable the
+    browser integration and install plugins for chrome and firefox
+  + ufw - simple firewall for linux
+    
+    enable =ufw.service= after installation and run =sudo ufw default deny= to enable the firewall
 
 + =Reader= applications:    
   + Use =Zathura= as the default reader
@@ -142,6 +168,12 @@ users=
 
 + Tools for *i3wm*    
   + Install ~deadd-notification-center~ for getting notifications for  *i3*
+    + Enable and start the =deadd-notification-center= service:
+
+      #+BEGIN_SRC bash
+sudo systemctl enable deadd-notification-center --now  
+#+END_SRC
+
   + Install ~rofi~ as the application launcher
   + Use =i3blocks= as the bar for i3wm
   + Use =numlockx= to enable numlock functionality
@@ -158,5 +190,19 @@ users=
     to get picture in picture effect using i3.
   + Install =xorg-backlight= brightness of the screen
   + Install =xorg-xinput= for enabling/disabling touchpad
-  + Use [[https://github.com/cdown/clipmenu][clipmenu]] as the clipboard manager for Linux
+  + Use [[https://github.com/cdown/clipmenu][clipmenu]] as the clipboard manager for Linux:
+    + Enable and start the =clipmenud= service:
+
+      #+BEGIN_SRC bash
+sudo systemctl enable clipmenud --now  
+#+END_SRC
+
   + Use =nm-applet= which will provide a tray for NetworkManger
+
+  + Set =firefox-developer-edition= as the default browser by:
+
+    #+BEGIN_SRC bash
+gio mime x-scheme-handler/http firefox-developer-edition.desktop
+gio mime x-scheme-handler/https firefox-developer-edition.desktop
+#+END_SRC
+
