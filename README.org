@@ -10,6 +10,14 @@
     modify the plugins for ~zimfw~.
   + Install ~alacritty~ as the default terminal.
 
+** Configuring plugins for ZSH
+   
+   + Useful command line tools:
+     + Use [[https://github.com/sharkdp/fd][fd]] as an alternative for =find=
+     + Use [[https://github.com/BurntSushi/ripgrep][Ripgrep]] as an alternative for =grep=
+     + Use [[https://github.com/sharkdp/bat][bat]]  as an alternative for =cat= and =less= to view files
+     + Use [[https://github.com/Peltoche/lsd][lsd]] as a modern alternative to =ls=
+
 * Configure ntp
   - Install =ntp= package and enable the ntp service
   - Run the following commands to disable =systemd-timesyncd=
@@ -108,7 +116,10 @@ IdleActionSec=30min
   + Use ~ncmpcpp~ as the client for =mpd=
   + Install ~mpDris2~ (from AUR) and enable it by running ~systemctl --user
     enable mpDris2~
-  + Install =playerctl= and =pulseaudio-ctl= for media controls
+  + Install =playerctl= and =pulseaudio-ctl= for media controls. This allows us
+    to add notifications and maximum volume limit for system volume
+  + Install =alsa= and =pulseaudio=: =alsa-utils=, =alsa-plugins=,
+    =pluseaudio-alsa=
   + Use =VLC= as the media player for videos. Enable hardware acceleration for
     decoding by installing: =intel-media-driver=, =libva-utils=,
     =xf86-video-intel= and selecting the VAAPI backend for hardware decoding in
@@ -132,11 +143,15 @@ IdleActionSec=30min
 
 * Security
   
-  + KeepassXC as the default password manager for linux. Also, enable the
+  + =KeepassXC= as the default password manager for linux. Also, enable the
     browser integration and install plugins for chrome and firefox
-  + ufw - simple firewall for linux
+  + =ufw=: simple firewall for linux
     
     enable =ufw.service= after installation and run =sudo ufw default deny= to enable the firewall
+  + change the default DNS resolver to =1.1.1.1= by editing the =nameserver=
+    entry in =/etc/resolv.conf= and make it unwritable by running the command:
+    =chattr +i /etc/resolv.conf=
+
 
 * Reader applications
   
@@ -150,6 +165,7 @@ IdleActionSec=30min
   + Install =hunspell=, =hunspell-en_US=, =hunspell-en_GB= for spell checker
   + Install =dictd= for English to other language dictionary translations
   + Install =texlive-most= and =pygments= for a complete latex environment
+  + Install =pdf-tools= to be able to view PDF file inside emacs using =poppler=
   + Install =pandoc= for converting documents from one format to other 
 
 * Configuring i3 and tools used
@@ -166,7 +182,6 @@ sudo systemctl enable deadd-notification-center --now
   + Use =numlockx= to enable numlock functionality
   + Use =unclutter= to hide mouse pointer after a few seconds of idle time.
   + Use =feh= to set the wallpaper background
-  + Use =Iosevka SS08= as the default monospace font
   + Use =i3lock= as the locker for i3wm
   + Use [[https://github.com/yshui/picom/][picom]] as the display compositor for i3. Install from =git=, for Archlinux,
     install using =picom-git= from AUR.
@@ -174,7 +189,11 @@ sudo systemctl enable deadd-notification-center --now
       backend will not work.
   + Use ~udiskie~ to get notifications and manage devices connected to the system.
   + Use =maim= and =xdotool= to take desktop screenshots. =xdotool= is also used
-    to get picture in picture effect using i3.
+    to get picture in picture effect using i3. The following are enabled in i3:
+    -  screenshot of entire screen
+    -  screenshot of active window
+    -  screenshot of region
+    -  copy selected region to clipboard
   + Install =xorg-backlight= brightness of the screen
   + Install =xorg-xinput= for enabling/disabling touchpad
   + Use [[https://github.com/cdown/clipmenu][clipmenu]] as the clipboard manager for Linux:
@@ -183,6 +202,7 @@ sudo systemctl enable deadd-notification-center --now
       #+BEGIN_SRC bash
 sudo systemctl enable clipmenud --now  
 #+END_SRC
+    + set ~CM_LAUNCHER=rofi~, so that you can use rofi to view clipboard
 
   + Use =nm-applet= which will provide a tray for NetworkManger
 
@@ -211,3 +231,46 @@ allowed=true
 system=false
 users=
 #+end_src
+
+* Productivity
+
+  + Install *Emacs28* from source by running:
+
+    #+BEGIN_SRC bash
+git clone -b master https://github.com/emacs-mirror/emacs --single-branch
+cd emacs
+sh autogen.sh
+./configure --with-modules --with-rsvg --with-dbus --with-imagemagick --without-pop --with-xft --with-xml2 --with-libotf
+make
+make install
+#+END_SRC
+
+  + =Postman= for testing HTTP requests
+  + =Zeal= for offline documentation
+  + =Source Trail= for browsing C/Cpp and Python projects visually
+  + Install LibreOffice from =libreoffice-fresh= (in AUR)
+  + =Plantuml= for creating control flow and other diagrams
+  + =dbeaver= (open source Database viewer)
+  + =tldr++= (AUR) [quickly view cheatsheets for linux commands]    
+  + =TeamViewr= for remote control
+    + Enable and start teamviewer deamon in the background by:
+
+      #+BEGIN_SRC bash
+sudo sytemctl enable teamviewerd.service --now  
+#+END_SRC
+  + =Wireshark= for network analyzing. Install it with the following packages:
+    =wireshark-qt=, =wireshark-cli=
+
+* Appearance
+
+  + Use =arc-gtk-theme= as the default theme and =paper-icon-theme= as the
+    default icons set
+  + Font sets for arch: =noto-fonts=, =noto-fonts-extra=, =noto-fonts-cjk=,
+    =noto-fonts-emoji=, =otf-font-awesome=
+    
+    To install all the necessary font packages to fonts from display various
+    langauges and emoji
+  + Use =Iosevka SS08= as the default monospace font
+  + Use =lxappearence= to change the font, icons and theme
+
+  
