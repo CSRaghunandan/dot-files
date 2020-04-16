@@ -196,5 +196,9 @@ zeal-docs-fix() {
     popd >/dev/null || exit
 }
 
+# integration with zsh for navi
+# press C-g to open Navi
+source <(navi widget zsh)
+
 # start the shell with a new fortune cookie :)
 fortune ; echo

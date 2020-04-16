@@ -1,0 +1,81 @@
+% ffmpeg
+
+# getting audio/video file information
+ffmpeg -i video.mp4 -hide_banner
+
+# converting video files to different formats
+ffmpeg -i video.mp4 video.avi
+
+# to preserve the quality of the source while converting, use this:
+ffmpeg -i input.webm -qscale 0 output.mp4
+
+# To check list of supported formats by FFmpeg, run:
+ffmpeg -formats
+
+# The below  command will convert input.mp4 video file to output.mp3 audio file.
+ffmpeg -i input.mp4 -vn -ab 320 output.mp3
+
+# audio transcoding options for converting a video to an audio file
+ffmpeg -i input.mp4 -vn -ar 44100 -ac 2 -ab 320 -f mp3 output.mp3
+
+# Change resolution of video files
+ffmpeg -i input.mp4 -filter:v scale=1280:720 -c:a copy output.mp4
+
+# change resolution of videos method2
+ffmpeg -i input.mp4 -s 1280x720 -c:a copy output.mp4
+
+# compressing video for a mp4 file
+ffmpeg -i input.mp4 -vf scale=1280:-1 -c:v libx264 -preset veryslow -crf 24 output.mp4
+
+# compress video and audio for a mp4 file
+ffmpeg -i input.mp4 -vf scale=1280:-1 \
+    -ac 2 -c:a aac -strict -2 -b:a 128k \
+    -c:v libx264 -preset veryslow -crf 24 output.mp4
+
+# compressing audio files
+ffmpeg -i input.mp3 -ab 128 output.mp3
+
+# Removing an audio stream from a media file
+ffmpeg -i input.mp4 -an output.mp4
+
+# Removing vido stream from media file
+ffmpeg -i input.mp4 -vn output.mp3
+
+# Extracting images from a video
+ffmpeg -i input.mp4 -r 1 -f image2 image-%2d.png
+
+# Cropping videos
+ffmpeg -i input.mp4 -croptop 100 -cropbottom 100 -cropleft 300 -cropright 300 output.mp4
+
+# convert the first 50 seconds of given video.mp4 file to video.avi format:
+ffmpeg -i input.mp4  -t 50 output.avi
+
+# Trim a media file using start and stop times
+ffmpeg -i input.mp4 -ss 00:00:50 -codec copy -t 50 output.mp4
+
+# set the aspect ratio of the video
+ffmpeg -i input.mp4 -aspect 16:9 output.mp4
+
+# Adding poster image to audio files
+ffmpeg -loop 1 -i inputimage.jpg -i inputaudio.mp3 -c:v libx264 -c:a aac -strict experimental -b:a 192k -shortest output.mp4
+
+# Split the video file into multiple parts
+ffmpeg -i input.mp4 -t 00:00:30 -c copy part1.mp4 -ss 00:00:30 -codec copy part2.mp4
+
+# Add a subtitle to a video
+ffmpeg -i input.mp4 -i subtitle.srt -map 0 -map 1 -c copy -c:v libx264 -crf 23 -preset veryfast output.mp4
+
+# Increase playback speed of video
+ffmpeg -i inputvideo.mp4 -vf "setpts=0.5*PTS" outputvideo.mp4
+
+# Decrease playback speed of video
+ffmpeg -i inputvideo.mp4 -vf "setpts=4.0*PTS" outputvideo.mp4
+
+# create a thumbnail from a video
+ffmpeg -i inputfile.mkv -vf "select=eq(n\,0)" -vf scale=320:-2 -q:v 3 output_image.jpg
+
+# Rresize image
+ffmpeg -i input.jpg -vf scale=640:-2 output_320x240.png
+
+#  Preview audio or video files:
+ffplay video.mp4~ or ~ffplay audio.mp3
