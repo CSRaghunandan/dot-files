@@ -47,7 +47,7 @@ ExecStart=/usr/bin/bash /home/csraghunandan/.scripts/system/keeb
 [Install]
 WantedBy=suspend.target
     #+END_SRC
-And run =sudo systemctl enable resume@.service=
+    And run =sudo systemctl enable resume@.service=
     
   + reverse mouse scroll direction in i3
 
