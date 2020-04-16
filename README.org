@@ -1,17 +1,16 @@
 * dot-files repository
-All the dot-files for my Arch Linux installation with *i3-gaps* as the tiling
-window manager.
 
-** configuring the system
-
-+ Configure *ZSH*:
+  All the dot-files for my Arch Linux installation with *i3-gaps* as the tiling
+  window manager
+  
+* Configure ZSH
   + Install and use ~zsh~ as the default shell by running ~chsh -s $(which zsh)~.
   + Install ~zimfw~ by following the instructions as defined [[https://github.com/zimfw/zimfw][here]]
   + After installation, run ~zimfw install~ followed by ~zimfw uninstall~, to
     modify the plugins for ~zimfw~.
   + Install ~alacritty~ as the default terminal.
 
-+ Configure =ntp=:
+* Configure ntp
   - Install =ntp= package and enable the ntp service
   - Run the following commands to disable =systemd-timesyncd=
     #+begin_src bash
@@ -24,7 +23,7 @@ window manager.
   - enable logs and statistics for ntp
   - =ntpq -pn= -> show the status of ntp  
   
-+ Keyboard configuration and mouse:
+* Keyboard configuration and mouse:
   + Install ~xorg-xmodmap~ for keyboard configuration: Left control is now
     =hyper= and Caps Lock is now =control=
   + Enable sticky keys are enabled without locking using =xkbset=
@@ -49,7 +48,7 @@ WantedBy=suspend.target
     #+END_SRC
     And run =sudo systemctl enable resume@.service=
     
-  + reverse mouse scroll direction in i3
+ + reverse mouse scroll direction in i3
 
      By modifying libinput drivers for mouse/pointer in the file
      =/usr/share/X11/xorg.conf.d/40-libinput.conf=
@@ -72,7 +71,7 @@ Option "ClickMethod" "clickfinger"   # replaces synaptics tapping setup
 Option "NaturalScrolling" "on"
 #+END_SRC
 
-+ Power management:
+* Power management:
   + modify the following lines in ~/etc/systemd/logind.conf~:
     
     #+BEGIN_SRC conf
@@ -101,24 +100,9 @@ IdleActionSec=30min
     low-battery-alert.timer=.
     + Install =acpi= for fetching laptop battery status    
     
-+ Install =redshift= to warn the screen during night times to reduce eye strain
-  + Enable and start: ~redshift~ by running
 
-    #+BEGIN_SRC bash
-systemctl --user enable redshift-gtk.service --now  
-#+END_SRC
-
-
-  + In order to allow access Redshift to use GeoClue2, add the following lines
-    to ~/etc/geoclue/geoclue.conf~:
-#+begin_src conf
-[redshift]
-allowed=true
-system=false
-users=
-#+end_src
-
-+ Configure =media=
+* Configure media related applications
+  
   + Run ~mkdir -p ~/.config/mpd/playlists~ and enable ~mpd~ service by running:
     ~sudo systemctl enable mpd.service~
   + Use ~ncmpcpp~ as the client for =mpd=
@@ -138,22 +122,24 @@ users=
     + flac, faac
     + x264, x265
     + youtube-dl (download from youtube and other media sites)
-+ Bluetooth configuration:
-  + Install =bluez=, =bluez-utils= and =blueman= (front end for bluetooth)
-  + Enable and start bluetooth service:
+    + Bluetooth configuration:
+      + Install =bluez=, =bluez-utils= and =blueman= (front end for bluetooth)
+      + Enable and start bluetooth service:
 
-    #+BEGIN_SRC bash
-sudo systemctl enable bluetooth.service --now  
+        #+BEGIN_SRC bash
+    sudo systemctl enable bluetooth.service --now  
 #+END_SRC
 
-+ Security:
+* Security
+  
   + KeepassXC as the default password manager for linux. Also, enable the
     browser integration and install plugins for chrome and firefox
   + ufw - simple firewall for linux
     
     enable =ufw.service= after installation and run =sudo ufw default deny= to enable the firewall
 
-+ =Reader= applications:    
+* Reader applications
+  
   + Use =Zathura= as the default reader
     + Install the following packages: =zathura-pdf-mupdf=, =zathura-djvu=, =zathura-cb=
     + Enable copy to clipboard by adding to =~/.config/zathura/zathurarc=:
@@ -166,7 +152,8 @@ sudo systemctl enable bluetooth.service --now
   + Install =texlive-most= and =pygments= for a complete latex environment
   + Install =pandoc= for converting documents from one format to other 
 
-+ Tools for *i3wm*    
+* Configuring i3 and tools used
+  
   + Install ~deadd-notification-center~ for getting notifications for  *i3*
     + Enable and start the =deadd-notification-center= service:
 
@@ -206,3 +193,21 @@ gio mime x-scheme-handler/http firefox-developer-edition.desktop
 gio mime x-scheme-handler/https firefox-developer-edition.desktop
 #+END_SRC
 
+* Misc
+
++ Install =redshift= to warn the screen during night times to reduce eye strain
+  + Enable and start: ~redshift~ by running
+
+    #+BEGIN_SRC bash
+systemctl --user enable redshift-gtk.service --now  
+#+END_SRC
+
+
+  + In order to allow access Redshift to use GeoClue2, add the following lines
+    to ~/etc/geoclue/geoclue.conf~:
+#+begin_src conf
+[redshift]
+allowed=true
+system=false
+users=
+#+end_src
