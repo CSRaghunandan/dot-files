@@ -186,7 +186,7 @@ source /home/csraghunandan/.config/broot/launcher/bash/br
 # initiate z.lua
 eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced once fzf)"
 # integrate z.lua with the native module for faster performance
-source ~/github/czmod/czmod.zsh
+source ~/src/clang/czmod/czmod.zsh
 
 # fix some docsets not rendering on Zeal. Run this command whenever you run into
 # an issue with zeal docsets
