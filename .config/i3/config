@@ -348,3 +348,6 @@ exec --no-startup-id udiskie --tray
 
 # start nm-applet for NetworkManager
 exec --no-startup-id nm-applet
+
+# run flashfocus
+exec_always --no-startup-id flashfocus
