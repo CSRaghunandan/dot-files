@@ -351,3 +351,6 @@ exec --no-startup-id nm-applet
 
 # run flashfocus
 exec_always --no-startup-id flashfocus
+
+# run bluetooth tray icon
+exec --no-startup-id blueman-tray

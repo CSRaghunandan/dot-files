@@ -190,10 +190,10 @@ sudo systemctl enable deadd-notification-center --now
   + Use ~udiskie~ to get notifications and manage devices connected to the system.
   + Use =maim= and =xdotool= to take desktop screenshots. =xdotool= is also used
     to get picture in picture effect using i3. The following are enabled in i3:
-    -  screenshot of entire screen
-    -  screenshot of active window
-    -  screenshot of region
-    -  copy selected region to clipboard
+    - screenshot of entire screen
+    - screenshot of active window
+    - screenshot of region
+    - copy selected region to clipboard
   + Install =xorg-backlight= brightness of the screen
   + Install =xorg-xinput= for enabling/disabling touchpad
   + Use [[https://github.com/cdown/clipmenu][clipmenu]] as the clipboard manager for Linux:
@@ -212,6 +212,9 @@ sudo systemctl enable clipmenud --now
 gio mime x-scheme-handler/http firefox-developer-edition.desktop
 gio mime x-scheme-handler/https firefox-developer-edition.desktop
 #+END_SRC
+
+  + Install =falshfocus-git=, this will flash i3 windows when switching. This
+    will make it easier to distinguish the active window
 
 * Misc
 
