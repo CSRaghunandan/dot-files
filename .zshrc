@@ -181,6 +181,9 @@ source /home/csraghunandan/.config/broot/launcher/bash/br
 
 # (Rich Enchanced Shell History)
 # to setup resh, run: curl -fsSL https://raw.githubusercontent.com/curusarn/resh/master/scripts/rawinstall.sh | bash
+# enable binding for C-r by running the below lines:
+# reshctl enable ctrl_r_binding_global
+# reshctl disable ctrl_r_binding_global
 [ -f ~/.resh/shellrc ] && source ~/.resh/shellrc # this line was added by RESH
 
 # initiate z.lua
