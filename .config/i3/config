@@ -241,6 +241,9 @@ mode "$mode_gaps_outer" {
     bindsym Escape mode "default"
 }
 
+# toggle wifi on/off
+bindsym $mod2+F1 exec --no-startup-id "~/.scripts/system/toggle-wifi"
+
 # change display brightness up or down
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10 ; notify-send 'Brightness down'"
 bindsym $mod2+F2 exec "xbacklight -dec 10 ; notify-send 'Brightness down'"

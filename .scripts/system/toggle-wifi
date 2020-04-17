@@ -1,0 +1,14 @@
+#!/bin/bash
+
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+
+wifi_status=$(nmcli r wifi | grep enabled -c)
+
+if [ "$wifi_status" == 1 ]; then
+    notify-send "Turning off WiFi"
+else
+    notify-send "Turning on WiFi"
+fi
+
+nmcli radio wifi $(echo "$wifi_status" | sed -e "s/1/off/" | sed -e "s/0/on/")
