@@ -24,6 +24,7 @@ export TERMINAL="alacritty"
 export BROWSER="firefox-developer-edition"
 export READER="zathura"
 export EDITOR="emacs"
+export FILE="thunar"
 
 # use intel-media-driver for video acceleration
 export LIBVA_DRIVER_NAME="iHD"
@@ -45,3 +46,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # use z.lua as the command for fz
 export FZ_HISTORY_CD_CMD="_zlua"
+
+# Colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
