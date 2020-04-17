@@ -200,5 +200,21 @@ zeal-docs-fix() {
 # press C-g to open Navi
 source <(navi widget zsh)
 
+# Search and install packages with yay and fzf
+yi() {
+	SELECTED_PKGS="$(yay -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
+	if [ -n "$SELECTED_PKGS" ]; then
+		yay -S $(echo $SELECTED_PKGS)
+	fi
+}
+
+# Search and remove packages with yay and fzf
+yr() {
+	SELECTED_PKGS="$(yay -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
+	if [ -n "$SELECTED_PKGS" ]; then
+		yay -Rns $(echo $SELECTED_PKGS)
+	fi
+}
+
 # start the shell with a new fortune cookie :)
 fortune ; echo
