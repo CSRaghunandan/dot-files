@@ -14,9 +14,9 @@ signal=10
 command=/home/csraghunandan/.config/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio
 interval=2
 signal=1
-AUDIO_HIGH_SYMBOL=  
-AUDIO_MED_SYMBOL=  
-AUDIO_LOW_SYMBOL=  
+AUDIO_HIGH_SYMBOL=
+AUDIO_MED_SYMBOL=
+AUDIO_LOW_SYMBOL=
 LONG_FORMAT="${SYMB} ${VOL}%"
 SHORT_FORMAT="${SYMB} ${VOL}%"
 AUDIO_MED_THRESH=60
@@ -36,7 +36,7 @@ AUDIO_LOW_THRESH=10
 command=/home/csraghunandan/.config/i3blocks-contrib/cpu_usage2/cpu_usage2
 markup=pango
 interval=persist
-LABEL= 
+LABEL=
 REFRESH_TIME=2
 WARN_PERCENT=50
 CRIT_PERCENT=80
@@ -45,7 +45,7 @@ CRIT_PERCENT=80
 
 [wifi]
 command=/home/csraghunandan/.config/i3blocks-contrib/wifi/wifi
-label=  
+label= 
 INTERFACE=wlp2s0
 interval=30
 separator=false
@@ -68,16 +68,9 @@ command=/home/csraghunandan/.config/i3blocks-contrib/battery2/battery2
 markup=pango
 interval=30
 
-[time]
-label= 
-command=date '+%a %Y-%m-%d %H:%M:%S'
+[calendar]
 interval=1
-
-[dunst]
-command=/home/csraghunandan/.config/i3blocks-contrib/dunst/dunst
-interval=once
-format=json
-markup=pango
-#min_width=50
-#align=center
-#DUNST_MUTE=off
+command=~/.config/i3blocks-contrib/calendar/calendar
+LABEL= 
+HEIGHT=180
+WIDTH=220
