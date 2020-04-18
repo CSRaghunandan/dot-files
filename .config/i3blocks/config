@@ -2,7 +2,7 @@
 
 # Global properties
 separator=false
-separator_block_width=20
+separator_block_width=18
 
 [mediaplayer]
 command=~/.config/i3blocks-contrib/mediaplayer/mediaplayer
@@ -48,16 +48,15 @@ command=~/.config/i3blocks-contrib/wifi/wifi
 label= 
 INTERFACE=wlp2s0
 interval=10
-separator=false
 
 [ssid]
 command=~/.config/i3blocks-contrib/ssid/ssid
 INTERFACE=wlp2s0
 interval=10
+separator_block_width=6
 
 [iface]
 command=~/.config/i3blocks-contrib/iface/iface
-LABEL=IP: 
 #IFACE=wlan0
 #ADDRESS_FAMILY=inet6?
 color=#00FF00
