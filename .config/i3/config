@@ -144,7 +144,7 @@ bindsym $mod+Shift+r restart
 
 # Set here your locker
 # If you use a wrapper, make sure that it accepts the no fork(-n) flag
-set $Locker /home/csraghunandan/.scripts/i3/lock-screen
+set $Locker ~/.scripts/i3/lock-screen
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker , mode "default"

@@ -1,17 +1,17 @@
 # i3blocks config goes here
 
 # Global properties
-separator=true
-separator_block_width=15
+separator=false
+separator_block_width=20
 
 [mediaplayer]
-command=/home/csraghunandan/.config/i3blocks-contrib/mediaplayer/mediaplayer
+command=~/.config/i3blocks-contrib/mediaplayer/mediaplayer
 instance=mpd
 interval=5
 signal=10
 
 [volume-pulseaudio]
-command=/home/csraghunandan/.config/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio
+command=~/.config/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio
 interval=2
 signal=1
 AUDIO_HIGH_SYMBOL=
@@ -33,7 +33,7 @@ AUDIO_LOW_THRESH=10
 #SUBSCRIBE=0
 
 [cpu_usage2]
-command=/home/csraghunandan/.config/i3blocks-contrib/cpu_usage2/cpu_usage2
+command=~/.config/i3blocks-contrib/cpu_usage2/cpu_usage2
 markup=pango
 interval=persist
 LABEL=
@@ -44,19 +44,19 @@ CRIT_PERCENT=80
 #DECIMALS=2
 
 [wifi]
-command=/home/csraghunandan/.config/i3blocks-contrib/wifi/wifi
+command=~/.config/i3blocks-contrib/wifi/wifi
 label= 
 INTERFACE=wlp2s0
 interval=30
 separator=false
 
 [ssid]
-command=/home/csraghunandan/.config/i3blocks-contrib/ssid/ssid
+command=~/.config/i3blocks-contrib/ssid/ssid
 INTERFACE=wlp2s0
 interval=60
 
 [iface]
-command=/home/csraghunandan/.config/i3blocks-contrib/iface/iface
+command=~/.config/i3blocks-contrib/iface/iface
 LABEL=IP: 
 #IFACE=wlan0
 #ADDRESS_FAMILY=inet6?
@@ -64,7 +64,7 @@ color=#00FF00
 interval=10
 
 [battery2]
-command=/home/csraghunandan/.config/i3blocks-contrib/battery2/battery2
+command=~/.config/i3blocks-contrib/battery2/battery2
 markup=pango
 interval=30
 
