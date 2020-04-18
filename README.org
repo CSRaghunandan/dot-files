@@ -213,8 +213,10 @@ gio mime x-scheme-handler/http firefox-developer-edition.desktop
 gio mime x-scheme-handler/https firefox-developer-edition.desktop
 #+END_SRC
 
-  + Install =falshfocus-git=, this will flash i3 windows when switching. This
-    will make it easier to distinguish the active window
+  + Run =blueman-tray= to get a tray icon for bluetooth. This requires =blueman=
+    to be installed
+  + Install =yad= to get dialog popups. This is used for calendar when pressing
+    date in i3bar
 
 * Misc
 
