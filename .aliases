@@ -1,6 +1,5 @@
 # general aliases
 alias c=clear
-alias u=cd ~/
 alias o=pwd
 
 # system commands
@@ -19,9 +18,11 @@ alias ssh="TERM=screen-256-color ssh"
 # aliases for lsd
 alias ls='lsd'
 alias l='ls -l'
+alias lh="ls -lh"
 alias la='ls -a'
 alias lla='ls -la'
-alias lt='ls --tree'
+alias lt='ls -lt'
+alias sl="ls"
 
 # use bat instead of cat
 alias cat=bat
@@ -38,3 +39,26 @@ alias zb='z -b'      # quickly cd to the parent directory
 # use prettyping instead of ping
 # https://github.com/denilsonsa/prettyping
 alias ping=prettyping
+
+# confirm before overwriting something
+alias cp="cp -i"
+# human-readable sizes
+alias df='df -h'
+# show sizes in MB
+alias free='free -m'
+# fixes typo
+alias cd..="cd .."
+
+# Git related
+alias gss='git status'
+alias gct='git commit'
+alias ga='git add'
+alias gd='git diff'
+alias gb='git branch'
+alias gl='git log'
+alias gsb='git show-branch'
+alias gco='git checkout'
+alias gr='git rebase'
+alias gri='git rebase --interactive'
+alias gcp='git cherry-pick'
+alias grm='git rm'
