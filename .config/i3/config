@@ -362,3 +362,9 @@ exec --no-startup-id nm-applet
 
 # run bluetooth tray icon
 exec --no-startup-id blueman-tray
+
+# run artha thesaurus
+exec --no-startup-id artha
+
+# run goldendict containing the websters 1828 unabridged dictionary
+exec --no-startup-id goldendict

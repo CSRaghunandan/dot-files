@@ -47,13 +47,13 @@ CRIT_PERCENT=80
 command=~/.config/i3blocks-contrib/wifi/wifi
 label= 
 INTERFACE=wlp2s0
-interval=30
+interval=10
 separator=false
 
 [ssid]
 command=~/.config/i3blocks-contrib/ssid/ssid
 INTERFACE=wlp2s0
-interval=60
+interval=10
 
 [iface]
 command=~/.config/i3blocks-contrib/iface/iface
