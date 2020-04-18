@@ -1,1 +1,30 @@
+# copy all selection to keyboard
 set selection-clipboard clipboard
+
+# Switching the keybindings for reload and rotate
+# because I personaly reload my documents more than
+# I rotate them. So having reload binded to r seems
+# more practicle
+map r reload
+map R rotate
+
+# ~/path/to/file
+# instead of 
+# /home/username/path/to/file
+# in the status bar
+set statusbar-home-tilde
+
+# Disables the status bar. CTRL+N to enable it.
+set guioptions ""
+
+# Set the background of zathura
+set default-bg "#000000"
+
+
+# In MuPDF, i is the keybinding to invert the color
+# and I rather stick with that binding
+map i recolor
+
+# Recolor the PDF
+set recolor-darkcolor "#dcdccc" 
+set recolor-lightcolor "#01181D"
