@@ -153,9 +153,6 @@ function vterm_printf(){
 }
 
 if [ -n "$INSIDE_EMACS" ]; then
-    # set emacs TERM variable to eterm-color so that colors are rendered correctly
-    TERM="eterm-color"
-
     vterm_prompt_end() {
         vterm_printf "51;A$(whoami)@$(hostname):$(pwd)";
     }
