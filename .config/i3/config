@@ -3,7 +3,7 @@ set $mod Mod4
 # Use hyper key as a second modifier
 set $mod2 Mod3
 
-font pango:Noto Sans 8
+font pango:Iosevka SS08 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -293,8 +293,11 @@ mode  "Passthrough Mode - Press Alt+F12 to exit" {
 bindsym $mod+F12 mode "Passthrough Mode - Press Alt+F12 to exit"
 
 bar {
-        status_command i3blocks
-        position top
+    status_command i3blocks
+    position top
+    colors {
+           background #12111E
+    }
 }
 
 workspace_auto_back_and_forth yes
@@ -326,6 +329,9 @@ for_window [class="Lxappearance"] floating enable
 # enable floating for xev application
 for_window [title="^Event Tester$"] floating enable
 
+# enable floating for yad
+for_window [class="Yad"] floating enable
+
 # set wallpaper for i3
 exec_always --no-startup-id feh --bg-scale ~/Pictures/beauty.png
 
@@ -351,9 +357,6 @@ exec --no-startup-id udiskie --tray
 
 # start nm-applet for NetworkManager
 exec --no-startup-id nm-applet
-
-# run flashfocus
-exec_always --no-startup-id flashfocus
 
 # run bluetooth tray icon
 exec --no-startup-id blueman-tray
