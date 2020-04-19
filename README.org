@@ -4,23 +4,60 @@
   window manager
   
 * Configure ZSH
-  + Install and use ~zsh~ as the default shell by running ~chsh -s $(which zsh)~.
-  + Install ~zimfw~ by following the instructions as defined [[https://github.com/zimfw/zimfw][here]]
+  
+  + Install and use ~zsh~ as the default shell by running ~chsh -s $(which zsh)~
+  + Install [[https://github.com/zimfw/zimfw][zimfw]] by following the instructions in readme
   + After installation, run ~zimfw install~ followed by ~zimfw uninstall~, to
-    modify the plugins for ~zimfw~.
-  + Install ~alacritty~ as the default terminal.
-
-** Configuring plugins for ZSH
+    modify the plugins for ~zimfw~
+  + Install [[https://github.com/alacritty/alacritty][alacritty]]  as the default terminal.
+    
+* Command line tools
+  
+** Useful command line line tools written in Rust
    
-   + Useful command line tools written in =Rust=:
-     + Use [[https://github.com/sharkdp/fd][fd]] as an alternative for =find=
-     + Use [[https://github.com/BurntSushi/ripgrep][Ripgrep]] as an alternative for =grep=
-     + Use [[https://github.com/sharkdp/bat][bat]]  as an alternative for =cat= and =less= to view files
-     + Use [[https://github.com/Peltoche/lsd][lsd]] as a modern alternative to =ls=
+   + Use [[https://github.com/sharkdp/fd][fd]] as an alternative for =find=
+   + Use [[https://github.com/BurntSushi/ripgrep][Ripgrep]] as an alternative for =grep=
+   + [[https://github.com/phiresky/ripgrep-all][ripgrep_all]]: rga: ripgrep, but also search in PDFs, E-Books, Office
+     documents, zip, tar.gz, etc.
+   + [[https://github.com/m4b/bingrep][bingrep]]: like ~grep~ UBER, but for binaries
+   + [[https://github.com/XAMPPRocky/tokei][tokei]]: count lines of code
+   + Use [[https://github.com/sharkdp/bat][bat]]  as an alternative for =cat= and =less= to view files
+   + Use [[https://github.com/Peltoche/lsd][lsd]] as a modern alternative to =ls=
+   + Use [[https://github.com/Canop/broot][broot]] as a modern alternative to tree
+   + [[https://github.com/yaa110/nomino][nomino]]: batch rename files using regex
+   + [[https://github.com/denisidoro/navi/][navi]]: An interactive cheatsheet tool for the command-line
+   + [[https://github.com/sharkdp/hyperfine][hyperfine]]: A command-line benchmarking tool
+   + [[https://github.com/sharkdp/hexyl][hexyl]]: command-line hex viewer 
+   + [[https://github.com/dalance/procs/][procs]]: A modern replacement for ps written in Rust
+   + [[https://github.com/cjbassi/ytop][ytop]]: A TUI system monitor written in Rust
 
-** Use command line utilities
+** Useful command line utilities
 
+   + [[https://github.com/tmux/tmux][tmux]]:  a terminal multiplexer
    + [[https://github.com/zquestz/s][s]]: search from the command line
+   + [[https://github.com/curusarn/resh][resh]]: Contextual shell history for zsh and bash
+   + [[https://github.com/isacikgoz/tldr][tldr++]]: quickly view cheatsheets for linux commands
+   + [[https://github.com/nosarthur/gita][Gita]]: Manage multiple git repositories easily
+   + [[https://dev.yorhel.nl/ncdu][ncdu]]: Ncdu is a disk usage analyzer with an ncurses interface.
+   + [[https://lnav.org/][lnav]]: Watch and analyze your log files from a terminal.
+   + [[https://salsa.debian.org/minicom-team/minicom][minicom]]: Serial communications program
+   + [[https://github.com/stedolan/jq][jq]]: command line JSON processor
+   + [[https://ffmpeg.org/][ffmpeg]]: A complete, cross-platform solution to record, convert and stream audio and video.
+   + [[https://github.com/ImageMagick/ImageMagick][imagemagick]],[[http://www.graphicsmagick.org/index.html][graphicsmagick]]: manipulate images on the command line
+   + [[https://graphviz.org/][graphviz]]: graph visualization software
+   + [[https://gstreamer.freedesktop.org/][Gstreamer]]: pipeline based multi-media framework
+   + [[https://github.com/denilsonsa/prettyping][prettyping]]: `prettyping` is a wrapper around the standard `ping` tool,
+     making the output prettier, more colorful, more compact, and easier to
+     read.
+   + [[https://github.com/mptre/yank/][yank]]: yank terminal output to clipboard
+   + [[https://github.com/syncthing/syncthing][syncthing]]: modern cross platform alternative to rsync
+   + [[https://www.gnu.org/software/stow/][GNU Stow]]: GNU Stow is a symlink farm manager which takes distinct packages
+     of software and/or data located in separate directories on the filesystem,
+     and makes them appear to be installed in the same place.
+   + [[https://github.com/aria2/aria2][aria2]]: aria2 is a lightweight multi-protocol & multi-source, cross platform
+     download utility operated in command-line. It supports HTTP/HTTPS, FTP,
+     SFTP, BitTorrent and Metalink.
+
 
 * Configure ntp
   - Install =ntp= package and enable the ntp service
@@ -192,7 +229,7 @@ sudo systemctl enable deadd-notification-center --now
     + Use =experimental backends= option when running picom, otherwise the =glx=
       backend will not work.
   + Use ~udiskie~ to get notifications and manage devices connected to the system.
-  + Use =maim= and =xdotool= to take desktop screenshots. =xdotool= is also used
+  + Use [[https://github.com/naelstrof/maim][maim]] and =xdotool= to take desktop screenshots. =xdotool= is also used
     to get picture in picture effect using i3. The following are enabled in i3:
     - screenshot of entire screen
     - screenshot of active window
@@ -264,7 +301,6 @@ make install
   + Install LibreOffice from =libreoffice-fresh= (in AUR)
   + =Plantuml= for creating control flow and other diagrams
   + =dbeaver= (open source Database viewer)
-  + =tldr++= (AUR) [quickly view cheatsheets for linux commands]    
   + =TeamViewr= for remote control
     + Enable and start teamviewer deamon in the background by:
 
