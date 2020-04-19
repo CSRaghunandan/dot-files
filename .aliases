@@ -3,7 +3,6 @@ alias c=clear
 alias o=pwd
 
 # system commands
-alias p="sudo pacman"
 alias ssh="TERM=screen-256color ssh"
 alias SS="sudo systemctl"
 alias ka="killall"
@@ -17,12 +16,6 @@ alias ssh="TERM=screen-256-color ssh"
 
 # aliases for lsd
 alias ls='lsd'
-alias l='ls -l'
-alias lh="ls -lh"
-alias la='ls -a'
-alias lla='ls -la'
-alias lt='ls -lt'
-alias sl="ls"
 
 # use bat instead of cat
 alias cat=bat
@@ -42,23 +35,7 @@ alias ping=prettyping
 
 # confirm before overwriting something
 alias cp="cp -i"
-# human-readable sizes
-alias df='df -h'
 # show sizes in MB
 alias free='free -m'
 # fixes typo
 alias cd..="cd .."
-
-# Git related
-alias gss='git status'
-alias gct='git commit'
-alias ga='git add'
-alias gd='git diff'
-alias gb='git branch'
-alias gl='git log'
-alias gsb='git show-branch'
-alias gco='git checkout'
-alias gr='git rebase'
-alias gri='git rebase --interactive'
-alias gcp='git cherry-pick'
-alias grm='git rm'
