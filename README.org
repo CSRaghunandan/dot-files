@@ -263,26 +263,7 @@ gio mime x-scheme-handler/https firefox-developer-edition.desktop
     hotplug support.
   + Install [[https://github.com/RasmusLindroth/i3keys][i3keys]] to list all the bindings made for i3wm in web or terminal
 
-* Misc
-
-+ Install =redshift= to warn the screen during night times to reduce eye strain
-  + Enable and start: ~redshift~ by running
-
-    #+BEGIN_SRC bash
-systemctl --user enable redshift-gtk.service --now  
-#+END_SRC
-
-
-  + In order to allow access Redshift to use GeoClue2, add the following lines
-    to ~/etc/geoclue/geoclue.conf~:
-#+begin_src conf
-[redshift]
-allowed=true
-system=false
-users=
-#+end_src
-
-* Productivity
+* Productivity tools
 
   + Install *Emacs28* from source by running:
 
@@ -321,5 +302,19 @@ sudo sytemctl enable teamviewerd.service --now
     langauges and emoji
   + Use =Iosevka SS08= as the default monospace font
   + Use =lxappearence= to change the font, icons and theme
+  + Install =redshift= to warn the screen during night times to reduce eye strain
+    + Enable and start: ~redshift~ by running
 
-  
+      #+BEGIN_SRC bash
+  systemctl --user enable redshift-gtk.service --now  
+  #+END_SRC
+
+
+    + In order to allow access Redshift to use GeoClue2, add the following lines
+      to ~/etc/geoclue/geoclue.conf~:
+    #+begin_src conf
+[redshift]
+allowed=true
+system=false
+users=
+    #+end_src
