@@ -12,11 +12,15 @@
 
 ** Configuring plugins for ZSH
    
-   + Useful command line tools:
+   + Useful command line tools written in =Rust=:
      + Use [[https://github.com/sharkdp/fd][fd]] as an alternative for =find=
      + Use [[https://github.com/BurntSushi/ripgrep][Ripgrep]] as an alternative for =grep=
      + Use [[https://github.com/sharkdp/bat][bat]]  as an alternative for =cat= and =less= to view files
      + Use [[https://github.com/Peltoche/lsd][lsd]] as a modern alternative to =ls=
+
+** Use command line utilities
+
+   + [[https://github.com/zquestz/s][s]]: search from the command line
 
 * Configure ntp
   - Install =ntp= package and enable the ntp service
@@ -217,6 +221,10 @@ gio mime x-scheme-handler/https firefox-developer-edition.desktop
     to be installed
   + Install =yad= to get dialog popups. This is used for calendar when pressing
     date in i3bar
+  + Install [[https://github.com/Airblader/xedgewarp][xedgewrap]] to allow mouse to wrap across multiple monitors
+  + Install [[https://github.com/chmln/enact][enact]] to have automatic configuration of multiple monitors with
+    hotplug support.
+  + Install [[https://github.com/RasmusLindroth/i3keys][i3keys]] to list all the bindings made for i3wm in web or terminal
 
 * Misc
 
