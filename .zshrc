@@ -216,5 +216,10 @@ yr() {
 	fi
 }
 
+# auto-completion for s
+if [ -f /usr/share/bash-completion/completions/s ]; then
+    . /usr/share/bash-completion/completions/s
+fi
+
 # start the shell with a new fortune cookie :)
 fortune ; echo

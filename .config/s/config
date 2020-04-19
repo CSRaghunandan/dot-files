@@ -1,0 +1,9 @@
+
+
+customProviders [
+  {
+    name: AmazonIndia
+    url: "https://amazon.com/s?k=%s"
+    tags: [Shopping]
+  }
+]
