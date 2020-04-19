@@ -16,8 +16,6 @@ bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun -matching fuzzy -show-icons
-# search in a variety of sources using rofi
-bindsym $mod2+g exec --no-startup-id ~/.scripts/rofi/web-search
 # use alt tab to switch between windows
 bindsym Mod1+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show combi -matching fuzzy -show-icons
 # clipboard manager using rofi
