@@ -317,6 +317,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="About"] floating enable
+for_window [window_role="Preferences"] floating enable
 
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
@@ -325,7 +326,6 @@ for_window [window_type="splash"] floating enable
 for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
 for_window [class="(?i)VirtualBox"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
-# for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down $height px
 for_window [class="Lxappearance"] floating enable
 
 # enable floating for xev application
@@ -368,3 +368,9 @@ exec --no-startup-id artha
 
 # run goldendict containing the websters 1828 unabridged dictionary
 exec --no-startup-id goldendict
+
+# run xedgewrap
+exec --no-startup-id xedgewarp -b
+
+# run enact: automatic configuration for multiple monitors
+exec --no-startup-id enact --pos top --watch &
