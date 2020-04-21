@@ -18,7 +18,7 @@ alias ssh="TERM=screen-256-color ssh"
 alias ls='lsd'
 
 # use bat instead of cat
-alias cat=bat
+alias cat=bat -p
 
 # use broot as the alias for tree
 alias tree=broot
@@ -39,3 +39,6 @@ alias cp="cp -i"
 alias free='free -m'
 # fixes typo
 alias cd..="cd .."
+
+# setup alias for i3
+alias i3lock="i3lock && echo mem > /sys/power/state"

@@ -259,7 +259,7 @@ sudo systemctl enable deadd-notification-center --now
     install using =picom-git= from AUR.
     + Use =experimental backends= option when running picom, otherwise the =glx=
       backend will not work.
-  + Use ~udiskie~ to get notifications and manage devices connected to the system.
+  + Use [[https://github.com/coldfix/udiskie][udiskie]] to get notifications and manage devices connected to the system.
   + Use [[https://github.com/naelstrof/maim][maim]] and =xdotool= to take desktop screenshots. =xdotool= is also used
     to get picture in picture effect using i3. The following are enabled in i3:
     - screenshot of entire screen
@@ -287,12 +287,30 @@ gio mime x-scheme-handler/https firefox-developer-edition.desktop
 
   + Run =blueman-tray= to get a tray icon for bluetooth. This requires =blueman=
     to be installed
-  + Install =yad= to get dialog popups. This is used for calendar when pressing
+  + Install [[https://github.com/v1cont/yad][yad]] to get dialog popups. This is used for calendar when pressing
     date in i3bar
   + Install [[https://github.com/Airblader/xedgewarp][xedgewrap]] to allow mouse to wrap across multiple monitors
   + Install [[https://github.com/chmln/enact][enact]] to have automatic configuration of multiple monitors with
-    hotplug support.
+    hotplug support:
+
+    #+BEGIN_SRC bash
+# install enact using cargo
+cargo install --git https://github.com/chmln/enact
+
+# to use in i3, add this line to your config:
+exec --no-startup-id enact --pos top --watch &
+#+END_SRC
+
   + Install [[https://github.com/RasmusLindroth/i3keys][i3keys]] to list all the bindings made for i3wm in web or terminal
+
+  + Install =i3-auto-layout= to automatically layout i3 windows in a uniform
+    manner:
+
+    #+BEGIN_SRC bash
+# install i3-auto-layout with cargo
+cargo install --git https://github.com/chmln/i3-auto-layout  
+#+END_SRC
+
 
 * Productivity tools
 
