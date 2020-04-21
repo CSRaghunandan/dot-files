@@ -58,6 +58,37 @@
      download utility operated in command-line. It supports HTTP/HTTPS, FTP,
      SFTP, BitTorrent and Metalink.
 
+** Language specific tools
+
+*** Shell
+    
+   + [[https://github.com/mvdan/sh][shfmt]]: format shell files using =shfmt=
+   + [[https://github.com/koalaman/shellcheck][shellcheck]]: ShellCheck, a static analysis tool for shell scripts
+
+*** C/Cpp
+
+    + [[https://github.com/MaskRay/ccls][ccls]]: LSP based language server for C and C++
+    + [[https://cmake.org/][CMake]]: C/C++ build files generator
+    + [[https://www.qt.io/][qt5]]: GUI Framework for C++
+    + [[https://www.boost.org/][boost]]:  peer-reviewed portable C++ source libraries which works will with
+      the standard library
+    + [[https://www.qt.io/development-tools][qt creator]]: IDE for C++ written by Qt team
+    + [[https://github.com/KDE/clazy][clazy]]: Qt oriented code checker based on clang framework
+    + [[https://ccache.dev/][ccache]]: Ccache (or “ccache”) is a compiler cache. It speeds up
+      recompilation by caching previous compilations and detecting when the same
+      compilation is being done again.
+    + [[http://cppcheck.sourceforge.net/][cppcheck]]: Cppcheck is an open source static analysis tool for C/C++ code
+    + gdb, lldb: debuggers for C/C++ and rust code.
+
+*** Rust
+
+    + [[https://github.com/rust-analyzer/rust-analyzer][rust-analyzer]]: An experimental Rust compiler front-end for IDEs and text
+      editors. On Arch Linux install =rust-analyzer-bin= from =AUR=
+    + [[https://github.com/RustSec/cargo-audit][cargo-audit]]: Audit Cargo.lock files for crates with security
+      vulnerabilities reported to the RustSec Advisory Database.
+    + [[https://github.com/RazrFalcon/cargo-bloat][cargo-bloat]]: find out what takes the most space in your executable
+    + [[https://github.com/nabijaczleweli/cargo-update][cargo-update]]: A cargo subcommand for checking and applying updates to
+      installed executables
 
 * Configure ntp
   - Install =ntp= package and enable the ntp service
