@@ -17,7 +17,7 @@
    
    + Use [[https://github.com/sharkdp/fd][fd]] as an alternative for =find=
    + Use [[https://github.com/BurntSushi/ripgrep][Ripgrep]] as an alternative for =grep=
-   + [[https://github.com/phiresky/ripgrep-all][ripgrep_all]]: rga: ripgrep, but also search in PDFs, E-Books, Office
+   + [[https://github.com/phiresky/ripgrep-all][ripgrep_all]]: =rga=: ripgrep, but also search in PDFs, E-Books, Office
      documents, zip, tar.gz, etc.
    + [[https://github.com/m4b/bingrep][bingrep]]: like ~grep~ UBER, but for binaries
    + [[https://github.com/XAMPPRocky/tokei][tokei]]: count lines of code
@@ -30,6 +30,8 @@
    + [[https://github.com/sharkdp/hexyl][hexyl]]: command-line hex viewer 
    + [[https://github.com/dalance/procs/][procs]]: A modern replacement for ps written in Rust
    + [[https://github.com/cjbassi/ytop][ytop]]: A TUI system monitor written in Rust
+   + [[https://github.com/SoptikHa2/desed][desed]]: Debugger for Sed: demystify and debug your sed scripts, from comfort
+     of your terminal.
 
 ** Useful command line utilities
 
@@ -42,13 +44,13 @@
    + [[https://lnav.org/][lnav]]: Watch and analyze your log files from a terminal.
    + [[https://salsa.debian.org/minicom-team/minicom][minicom]]: Serial communications program
    + [[https://github.com/stedolan/jq][jq]]: command line JSON processor
-   + [[https://ffmpeg.org/][ffmpeg]]: A complete, cross-platform solution to record, convert and stream audio and video.
+   + [[https://ffmpeg.org/][ffmpeg]]: A complete, cross-platform solution to record, convert and stream
+     audio and video.
    + [[https://github.com/ImageMagick/ImageMagick][imagemagick]],[[http://www.graphicsmagick.org/index.html][graphicsmagick]]: manipulate images on the command line
    + [[https://graphviz.org/][graphviz]]: graph visualization software
    + [[https://gstreamer.freedesktop.org/][Gstreamer]]: pipeline based multi-media framework
-   + [[https://github.com/denilsonsa/prettyping][prettyping]]: `prettyping` is a wrapper around the standard `ping` tool,
-     making the output prettier, more colorful, more compact, and easier to
-     read.
+   + [[https://github.com/denilsonsa/prettyping][prettyping]]: is a wrapper around the standard =ping= tool, making the output
+     prettier, more colorful, more compact, and easier to read.
    + [[https://github.com/mptre/yank/][yank]]: yank terminal output to clipboard
    + [[https://github.com/syncthing/syncthing][syncthing]]: modern cross platform alternative to rsync
    + [[https://www.gnu.org/software/stow/][GNU Stow]]: GNU Stow is a symlink farm manager which takes distinct packages
