@@ -5,3 +5,8 @@
 	helper = store
 [core]
 	excludesfile = /home/csraghunandan/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+[diff-so-fancy]
+	rulerWidth = 80
+[alias]
+    patch = !git --no-pager diff --no-color
