@@ -332,6 +332,30 @@ make
 make install
 #+END_SRC
 
+    + Enable and run the systemd service for emacs:
+
+      #+BEGIN_SRC bash
+systemctl --user enable emacs --now
+#+END_SRC
+
+    + Change the =emacs.desktop= file to launch =emacsclient=, its located in
+      =/usr/local/share/applications/emacs.desktop=:
+
+      #+BEGIN_SRC conf
+[Desktop Entry]
+Name=Emacs
+GenericName=Text Editor
+Comment=Edit text
+MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
+Exec=/usr/local/bin/emacsclient -c -a '' %F
+Icon=emacs
+Type=Application
+Terminal=false
+Categories=Development;TextEditor;
+StartupWMClass=Emacs
+Keywords=Text;Editor;
+#+END_SRC
+      
   + =Postman= for testing HTTP requests
   + =Zeal= for offline documentation
   + =Source Trail= for browsing C/Cpp and Python projects visually
