@@ -5,4 +5,3 @@
 	helper = store
 [core]
 	excludesfile = /home/csraghunandan/.gitignore_global
-	editor = emacs
