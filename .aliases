@@ -16,7 +16,7 @@ alias et='TERM="xterm-256color" emacsclient -t -a ""'
 alias ls='lsd'
 
 # use bat instead of cat
-alias cat=bat -p
+alias cat="bat -p"
 
 # use broot as the alias for tree
 alias tree=broot
