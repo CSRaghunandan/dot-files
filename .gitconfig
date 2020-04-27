@@ -5,8 +5,4 @@
 	helper = store
 [core]
 	excludesfile = /home/csraghunandan/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
-[diff-so-fancy]
-	rulerWidth = 80
-[alias]
-    patch = !git --no-pager diff --no-color
+	pager=delta --dark --theme="1337" 
