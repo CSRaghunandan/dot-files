@@ -123,6 +123,12 @@ assign [class="(?i)libreoffice.*"] $ws7
 assign [class="TeamViewer"] $ws7
 assign [class="zoom"] $ws7
 
+# colors for borders
+client.focused          #906CFF #7054CB #ffffff #906CFF
+client.focused_inactive #12111E #272642 #ffffff #484e50
+client.unfocused        #12111E #272642 #888888 #292d2e 
+client.urgent           #C10004 #900000 #ffffff #900000
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
