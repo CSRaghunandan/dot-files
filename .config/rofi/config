@@ -1,1 +1,8 @@
-rofi.theme: /usr/share/rofi/themes/Pop-Dark.rasi
+#! "Padding" Set from: Default
+rofi.padding: 15
+
+rofi.color-enabled: true
+rofi.color-window: #1b182c, #1b182c, #1b182c
+rofi.color-normal: #1b182c, #ffffff, #1b182c, #906cff, #ffffff
+rofi.color-active: #1b182c, #ffffff, #1b182c, #906cff, #ffffff
+rofi.color-urgent: #1b182c, #ff1844, #1b182c, #906cff, #ff1844
