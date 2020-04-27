@@ -295,8 +295,13 @@ bindsym $mod+F12 mode "Passthrough Mode - Press Alt+F12 to exit"
 bar {
     status_command i3blocks
     position top
+
     colors {
-           background #12111E
+        background #1E1C31
+        focused_workspace #906CFF #906CFF #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #12111E #12111E #565575
+        urgent_workspace #2f343a #900000 #ffffff
     }
 }
 
@@ -374,4 +379,4 @@ exec --no-startup-id xedgewarp -b
 exec --no-startup-id enact --pos top --watch &
 
 # start auto-layout which will automatically split windows uniformly, similar to avy for emacs
-exec_always --no-startup-id i3-auto-layout
+exec --no-startup-id i3-auto-layout
