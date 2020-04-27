@@ -10,7 +10,7 @@ alias ka="killall"
 # emacs related aliases
 alias ec='emacsclient -nc -a ""'
 alias eg='emacsclient -n -a ""'
-alias et='TERM="xterm-256color" emacsclient -t -a ""'
+alias et='TERM=xterm-256color emacsclient -t -a ""'
 
 # aliases for lsd
 alias ls='lsd'
