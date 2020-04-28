@@ -75,8 +75,6 @@ alias ls='lsd'
 
    + [[https://github.com/tmux/tmux][tmux]]:  a terminal multiplexer
    + [[https://github.com/zquestz/s][s]]: search from the command line
-   + [[https://github.com/curusarn/resh][resh]]: Contextual shell history for zsh and bash
-     + To update resh, run =reshctl update=
    + [[https://github.com/isacikgoz/tldr][tldr++]]: quickly view cheatsheets for linux commands
    + [[https://github.com/nosarthur/gita][Gita]]: Manage multiple git repositories easily
    + [[https://dev.yorhel.nl/ncdu][ncdu]]: Ncdu is a disk usage analyzer with an ncurses interface.

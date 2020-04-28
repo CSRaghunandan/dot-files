@@ -188,15 +188,6 @@ source /home/csraghunandan/.config/broot/launcher/bash/br
 # zsh-bd
 . $HOME/.zsh/plugins/bd/bd.zsh
 
-# (Rich Enchanced Shell History)
-# to setup resh, run: curl -fsSL https://raw.githubusercontent.com/curusarn/resh/master/scripts/rawinstall.sh | bash
-# enable binding for C-r by running the below lines:
-# reshctl enable ctrl_r_binding_global
-# reshctl disable ctrl_r_binding_global
-[ -f ~/.resh/shellrc ] && source ~/.resh/shellrc # this line was added by RESH
-# completions for reshctl
-. <(reshctl completion zsh) && compdef _reshctl reshctl
-
 # initiate z.lua
 eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced once fzf)"
 # integrate z.lua with the native module for faster performance
