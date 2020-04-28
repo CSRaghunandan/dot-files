@@ -107,7 +107,14 @@ alias ping=prettyping
    + [[https://github.com/scopatz/nanorc][nano-syntax-highlighting]]: Improved Nano Syntax Highlighting Files
    + [[https://www.vanheusden.com/multitail/][multitail]]: MultiTail allows you to monitor logfiles and command output in
      multiple windows in a terminal, colorize, filter and merge.
+   + [[fzf][fzf]]: A command-line fuzzy finder 
+     + Install it by:
 
+       #+BEGIN_SRC bash
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+# select completions and keybindings for fzf  
+#+END_SRC
 
 ** Language specific tools
 
@@ -405,7 +412,7 @@ systemctl --user enable i3-auto-layout.service --now
   + Install *Emacs28* from source by running:
 
     #+BEGIN_SRC bash
-git clone -b master https://github.com/emacs-mirror/emacs --single-branch
+git clone --depth 1 master https://github.com/emacs-mirror/emacs
 cd emacs
 sh autogen.sh
 ./configure --with-modules --with-rsvg --with-dbus --with-imagemagick --without-pop --with-xft --with-xml2 --with-libotf

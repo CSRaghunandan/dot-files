@@ -136,6 +136,22 @@ export PATH="/home/csraghunandan/.pyenv/bin:$PATH"
 # opam configuration
 # test -r /home/csraghunandan/.opam/opam-init/init.sh && . /home/csraghunandan/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
+# source fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+	fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+	fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
 function vterm_printf() {
 	if [ -n "$TMUX" ]; then
 		# tell tmux to pass the escape sequences through
@@ -178,7 +194,6 @@ source /home/csraghunandan/.config/broot/launcher/bash/br
 # reshctl enable ctrl_r_binding_global
 # reshctl disable ctrl_r_binding_global
 [ -f ~/.resh/shellrc ] && source ~/.resh/shellrc # this line was added by RESH
-
 # completions for reshctl
 . <(reshctl completion zsh) && compdef _reshctl reshctl
 
