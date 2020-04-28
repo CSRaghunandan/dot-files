@@ -13,7 +13,7 @@ alias eg='emacsclient -n -a ""'
 alias et='TERM=xterm-256color emacsclient -t -a ""'
 
 # aliases for lsd
-alias ls='lsd'
+alias ls='lsd --icon never'
 
 # use bat instead of cat
 alias cat="bat -p --theme='Sublime Snazzy'"
