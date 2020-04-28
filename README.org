@@ -107,7 +107,7 @@ alias ping=prettyping
    + [[https://github.com/scopatz/nanorc][nano-syntax-highlighting]]: Improved Nano Syntax Highlighting Files
    + [[https://www.vanheusden.com/multitail/][multitail]]: MultiTail allows you to monitor logfiles and command output in
      multiple windows in a terminal, colorize, filter and merge.
-   + [[fzf][fzf]]: A command-line fuzzy finder 
+   + [[https://github.com/junegunn/fzf/][fzf]]: A command-line fuzzy finder 
      + Install it by:
 
        #+BEGIN_SRC bash
