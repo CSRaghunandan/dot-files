@@ -357,9 +357,6 @@ exec --no-startup-id unclutter
 # Enable numlock functionality
 exec --no-startup-id numlockx on
 
-# start picom
-exec --no-startup-id picom --config ~/.config/picom.conf --experimental-backends
-
 # configure the keyboard settings
 exec --no-startup-id ~/.scripts/system/keeb
 

@@ -332,6 +332,14 @@ sudo systemctl enable deadd-notification-center --now
     install using =picom-git= from AUR.
     + Use =experimental backends= option when running picom, otherwise the =glx=
       backend will not work.
+
+    + To run =picom=, copy the systemd user service file(=picom.service=) to
+      =/usr/lib/systemd/user/= and run the below command:
+
+      #+BEGIN_SRC bash
+# this needed as sometimes picom crashes when restarting i3 session
+systemctl --user enable picom.service --now
+#+END_SRC    
   + Use [[https://github.com/coldfix/udiskie][udiskie]] to get notifications and manage devices connected to the system.
   + Use [[https://github.com/naelstrof/maim][maim]] and =xdotool= to take desktop screenshots. =xdotool= is also used
     to get picture in picture effect using i3. The following are enabled in i3:
@@ -388,7 +396,7 @@ cargo install --git https://github.com/chmln/i3-auto-layout
       file(=i3-auto-layout.service=) to =/usr/lib/systemd/user/= and run the
       below command:
 
-      #+BEGIN_SRC 
+      #+BEGIN_SRC bash
 systemctl --user enable i3-auto-layout.service --now  
 #+END_SRC
 
@@ -437,6 +445,17 @@ Keywords=Text;Editor;
 export EDITOR="emacsclient -n -a \"\""
 export VISUAL="emacsclient -n -a \"\""
 #+END_SRC
+
+    + Setup handy aliases for emacs by adding the below in your =.aliases= file:
+
+      #+BEGIN_SRC bash
+alias ec='emacsclient -nc -a ""'
+alias eg='emacsclient -n -a ""'
+alias et='TERM=xterm-256color emacsclient -t -a ""'
+#+END_SRC
+      + Now you can open emacs by conecting to the emacs daemon using
+        emacsclient using: =ec=
+      + You can open a file on the existing emacs frame by: =eg file-name=
 
   + =Postman= for testing HTTP requests
   + =Zeal= for offline documentation

@@ -1,0 +1,12 @@
+[Unit]
+Description=Picom: display compositor for Linux
+Documentation=https://github.com/yshui/picom
+After=display-manager.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/picom  --no-fading-openclose --experimental-backends
+Restart=always
+
+[Install]
+WantedBy=default.target
