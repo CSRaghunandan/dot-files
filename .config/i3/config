@@ -383,6 +383,3 @@ exec --no-startup-id xedgewarp -b
 
 # run enact: automatic configuration for multiple monitors
 exec --no-startup-id enact --pos top --watch &
-
-# start auto-layout which will automatically split windows uniformly, similar to avy for emacs
-exec --no-startup-id i3-auto-layout
