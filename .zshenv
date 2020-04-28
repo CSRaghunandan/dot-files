@@ -13,6 +13,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.scripts/i3:$PATH"
 export PATH="$HOME/.scripts/system:$PATH"
 
+# locale configuration
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
@@ -46,5 +47,6 @@ export FZ_HISTORY_CD_CMD="_zlua"
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# colored man pages using bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT='-c'

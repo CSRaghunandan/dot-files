@@ -10,6 +10,14 @@
   + After installation, run ~zimfw install~ followed by ~zimfw uninstall~, to
     modify the plugins for ~zimfw~
   + Install [[https://github.com/alacritty/alacritty][alacritty]]  as the default terminal.
+    + Configure environment variables for terminals by adding the below lines to
+      =.zshenv=:
+
+      #+BEGIN_SRC bash
+export TERM="alacritty"
+export TERMINAL="alacritty"
+#+END_SRC
+
     
 * Command line tools
   
@@ -22,7 +30,36 @@
    + [[https://github.com/m4b/bingrep][bingrep]]: like ~grep~ UBER, but for binaries
    + [[https://github.com/XAMPPRocky/tokei][tokei]]: count lines of code
    + Use [[https://github.com/sharkdp/bat][bat]]  as an alternative for =cat= and =less= to view files
+     + Replace =cat= with =bat= by using an alias:
+
+       #+BEGIN_SRC bash
+alias cat="bat -p --theme='Sublime Snazzy'"  
+#+END_SRC
+
+     + You can have colored man pages using =bat=:
+
+       #+BEGIN_SRC bash
+# add this to your .zshenv file
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT='-c'
+
+# below are modifications to less:
+# Modify the pager defaults: The -R option is needed to interpret ANSI colors
+# correctly. The second option (-F) instructs less to exit immediately if the
+# output size is smaller than the vertical size of the terminal.
+export PAGER="less -RF"
+
+# use UTF-8 charset for less
+export LESSCHARSET=utf-8
+#+END_SRC
+
    + Use [[https://github.com/Peltoche/lsd][lsd]] as a modern alternative to =ls=
+     + Use =lsd= as an alternative for =ls= using an alias:
+
+       #+BEGIN_SRC bash
+alias ls='lsd'  
+#+END_SRC
+
    + Use [[https://github.com/Canop/broot][broot]] as a modern alternative to tree
    + [[https://github.com/yaa110/nomino][nomino]]: batch rename files using regex
    + [[https://github.com/denisidoro/navi/][navi]]: An interactive cheatsheet tool for the command-line
@@ -39,6 +76,7 @@
    + [[https://github.com/tmux/tmux][tmux]]:  a terminal multiplexer
    + [[https://github.com/zquestz/s][s]]: search from the command line
    + [[https://github.com/curusarn/resh][resh]]: Contextual shell history for zsh and bash
+     + To update resh, run =reshctl update=
    + [[https://github.com/isacikgoz/tldr][tldr++]]: quickly view cheatsheets for linux commands
    + [[https://github.com/nosarthur/gita][Gita]]: Manage multiple git repositories easily
    + [[https://dev.yorhel.nl/ncdu][ncdu]]: Ncdu is a disk usage analyzer with an ncurses interface.
@@ -52,6 +90,12 @@
    + [[https://gstreamer.freedesktop.org/][Gstreamer]]: pipeline based multi-media framework
    + [[https://github.com/denilsonsa/prettyping][prettyping]]: is a wrapper around the standard =ping= tool, making the output
      prettier, more colorful, more compact, and easier to read.
+     + Replace =ping= with =prettyping= using an alias:
+
+       #+BEGIN_SRC bash
+alias ping=prettyping  
+#+END_SRC
+
    + [[https://github.com/mptre/yank/][yank]]: yank terminal output to clipboard
    + [[https://github.com/syncthing/syncthing][syncthing]]: modern cross platform alternative to rsync
    + [[https://www.gnu.org/software/stow/][GNU Stow]]: GNU Stow is a symlink farm manager which takes distinct packages
@@ -111,6 +155,15 @@
   - =ntpq -pn= -> show the status of ntp  
   
 * Keyboard configuration and mouse:
+  + Configure locale for your system by adding the below lines to =.zshenv=
+    file:
+
+    #+BEGIN_SRC bash
+# locale configuration
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+#+END_SRC
+
   + Install ~xorg-xmodmap~ for keyboard configuration: Left control is now
     =hyper= and Caps Lock is now =control=
   + Enable sticky keys are enabled without locking using =xkbset=
@@ -135,12 +188,10 @@ WantedBy=suspend.target
     #+END_SRC
     And run =sudo systemctl enable resume@.service=
     
- + reverse mouse scroll direction in i3
+  + reverse mouse scroll direction in i3, by modifying libinput drivers for
+    mouse/pointer in the file =/usr/share/X11/xorg.conf.d/40-libinput.conf=:
 
-     By modifying libinput drivers for mouse/pointer in the file
-     =/usr/share/X11/xorg.conf.d/40-libinput.conf=
-
-     #+BEGIN_SRC conf
+      #+BEGIN_SRC conf
 Section "InputClass"
 Identifier "libinput pointer catchall"
 MatchIsPointer "on"
@@ -148,11 +199,11 @@ MatchDevicePath "/dev/input/event*"
 Option "NaturalScrolling" "on"
 Driver "libinput"
 EndSection
-     #+END_SRC
+      #+END_SRC
      
   + Add right click option to touchpad for double tap fingers and natural
-     scrolling by adding to the same file above, the line:
-     #+BEGIN_SRC conf
+    scrolling by adding to the same file above, the line:
+    #+BEGIN_SRC conf
 Option "Tapping" "on"                # enables tapping
 Option "ClickMethod" "clickfinger"   # replaces synaptics tapping setup
 Option "NaturalScrolling" "on"
@@ -176,6 +227,12 @@ IdleActionSec=30min
     + Hold off on suspending the system for =30s= after closing the lid
   + Use =i3lock= as the lockscreen for i3. Install =xss-lock= and =xautolock=
     for power management during lock.
+    + Setup an alias for =i3lock=:
+
+      #+BEGIN_SRC bash
+alias i3lock="i3lock && echo mem > /sys/power/state"  
+#+END_SRC
+
   + =TLP= and =thermald= for power management for laptops:
     - Enable =tlp.servce=
     - mask the systemd service =systemd-rfkill.service= and socket =systemd-rfkill.socket=
@@ -237,6 +294,15 @@ IdleActionSec=30min
   + Use =Zathura= as the default reader
     + Install the following packages: =zathura-pdf-mupdf=, =zathura-djvu=, =zathura-cb=
     + Enable copy to clipboard by adding to =~/.config/zathura/zathurarc=:
+    + Make =zathura= the default PDF reader for opening applications in firefox,
+      or other GUI applications by modifying the =mineapps.list=
+    + Make =zathura= the default =Reader= application by adding the following
+      lines in your =.zshenv= file:
+
+      #+BEGIN_SRC bash
+export READER="zathura"  
+#+END_SRC
+
   + Use =libreoffice-fresh= package for installing libreoffice
   + Dictionary and thesaurus config:
     + Install =artha= as the thesarus for linux. Bind its shortcut to =Hyper+Alt+t=
@@ -315,9 +381,16 @@ exec --no-startup-id enact --pos top --watch &
 
     #+BEGIN_SRC bash
 # install i3-auto-layout with cargo
-cargo install --git https://github.com/chmln/i3-auto-layout  
+cargo install --git https://github.com/chmln/i3-auto-layout
 #+END_SRC
 
+    + To run =i3-auto-layout=, copy the systemd user service
+      file(=i3-auto-layout.service=) to =/usr/lib/systemd/user/= and run the
+      below command:
+
+      #+BEGIN_SRC 
+systemctl --user enable i3-auto-layout.service --now  
+#+END_SRC
 
 * Productivity tools
 
@@ -328,7 +401,8 @@ git clone -b master https://github.com/emacs-mirror/emacs --single-branch
 cd emacs
 sh autogen.sh
 ./configure --with-modules --with-rsvg --with-dbus --with-imagemagick --without-pop --with-xft --with-xml2 --with-libotf
-make
+# replce -jX, X is the number of cores in your machine
+make -j8
 make install
 #+END_SRC
 
@@ -355,7 +429,15 @@ Categories=Development;TextEditor;
 StartupWMClass=Emacs
 Keywords=Text;Editor;
 #+END_SRC
-      
+
+    + Make =emacs= your default text editor by adding the below lines to your
+      =.zshenv= file:
+
+      #+BEGIN_SRC bash
+export EDITOR="emacsclient -n -a \"\""
+export VISUAL="emacsclient -n -a \"\""
+#+END_SRC
+
   + =Postman= for testing HTTP requests
   + =Zeal= for offline documentation
   + =Source Trail= for browsing C/Cpp and Python projects visually
