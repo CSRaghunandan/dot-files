@@ -4,6 +4,7 @@ Documentation=https://github.com/chmln/i3-auto-layout
 After=display-manager.service
 
 [Service]
+ExecPre=/usr/bin/sleep 5
 ExecStart=/home/csraghunandan/.cargo/bin/i3-auto-layout
 Restart=always
 
