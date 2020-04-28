@@ -4,6 +4,7 @@
 [credential]
 	helper = store
 [core]
+	editor = /usr/local/bin/emacsclient -c -a ''
 	excludesfile = /home/csraghunandan/.gitignore_global
 	pager=delta --dark --theme='Sublime Snazzy'
 [interactive]
