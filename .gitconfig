@@ -5,4 +5,6 @@
 	helper = store
 [core]
 	excludesfile = /home/csraghunandan/.gitignore_global
-	pager=delta --dark --theme="1337" 
+	pager=delta --dark --theme='Sublime Snazzy'
+[interactive]
+	diffFilter = delta --color-only 
