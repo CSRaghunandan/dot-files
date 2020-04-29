@@ -219,7 +219,7 @@ Option "NaturalScrolling" "on"
     
     #+BEGIN_SRC conf
 HandlePowerKey=suspend
-HandleLidSwitch=suspend
+HandleLidSwitch=lock
 HoldoffTimeoutSec=30s
 IdleAction=suspend
 IdleActionSec=30min  
@@ -228,15 +228,16 @@ IdleActionSec=30min
     This will enable the system to:
     + =suspend= when pressed the power button instead of shutdown
     + If the system is idle for 30minutes, =suspend=
-    + If the laptop lid is closed, =suspend= the system
+    + If the laptop lid is closed, =lock= the system
     + Hold off on suspending the system for =30s= after closing the lid
-  + Use =i3lock= as the lockscreen for i3. Install =xss-lock= and =xautolock=
-    for power management during lock.
+  + Use =i3lock= as the lockscreen for i3 and configure it like so:
     + Setup an alias for =i3lock=:
 
       #+BEGIN_SRC bash
 alias i3lock="i3lock && echo mem > /sys/power/state"  
 #+END_SRC
+    + Use =xsslock= to run =i3lock= when the system is locked
+    + Use =xautolockctl= to lock the system after 10 minutes of inactivity
 
   + =TLP= and =thermald= for power management for laptops:
     - Enable =tlp.servce=
