@@ -4,12 +4,12 @@ export DISPLAY=:0
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 
 # replace 20 with the ID number of your touchpad in `xinput list` command
-enabled=$(xinput list-props "SynPS/2 Synaptics TouchPad" | head -n2 | grep -i enabled | awk '{ print $NF }')
+enabled=$(xinput list-props "SYNA7DB5:01 06CB:CD41 Touchpad" | head -n2 | grep -i enabled | awk '{ print $NF }')
 
 if [ 1 -eq "$enabled" ]; then
-    xinput disable "SynPS/2 Synaptics TouchPad" ;
+    xinput disable "SYNA7DB5:01 06CB:CD41 Touchpad" ;
     notify-send "Disabled touchpad"
 else
-    xinput enable "SynPS/2 Synaptics TouchPad" ;
+    xinput enable "SYNA7DB5:01 06CB:CD41 Touchpad" ;
     notify-send "Enabled touchpad"
 fi
