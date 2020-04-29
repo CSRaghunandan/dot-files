@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-export DISPLAY=:0
-export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
-
 maim -p 0 -c 0.96,0.5,0.09 $HOME/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
 sleep 1
 notify-send 'Full desktop screenshot taken'
