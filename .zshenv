@@ -53,7 +53,12 @@ export MANROFFOPT='-c'
 
 # FZF environment variables
 # Options to fzf command
-export FZF_DEFAULT_OPTS='--cycle --color=16'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+--cycle
+--color=dark
+--color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
+--color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
+'
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 # To apply the command to CTRL-T as well
