@@ -390,22 +390,6 @@ exec --no-startup-id enact --pos top --watch &
 
   + Install [[https://github.com/RasmusLindroth/i3keys][i3keys]] to list all the bindings made for i3wm in web or terminal
 
-  + Install =i3-auto-layout= to automatically layout i3 windows in a uniform
-    manner:
-
-    #+BEGIN_SRC bash
-# install i3-auto-layout with cargo
-cargo install --git https://github.com/chmln/i3-auto-layout
-#+END_SRC
-
-    + To run =i3-auto-layout=, copy the systemd user service
-      file(=i3-auto-layout.service=) to =/usr/lib/systemd/user/= and run the
-      below command:
-
-      #+BEGIN_SRC bash
-systemctl --user enable i3-auto-layout.service --now  
-#+END_SRC
-
 * Productivity tools
 
   + Install *Emacs28* from source by running:
