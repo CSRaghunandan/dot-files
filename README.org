@@ -135,6 +135,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
       compilation is being done again.
     + [[http://cppcheck.sourceforge.net/][cppcheck]]: Cppcheck is an open source static analysis tool for C/C++ code
     + gdb, lldb: debuggers for C/C++ and rust code.
+    + [[http://www.doxygen.nl/manual/index.html][doxygen]]: Generate documentation from source code
 
 *** Rust
 
