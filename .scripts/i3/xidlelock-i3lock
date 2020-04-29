@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Run xidlehook
+xidlehook \
+  `# Don't lock when there's a fullscreen application` \
+  --not-when-fullscreen \
+  `# Don't lock when there's audio playing` \
+  --not-when-audio \
+  `# Dim the screen after 60 seconds, undim if user becomes active` \
+  --timer 600 \
+    'xbacklight -set 50; notify-send "Screen will be locked in 30s"' \
+    'xbacklight -set 100' \
+  `# Undim & lock after 30 more seconds` \
+  --timer 30 \
+    ' ~/.scripts/i3/lock-screen; xbacklight -set 100;' \
+    '' \
+  `# Finally, suspend an hour after it locks` \
+  --timer 600 \
+    'systemctl suspend' \
+    ''

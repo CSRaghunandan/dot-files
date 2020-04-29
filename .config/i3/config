@@ -172,13 +172,11 @@ bindsym $mod+minus scratchpad show
 
 # power management and screenlock
 # lock after 10 minutes of inactivity
-exec --no-startup-id xautolock -time 10 -locker $Locker -detectsleep -notifier /usr/bin/notify-send -notify 10
+exec --no-startup-id ~/.scripts/i3/xidlelock-i3lock
 # kickstart i3lock when suspended or lid closed
 exec --no-startup-id xss-lock --transfer-sleep-lock  -- $Locker --nofork
 # lock screen key binding
 bindsym ctrl+$mod+l exec --no-startup-id $Locker
-# add binding to toggle lock
-bindsym $mod2+s exec --no-startup-id ~/.scripts/i3/toggle-lock
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

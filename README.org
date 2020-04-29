@@ -70,6 +70,9 @@ alias ls='lsd'
    + [[https://github.com/SoptikHa2/desed][desed]]: Debugger for Sed: demystify and debug your sed scripts, from comfort
      of your terminal.
    + [[https://github.com/dandavison/delta][delta]]: A syntax-highlighter for git and diff output
+   + [[https://github.com/jD91mZM2/xidlehook][xidlehook]]: xidlehook is a general-purpose replacement for xautolock. It
+     executes a command when the computer has been idle for a specified amount
+     of time.
 
 ** Useful command line utilities
 
@@ -221,16 +224,11 @@ Option "NaturalScrolling" "on"
     #+BEGIN_SRC conf
 HandlePowerKey=suspend
 HandleLidSwitch=lock
-HoldoffTimeoutSec=30s
-IdleAction=suspend
-IdleActionSec=30min  
 #+END_SRC
 
     This will enable the system to:
     + =suspend= when pressed the power button instead of shutdown
-    + If the system is idle for 30minutes, =suspend=
     + If the laptop lid is closed, =lock= the system
-    + Hold off on suspending the system for =30s= after closing the lid
   + Use =i3lock= as the lockscreen for i3 and configure it like so:
     + Setup an alias for =i3lock=:
 
@@ -238,7 +236,8 @@ IdleActionSec=30min
 alias i3lock="i3lock && echo mem > /sys/power/state"  
 #+END_SRC
     + Use =xsslock= to run =i3lock= when the system is locked
-    + Use =xautolockctl= to lock the system after 10 minutes of inactivity
+    + Use =xidlelock= to lock the screen after 10mins of inactivity and suspend
+      computer after 10more minutes of further inactivity
 
   + =TLP= and =thermald= for power management for laptops:
     - Enable =tlp.servce=
