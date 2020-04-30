@@ -236,7 +236,7 @@ HandleLidSwitch=lock
 alias i3lock="i3lock && echo mem > /sys/power/state"  
 #+END_SRC
     + Use =xsslock= to run =i3lock= when the system is locked
-    + Use =xidlelock= to lock the screen after 10mins of inactivity and suspend
+    + Use =xidlehook= to lock the screen after 10mins of inactivity and suspend
       computer after 10more minutes of further inactivity
 
   + =TLP= and =thermald= for power management for laptops:
