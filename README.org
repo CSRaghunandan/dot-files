@@ -398,10 +398,30 @@ exec --no-startup-id enact --pos top --watch &
 git clone --depth 1 master https://github.com/emacs-mirror/emacs
 cd emacs
 sh autogen.sh
-./configure --with-modules --with-rsvg --with-dbus --with-imagemagick --without-pop --with-xft --with-xml2 --with-libotf
+./configure --with-modules --with-rsvg --with-dbus --with-imagemagick --without-pop --with-xft --with-xml2 --with-libotf --with-mailutils
 # replce -jX, X is the number of cores in your machine
 make -j8
 make install
+#+END_SRC
+
+    + Optionally, you can also compile emacs native compilation branch, like so
+
+      #+BEGIN_SRC bash
+git clone --depth 1 master https://github.com/emacs-mirror/emacs -b feature/native-comp
+cd emacs
+sh autogen.sh
+./configure --with-modules --with-rsvg --with-dbus --with-imagemagick --without-pop --with-xft --with-xml2 --with-libotf --with-mailutils --with-nativecomp
+# replce -jX, X is the number of cores in your machine
+make -j8 NATIVE_FAST_BOOT=1
+make install  
+#+END_SRC
+
+      + Add the below line to =early-init.el=
+
+        #+BEGIN_SRC emacs-lisp
+;; comment out this line if you are not using emacs native compilation branch
+;; native compile elisp files as they are loaded
+(setq comp-deferred-compilation t)
 #+END_SRC
 
     + Enable and run the systemd service for emacs:
@@ -446,6 +466,35 @@ alias et='TERM=xterm-256color emacsclient -t -a ""'
       + Now you can open emacs by conecting to the emacs daemon using
         emacsclient using: =ec=
       + You can open a file on the existing emacs frame by: =eg file-name=
+      + Emacs configuration for =vterm= integration:
+
+        #+BEGIN_SRC bash
+function vterm_printf() {
+	if [ -n "$TMUX" ]; then
+		# tell tmux to pass the escape sequences through
+		# (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
+		printf "\ePtmux;\e\e]%s\007\e\\" "$1"
+	elif [ "${TERM%%-*}" = "screen" ]; then
+		# GNU screen (screen, screen-256color, screen-256color-bce)
+		printf "\eP\e]%s\007\e\\" "$1"
+	else
+		printf "\e]%s\e\\" "$1"
+	fi
+}
+
+if [ -n "$INSIDE_EMACS" ]; then
+	vterm_prompt_end() {
+		vterm_printf "51;A$(whoami)@$(hostname):$(pwd)"
+	}
+	PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
+fi
+
+if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
+	alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
+fi
+  
+#+END_SRC
+
 
   + =Postman= for testing HTTP requests
   + =Zeal= for offline documentation
