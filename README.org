@@ -108,6 +108,8 @@ alias ping=prettyping
    + [[https://github.com/scopatz/nanorc][nano-syntax-highlighting]]: Improved Nano Syntax Highlighting Files
    + [[https://www.vanheusden.com/multitail/][multitail]]: MultiTail allows you to monitor logfiles and command output in
      multiple windows in a terminal, colorize, filter and merge.
+   + [[https://launchpad.net/safe-rm][safe-rm]]: wrapper around rm to make it prevent accidental delete of
+     important directories that should never be deleted
    + [[https://github.com/junegunn/fzf/][fzf]]: A command-line fuzzy finder 
      + Install it by:
 
@@ -126,6 +128,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 *** C/Cpp
 
+    + LLVM tool-chain: llvm, clang, clang++, clangd, lld, clang-tidy, clang-format
     + [[https://github.com/MaskRay/ccls][ccls]]: LSP based language server for C and C++
     + [[https://cmake.org/][CMake]]: C/C++ build files generator
     + [[https://www.qt.io/][qt5]]: GUI Framework for C++
