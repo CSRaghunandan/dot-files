@@ -334,7 +334,8 @@ sudo systemctl enable deadd-notification-center --now
   + Install ~rofi~ as the application launcher
   + Use =i3blocks= as the bar for i3wm
   + Use =numlockx= to enable numlock functionality
-  + Use =unclutter= to hide mouse pointer after a few seconds of idle time.
+  + [[https://github.com/jcs/xbanish][xbanish]]: banish the mouse cursor when typing, show it again when the mouse
+    moves
   + Use =feh= to set the wallpaper background
   + Use =i3lock= as the locker for i3wm
   + Use [[https://github.com/yshui/picom/][picom]] as the display compositor for i3. Install from =git=, for Archlinux,
@@ -392,6 +393,8 @@ exec --no-startup-id enact --pos top --watch &
 #+END_SRC
 
   + Install [[https://github.com/RasmusLindroth/i3keys][i3keys]] to list all the bindings made for i3wm in web or terminal
+
+  + [[https://github.com/thezbyg/gpick][gpick]]: Advanced color picker written in C++ using GTK+ toolkit
 
 * Productivity tools
 

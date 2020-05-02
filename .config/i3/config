@@ -349,8 +349,8 @@ exec --no-startup-id deadd-notification-center
 # Show and hide the notification-center for deadd
 bindsym $mod2+n exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
 
-# Unclutter makes the mouse invisible after a brief period
-exec --no-startup-id unclutter
+# xbanish: banish the mouse cursor when typing, show it again when the mouse moves
+exec --no-startup-id xbanish
 
 # Enable numlock functionality
 exec --no-startup-id numlockx on
