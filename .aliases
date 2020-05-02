@@ -41,3 +41,6 @@ alias cd..="cd .."
 
 # setup alias for i3
 alias i3lock="i3lock && echo mem > /sys/power/state"
+
+# feh: fit image to window
+alias fehf='feh -.'
