@@ -4,6 +4,8 @@ x-scheme-handler/https=firefox-developer-edition.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
 inode/directory=Thunar.desktop
 text/html=firefox-developer-edition.desktop
+image/jpeg=feh.desktop
+image/png=feh.desktop
+image/bmp=feh.desktop
 
 [Added Associations]
-text/html=firefox-developer-edition.desktop;
