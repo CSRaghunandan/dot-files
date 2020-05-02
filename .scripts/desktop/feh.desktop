@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Feh
+GenericName=Feh: Simple Image Viewer for Linux
+Comment=View images
+MimeType=image/jpeg;image/png;
+Exec=feh -.
+Type=Application
+Terminal=false
+Categories=Media;ImageViewer;
+StartupWMClass=Feh
+Keywords=Image;ImageViewer;
