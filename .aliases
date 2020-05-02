@@ -42,6 +42,8 @@ alias cd..="cd .."
 # setup alias for i3
 alias i3lock="i3lock && echo mem > /sys/power/state"
 
+## aliases for feh
 # feh: fit image to window
 alias fehf='feh -.'
+# use imagemagick to open non-raster images using feh
 alias fmagick='feh --conversion-timeout'
