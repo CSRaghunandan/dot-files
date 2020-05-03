@@ -24,7 +24,7 @@ bindsym $mod2+c exec CM_LAUNCHER=rofi clipmenu -matching fuzzy
 bindsym $mod2+e exec --no-startup-id ~/.scripts/rofi/kaomoji-rofi/kaomoji.sh -columns 4 -width 60
 
 # Needed for i3-gaps
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 gaps inner 12
 gaps outer 8
 
