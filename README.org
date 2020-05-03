@@ -73,6 +73,10 @@ alias ls='lsd'
    + [[https://github.com/jD91mZM2/xidlehook][xidlehook]]: xidlehook is a general-purpose replacement for xautolock. It
      executes a command when the computer has been idle for a specified amount
      of time.
+   + [[https://starship.rs/config][starship]]: Customizable shell prompt written in Rust
+
+     Install it with =starship-bin= package in AUR. Also, install
+     =powerline-fonts= as the dependency for starship prompt
 
 ** Useful command line utilities
 

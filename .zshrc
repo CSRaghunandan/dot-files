@@ -136,6 +136,9 @@ export PATH="/home/csraghunandan/.pyenv/bin:$PATH"
 # opam configuration
 # test -r /home/csraghunandan/.opam/opam-init/init.sh && . /home/csraghunandan/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
+# init starship prompt
+eval "$(starship init zsh)"
+
 # source fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
