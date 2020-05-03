@@ -141,6 +141,8 @@ eval "$(starship init zsh)"
 
 # source fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# add keybinding for transpose char, since its overwritten by fzf
+bindkey '^X^T' transpose-chars
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 # command for listing path candidates.
@@ -228,6 +230,9 @@ yr() {
 if [ -f /usr/share/bash-completion/completions/s ]; then
 	. /usr/share/bash-completion/completions/s
 fi
+
+# configure thefuck alias
+eval $(thefuck --alias)
 
 # start the shell with a new fortune cookie :)
 fortune

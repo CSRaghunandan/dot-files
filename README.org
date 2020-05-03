@@ -114,6 +114,7 @@ alias ping=prettyping
      multiple windows in a terminal, colorize, filter and merge.
    + [[https://launchpad.net/safe-rm][safe-rm]]: wrapper around rm to make it prevent accidental delete of
      important directories that should never be deleted
+   + [[https://github.com/nvbn/thefuck][thefuck]]: correct previous console command
    + [[https://github.com/junegunn/fzf/][fzf]]: A command-line fuzzy finder 
      + Install it by:
 
