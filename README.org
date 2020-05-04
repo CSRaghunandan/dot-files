@@ -521,6 +521,9 @@ sudo sytemctl enable teamviewerd.service --now
 #+END_SRC
   + =Wireshark= for network analyzing. Install it with the following packages:
     =wireshark-qt=, =wireshark-cli=
+  + [[https://github.com/editorconfig/editorconfig-core-c][editorconfig]]: EditorConfig helps maintain consistent coding styles for
+    multiple developers working on the same project across various editors and
+    IDEs.
 
 * Appearance
 
