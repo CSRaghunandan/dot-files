@@ -524,6 +524,7 @@ sudo sytemctl enable teamviewerd.service --now
   + [[https://github.com/editorconfig/editorconfig-core-c][editorconfig]]: EditorConfig helps maintain consistent coding styles for
     multiple developers working on the same project across various editors and
     IDEs.
+  + [[https://johnfactotum.github.io/foliate/][foliate]]: Simple and modern ebook reader
 
 * Appearance
 
