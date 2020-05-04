@@ -18,3 +18,10 @@ only_detached = false
 [[battery.display]]  # "bold red" style when capacity is between 0% and 10%
 threshold = 10
 style = "bold red"
+
+[hostname]
+ssh_only = false
+
+[username]
+disabled = false
+show_always = true
