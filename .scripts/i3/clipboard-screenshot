@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
 maim -s | xclip -selection clipboard -t image/png
-sleep 1
-notify-send 'Screenshot copied to clipboard'
+
+retVal=$?
+if [ $retVal -eq 0 ]; then
+	sleep 0.2
+	notify-send 'Screenshot copied to clipboard'
+fi

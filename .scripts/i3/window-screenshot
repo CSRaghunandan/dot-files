@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 maim -i $(xdotool getactivewindow) ~/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
-sleep 1
-notify-send 'Screenshot captured'
+sleep 0.2
+notify-send 'Screenshot captured for current window'
