@@ -277,15 +277,8 @@ bindsym $mod2+F10 exec playerctl play-pause # pause/play media
 bindsym $mod2+F4 exec --no-startup-id ~/.scripts/i3/toggle-touchpad
 bindsym XF86Display exec --no-startup-id ~/.scripts/i3/toggle-touchpad
 
-# screenshot shortcuts
-# full desktop screenshot
-bindsym --release Ctrl+Print exec --no-startup-id ~/.scripts/i3/desktop-screenshot
-# select a region for screenshot
-bindsym --release Shift+Print exec --no-startup-id ~/.scripts/i3/region-screenshot
-# select the current window for screenshot
-bindsym --release $mod+Print exec --no-startup-id ~/.scripts/i3/window-screenshot
-# take a screenshot and copy it to clipboard
-bindsym --release $mod2+Print exec --no-startup-id ~/.scripts/i3/clipboard-screenshot
+# shortcut for screenshots
+bindsym --release Shift+Print exec --no-startup-id ~/.scripts/i3/screenshot-maim
 
 bindsym $mod+Shift+b floating toggle; sticky toggle; exec --no-startup-id ~/.scripts/i3/bottomleft
 bindsym $mod+Shift+n floating toggle; sticky toggle; exec --no-startup-id ~/.scripts/i3/bottomright

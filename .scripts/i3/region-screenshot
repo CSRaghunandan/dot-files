@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-maim -s -p 0 -c 0.96,0.5,0.09 $HOME/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
-
-retVal=$?
-if [ $retVal -eq 0 ]; then
-	sleep 0.2
-	notify-send 'Region screenshot captured'
-fi
