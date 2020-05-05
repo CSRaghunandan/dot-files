@@ -535,7 +535,7 @@ sudo sytemctl enable teamviewerd.service --now
     
     To install all the necessary font packages to fonts from display various
     langauges and emoji
-  + Use =Iosevka SS08= as the default monospace font
+  + Use =Iosevka SS08 Medium= as the default monospace font
   + Use =lxappearence= to change the font, icons and theme
   + Install =redshift= to warn the screen during night times to reduce eye strain
     + Enable and start: ~redshift~ by running

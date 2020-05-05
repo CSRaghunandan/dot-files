@@ -32,8 +32,6 @@ alias zb='z -b' # quickly cd to the parent directory
 # https://github.com/denilsonsa/prettyping
 alias ping=prettyping
 
-# confirm before overwriting something
-alias cp="cp -i"
 # show sizes in MB
 alias free='free -m'
 # fixes typo
@@ -47,3 +45,12 @@ alias i3lock="i3lock && echo mem > /sys/power/state"
 alias fehf='feh -.'
 # use imagemagick to open non-raster images using feh
 alias fmagick='feh --conversion-timeout'
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="safe-rm -vI" \
+	mkd="mkdir -pv" \
+	yt="youtube-dl --add-metadata -i" \
+	ffmpeg="ffmpeg -hide_banner"
