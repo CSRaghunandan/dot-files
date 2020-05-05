@@ -74,3 +74,15 @@ XF86AudioPlay
       playerctl play-pause
 hyper + F10
       playerctl play-pause
+
+# show and hide the notification center for deadd-notificaiton-centter
+hyper + n
+      kill -s USR1 $(pidof deadd-notification-center)
+
+# shortcuts for screenshots
+shift + Print
+      ~/.scripts/i3/screenshot-maim
+
+# toggle touchpad
+hyper + F4
+      ~/.scripts/i3/toggle-touchpad

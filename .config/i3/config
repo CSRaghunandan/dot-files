@@ -231,13 +231,6 @@ mode "$mode_gaps_outer" {
     bindsym Escape mode "default"
 }
 
-# toggle touchpad
-bindsym $mod2+F4 exec --no-startup-id ~/.scripts/i3/toggle-touchpad
-bindsym XF86Display exec --no-startup-id ~/.scripts/i3/toggle-touchpad
-
-# shortcut for screenshots
-bindsym --release Shift+Print exec --no-startup-id ~/.scripts/i3/screenshot-maim
-
 bindsym $mod+Shift+b floating toggle; sticky toggle; exec --no-startup-id ~/.scripts/i3/bottomleft
 bindsym $mod+Shift+n floating toggle; sticky toggle; exec --no-startup-id ~/.scripts/i3/bottomright
 
@@ -297,8 +290,6 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/beauty.png
 
 # Starts deadd for notifications:
 exec --no-startup-id deadd-notification-center
-# Show and hide the notification-center for deadd
-bindsym $mod2+n exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
 
 # xbanish: banish the mouse cursor when typing, show it again when the mouse moves
 exec --no-startup-id xbanish
