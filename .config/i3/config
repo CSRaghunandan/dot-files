@@ -231,34 +231,6 @@ mode "$mode_gaps_outer" {
     bindsym Escape mode "default"
 }
 
-# toggle wifi on/off
-bindsym $mod2+F1 exec --no-startup-id "~/.scripts/system/toggle-wifi"
-
-# change display brightness up or down
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10 ; notify-send 'Brightness down'"
-bindsym $mod2+F2 exec "xbacklight -dec 10 ; notify-send 'Brightness down'"
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10 ; notify-send 'Brightness up'"
-bindsym $mod2+F3 exec "xbacklight -inc 10 ; notify-send 'Brightness up'"
-
-# configure playback volume buttons
-# toggle volume up
-bindsym XF86AudioRaiseVolume exec --no-startup-id "/usr/bin/pulseaudio-ctl up" 
-bindsym $mod2+F8  exec --no-startup-id "/usr/bin/pulseaudio-ctl up"
-# toggle volume down
-bindsym XF86AudioLowerVolume exec --no-startup-id "/usr/bin/pulseaudio-ctl down"
-bindsym $mod2+F7 exec --no-startup-id "/usr/bin/pulseaudio-ctl down"
-# toggle mute on/off
-bindsym XF86AudioMute exec /usr/bin/pulseaudio-ctl mute
-bindsym $mod2+F6 exec /usr/bin/pulseaudio-ctl mute
-
-# media controls
-bindsym XF86AudioNext exec playerctl next # next media
-bindsym $mod2+F11 exec playerctl next # next media
-bindsym XF86AudioPrev exec playerctl previous # previous media
-bindsym $mod2+F9 exec playerctl previous # previous media
-bindsym XF86AudioPlay exec playerctl play-pause # pause/play media
-bindsym $mod2+F10 exec playerctl play-pause # pause/play media
-
 # toggle touchpad
 bindsym $mod2+F4 exec --no-startup-id ~/.scripts/i3/toggle-touchpad
 bindsym XF86Display exec --no-startup-id ~/.scripts/i3/toggle-touchpad
@@ -357,3 +329,6 @@ exec --no-startup-id xedgewarp -b
 
 # run enact: automatic configuration for multiple monitors
 exec --no-startup-id enact --pos top --watch &
+
+# start sxhkd
+exec --no-startup-id sxhkd

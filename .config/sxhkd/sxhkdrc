@@ -26,3 +26,51 @@ hyper + e
 # lock screen using i3lock
 ctrl + super + l
       ~/.scripts/i3/lock-screen
+
+# toggle wifi on/off
+hyper + F1
+      ~/.scripts/system/toggle-wifi
+
+
+# Change display birghtness up/down
+XF86MonBrightnessDown
+      xbacklight -dec 10 ; notify-send 'Brightness down'
+hyper + F2
+      xbacklight -dec 10 ; notify-send 'Brightness down'
+ XF86MonBrightnessUp
+      xbacklight -inc 10 ; notify-send 'Brightness up'
+hyper + F3
+      xbacklight -inc 10 ; notify-send 'Brightness up'
+
+
+# configure playback volume buttons
+# toggle volume up
+XF86AudioRaiseVolume
+      /usr/bin/pulseaudio-ctl up
+hyper + F8
+      /usr/bin/pulseaudio-ctl up
+# toggle volume down
+XF86AudioLowerVolume
+      /usr/bin/pulseaudio-ctl down
+hyper + F7
+      /usr/bin/pulseaudio-ctl down
+# toggle mute on/off
+XF86AudioMute
+      /usr/bin/pulseaudio-ctl mute
+hyper + F6
+      /usr/bin/pulseaudio-ctl mute
+
+
+# media controls
+XF86AudioNext
+      playerctl next
+hyper + F11
+      playerctl next
+XF86AudioPrev
+      playerctl previous
+hyper + F9
+      playerctl previous
+XF86AudioPlay
+      playerctl play-pause
+hyper + F10
+      playerctl play-pause
