@@ -9,11 +9,13 @@ command=~/.config/i3blocks-contrib/mediaplayer/mediaplayer
 instance=mpd
 interval=5
 signal=10
+markup=pango
 
 [volume-pulseaudio]
 command=~/.config/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio
 interval=2
 signal=1
+markup=pango
 AUDIO_HIGH_SYMBOL=
 AUDIO_MED_SYMBOL=
 AUDIO_LOW_SYMBOL=
@@ -48,12 +50,14 @@ command=~/.config/i3blocks-contrib/wifi/wifi
 label= 
 INTERFACE=wlp2s0
 interval=10
+markup=pango
 
 [ssid]
 command=~/.config/i3blocks-contrib/ssid/ssid
 INTERFACE=wlp2s0
 interval=10
 separator_block_width=6
+markup=pango
 
 [iface]
 command=~/.config/i3blocks-contrib/iface/iface
@@ -61,6 +65,7 @@ command=~/.config/i3blocks-contrib/iface/iface
 #ADDRESS_FAMILY=inet6?
 color=#00FF00
 interval=10
+markup=pango
 
 [battery2]
 command=~/.config/i3blocks-contrib/battery2/battery2
@@ -73,3 +78,4 @@ command=~/.config/i3blocks-contrib/calendar/calendar
 LABEL= 
 HEIGHT=180
 WIDTH=220
+markup=pango

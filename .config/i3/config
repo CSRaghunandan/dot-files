@@ -3,7 +3,7 @@ set $mod Mod4
 # Use hyper key as a second modifier
 set $mod2 Mod3
 
-font pango:Iosevka SS08 9
+font pango:Iosevka SS08 Medium 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
