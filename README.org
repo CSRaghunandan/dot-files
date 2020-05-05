@@ -401,6 +401,8 @@ exec --no-startup-id enact --pos top --watch &
 
   + [[https://github.com/thezbyg/gpick][gpick]]: Advanced color picker written in C++ using GTK+ toolkit
 
+  + [[https://github.com/baskerville/sxhkd][sxhkd]]: Simple X hotkey daemon
+
 * Productivity tools
 
   + Install *Emacs28* from source by running:

@@ -8,20 +8,8 @@ font pango:Iosevka SS08 Medium 9
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
-
 # kill focused window
 bindsym $mod+Shift+q kill
-
-# start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun -matching fuzzy -show-icons
-# use alt tab to switch between windows
-bindsym Mod1+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show combi -matching fuzzy -show-icons
-# clipboard manager using rofi
-bindsym $mod2+c exec CM_LAUNCHER=rofi clipmenu -matching fuzzy
-# add binding for copy pasting kaomoji
-bindsym $mod2+e exec --no-startup-id ~/.scripts/rofi/kaomoji-rofi/kaomoji.sh -columns 4 -width 60
 
 # Needed for i3-gaps
 for_window [class="^.*"] border pixel 0
@@ -175,8 +163,6 @@ bindsym $mod+minus scratchpad show
 exec --no-startup-id ~/.scripts/i3/xidlehook-i3lock
 # kickstart i3lock when suspended or lid closed
 exec --no-startup-id xss-lock --transfer-sleep-lock  -- $Locker --nofork
-# lock screen key binding
-bindsym ctrl+$mod+l exec --no-startup-id $Locker
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
