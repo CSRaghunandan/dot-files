@@ -330,12 +330,6 @@ export READER="zathura"
 * Configuring i3 and tools used
   
   + Install ~deadd-notification-center~ for getting notifications for  *i3*
-    + Enable and start the =deadd-notification-center= service:
-
-      #+BEGIN_SRC bash
-sudo systemctl enable deadd-notification-center --now  
-#+END_SRC
-
   + Install ~rofi~ as the application launcher
   + Use =i3blocks= as the bar for i3wm
   + Use =numlockx= to enable numlock functionality
@@ -527,6 +521,7 @@ sudo sytemctl enable teamviewerd.service --now
     multiple developers working on the same project across various editors and
     IDEs.
   + [[https://johnfactotum.github.io/foliate/][foliate]]: Simple and modern ebook reader
+  + [[https://gitlab.gnome.org/GNOME/nautilus][Nautilus]] as the default graphical file explorer
 
 * Appearance
 

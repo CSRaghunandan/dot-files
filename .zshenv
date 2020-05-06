@@ -25,7 +25,7 @@ export BROWSER="firefox-developer-edition"
 export READER="zathura"
 export EDITOR="emacsclient -n -a \"\""
 export VISUAL="emacsclient -n -a \"\""
-export FILE="thunar"
+export FILE="nautilus"
 
 # use intel-media-driver for video acceleration
 export LIBVA_DRIVER_NAME="iHD"
