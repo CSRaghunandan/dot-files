@@ -234,6 +234,9 @@ fi
 # configure thefuck alias
 eval $(thefuck --alias)
 
+# initialize
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+
 # start the shell with a new fortune cookie :)
 fortune
 echo
