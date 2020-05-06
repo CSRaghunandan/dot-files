@@ -31,49 +31,23 @@ ctrl + super + l
 hyper + F1
       ~/.scripts/system/toggle-wifi
 
-
 # Change display birghtness up/down
-XF86MonBrightnessDown
-      xbacklight -dec 10 ; notify-send 'Brightness down'
-hyper + F2
-      xbacklight -dec 10 ; notify-send 'Brightness down'
- XF86MonBrightnessUp
-      xbacklight -inc 10 ; notify-send 'Brightness up'
-hyper + F3
-      xbacklight -inc 10 ; notify-send 'Brightness up'
-
-
+XF86MonBrightness{Down,Up}
+      xbacklight {-dec,-inc} 10
+hyper + {F2,F3}
+      xbacklight {-dec,-inc} 10
+      
 # configure playback volume buttons
-# toggle volume up
-XF86AudioRaiseVolume
-      /usr/bin/pulseaudio-ctl up
-hyper + F8
-      /usr/bin/pulseaudio-ctl up
-# toggle volume down
-XF86AudioLowerVolume
-      /usr/bin/pulseaudio-ctl down
-hyper + F7
-      /usr/bin/pulseaudio-ctl down
-# toggle mute on/off
-XF86AudioMute
-      /usr/bin/pulseaudio-ctl mute
-hyper + F6
-      /usr/bin/pulseaudio-ctl mute
+XF86Audio{Mute,LowerVolume,RaiseVolume}
+      /usr/bin/pulseaudio-ctl {mute,down,up}
+hyper + {F6,F7,F8}
+      /usr/bin/pulseaudio-ctl {mute,down,up}
 
-
-# media controls
-XF86AudioNext
-      playerctl next
-hyper + F11
-      playerctl next
-XF86AudioPrev
-      playerctl previous
-hyper + F9
-      playerctl previous
-XF86AudioPlay
-      playerctl play-pause
-hyper + F10
-      playerctl play-pause
+# media controls for mpd, VLC, etc.
+XF86Audio{Prev,Play,Next, Stop}
+      playerctl {previous,play-pause,next,stop}
+hyper + {F9, F10, F11, F12}
+      playerctl {previous,play-pause,next,stop}
 
 # show and hide the notification center for deadd-notificaiton-centter
 hyper + n
