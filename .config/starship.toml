@@ -6,14 +6,12 @@ style_failure = "bold red"
 
 [directory]
 truncation_length = 3
-fish_style_pwd_dir_length = 1
 
 [git_status]
 enabled = true
 
 [git_commit]
 commit_hash_length = 8
-only_detached = false
 
 [[battery.display]]  # "bold red" style when capacity is between 0% and 10%
 threshold = 10
