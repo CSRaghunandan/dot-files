@@ -288,9 +288,6 @@ for_window [class="Yad"] floating enable
 # set wallpaper for i3
 exec_always --no-startup-id feh --bg-scale ~/Pictures/beauty.png
 
-# Starts deadd for notifications:
-exec --no-startup-id deadd-notification-center
-
 # xbanish: banish the mouse cursor when typing, show it again when the mouse moves
 exec --no-startup-id xbanish
 
