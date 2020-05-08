@@ -10,7 +10,7 @@
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.cabal/bin$PATH"
+export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="$HOME/.scripts/i3:$PATH"
 export PATH="$HOME/.scripts/system:$PATH"
 
