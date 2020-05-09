@@ -521,7 +521,14 @@ sudo sytemctl enable teamviewerd.service --now
     multiple developers working on the same project across various editors and
     IDEs.
   + [[https://johnfactotum.github.io/foliate/][foliate]]: Simple and modern ebook reader
-  + [[https://gitlab.gnome.org/GNOME/nautilus][Nautilus]] as the default graphical file explorer
+
+
+* System
+
+  + =intel-gpu-tools=: this will install the application =intel-gpu-top=, which
+    we can use to monitor Intel GPU usage
+  + [[https://gitlab.gnome.org/GNOME/nautilus][Nautilus]] as the default graphical file explorer    
+  + =xorg-xev=, =xorg-xprop=, =xorg-xhost=, =xorg-xrandr=: X11 related utilities
 
 * Appearance
 
