@@ -77,6 +77,7 @@ alias ls='lsd'
 
      Install it with =starship-bin= package in AUR. Also, install
      =powerline-fonts= as the dependency for starship prompt
+   + [[https://github.com/watchexec/watchexec][watchexec]]: Executes commands in response to file modifications
 
 ** Useful command line utilities
 
