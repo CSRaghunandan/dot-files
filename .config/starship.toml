@@ -23,3 +23,6 @@ ssh_only = false
 [username]
 disabled = false
 show_always = true
+
+[haskell]
+disabled = true
