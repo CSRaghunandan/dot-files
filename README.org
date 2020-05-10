@@ -328,6 +328,29 @@ export READER="zathura"
   + Install =pdf-tools= to be able to view PDF file inside emacs using =poppler=
   + Install =pandoc= for converting documents from one format to other 
 
+* Productivity tools
+
+  + =GNU Emacs=: My choice of text editor
+  + =Postman= for testing HTTP requests
+  + =Zeal= for offline documentation
+  + =Source Trail= for browsing C/Cpp and Python projects visually
+  + Install LibreOffice from =libreoffice-fresh= (in AUR)
+  + =Plantuml= for creating control flow and other diagrams
+  + =dbeaver= (open source Database viewer)
+  + =TeamViewr= for remote control
+    + Enable and start teamviewer deamon in the background by:
+
+      #+BEGIN_SRC bash
+sudo sytemctl enable teamviewerd.service --now  
+#+END_SRC
+  + =Wireshark= for network analyzing. Install it with the following packages:
+    =wireshark-qt=, =wireshark-cli=
+  + [[https://github.com/editorconfig/editorconfig-core-c][editorconfig]]: EditorConfig helps maintain consistent coding styles for
+    multiple developers working on the same project across various editors and
+    IDEs.
+  + [[https://johnfactotum.github.io/foliate/][foliate]]: Simple and modern ebook reader
+
+
 * Configuring i3 and tools used
   
   + Install ~deadd-notification-center~ for getting notifications for  *i3*
@@ -397,132 +420,6 @@ exec --no-startup-id enact --pos top --watch &
   + [[https://github.com/thezbyg/gpick][gpick]]: Advanced color picker written in C++ using GTK+ toolkit
 
   + [[https://github.com/baskerville/sxhkd][sxhkd]]: Simple X hotkey daemon
-
-* Productivity tools
-
-  + Install *Emacs28* from source by running:
-
-    #+BEGIN_SRC bash
-git clone --depth 1 master https://github.com/emacs-mirror/emacs
-cd emacs
-sh autogen.sh
-./configure --with-modules --with-rsvg --with-dbus --with-imagemagick --without-pop --with-xft --with-xml2 --with-libotf --with-mailutils
-# replce -jX, X is the number of cores in your machine
-make -j8
-make install
-#+END_SRC
-
-    + Optionally, you can also compile emacs native compilation branch, like so
-
-      #+BEGIN_SRC bash
-git clone --depth 1 master https://github.com/emacs-mirror/emacs -b feature/native-comp
-cd emacs
-sh autogen.sh
-./configure --with-modules --with-rsvg --with-dbus --with-imagemagick --without-pop --with-xft --with-xml2 --with-libotf --with-mailutils --with-nativecomp
-# replce -jX, X is the number of cores in your machine
-make -j8 NATIVE_FAST_BOOT=1
-make install  
-#+END_SRC
-
-      + Add the below line to =early-init.el=
-
-        #+BEGIN_SRC emacs-lisp
-;; comment out this line if you are not using emacs native compilation branch
-;; native compile elisp files as they are loaded
-(setq comp-deferred-compilation t)
-#+END_SRC
-
-    + Enable and run the systemd service for emacs:
-
-      #+BEGIN_SRC bash
-systemctl --user enable emacs --now
-#+END_SRC
-
-    + Change the =emacs.desktop= file to launch =emacsclient=, its located in
-      =/usr/local/share/applications/emacs.desktop=:
-
-      #+BEGIN_SRC conf
-[Desktop Entry]
-Name=Emacs
-GenericName=Text Editor
-Comment=Edit text
-MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
-Exec=/usr/local/bin/emacsclient -c -a '' %F
-Icon=emacs
-Type=Application
-Terminal=false
-Categories=Development;TextEditor;
-StartupWMClass=Emacs
-Keywords=Text;Editor;
-#+END_SRC
-
-    + Make =emacs= your default text editor by adding the below lines to your
-      =.zshenv= file:
-
-      #+BEGIN_SRC bash
-export EDITOR="emacsclient -n -a \"\""
-export VISUAL="emacsclient -n -a \"\""
-#+END_SRC
-
-    + Setup handy aliases for emacs by adding the below in your =.aliases= file:
-
-      #+BEGIN_SRC bash
-alias ec='emacsclient -nc -a ""'
-alias eg='emacsclient -n -a ""'
-alias et='TERM=xterm-256color emacsclient -t -a ""'
-#+END_SRC
-      + Now you can open emacs by conecting to the emacs daemon using
-        emacsclient using: =ec=
-      + You can open a file on the existing emacs frame by: =eg file-name=
-      + Emacs configuration for =vterm= integration:
-
-        #+BEGIN_SRC bash
-function vterm_printf() {
-	if [ -n "$TMUX" ]; then
-		# tell tmux to pass the escape sequences through
-		# (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
-		printf "\ePtmux;\e\e]%s\007\e\\" "$1"
-	elif [ "${TERM%%-*}" = "screen" ]; then
-		# GNU screen (screen, screen-256color, screen-256color-bce)
-		printf "\eP\e]%s\007\e\\" "$1"
-	else
-		printf "\e]%s\e\\" "$1"
-	fi
-}
-
-if [ -n "$INSIDE_EMACS" ]; then
-	vterm_prompt_end() {
-		vterm_printf "51;A$(whoami)@$(hostname):$(pwd)"
-	}
-	PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
-fi
-
-if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
-	alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
-fi
-  
-#+END_SRC
-
-
-  + =Postman= for testing HTTP requests
-  + =Zeal= for offline documentation
-  + =Source Trail= for browsing C/Cpp and Python projects visually
-  + Install LibreOffice from =libreoffice-fresh= (in AUR)
-  + =Plantuml= for creating control flow and other diagrams
-  + =dbeaver= (open source Database viewer)
-  + =TeamViewr= for remote control
-    + Enable and start teamviewer deamon in the background by:
-
-      #+BEGIN_SRC bash
-sudo sytemctl enable teamviewerd.service --now  
-#+END_SRC
-  + =Wireshark= for network analyzing. Install it with the following packages:
-    =wireshark-qt=, =wireshark-cli=
-  + [[https://github.com/editorconfig/editorconfig-core-c][editorconfig]]: EditorConfig helps maintain consistent coding styles for
-    multiple developers working on the same project across various editors and
-    IDEs.
-  + [[https://johnfactotum.github.io/foliate/][foliate]]: Simple and modern ebook reader
-
 
 * System
 
