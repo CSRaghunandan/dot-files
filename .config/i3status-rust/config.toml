@@ -1,0 +1,42 @@
+theme = "space-villain"
+icons = "awesome"
+
+[[block]]
+block = "music"
+max_width = 50
+
+[[block]]
+block = "net"
+device = "wlp2s0"
+ssid = true
+signal_strength = true
+ip = true
+interval = 5
+use_bits = false
+speed_up = false
+speed_down = false
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{utilization}% {frequency}GHz"
+
+[[block]]
+block = "battery"
+driver = "upower"
+format = "{percentage}% {time}"
+device = "BAT1"
+
+[[block]]
+block = "sound"
+step_width = 3
+
+[[block]]
+block = "time"
+interval = 1
+format = "+%a %d.%m.%Y %H:%M:%S"

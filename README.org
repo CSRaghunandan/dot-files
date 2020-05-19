@@ -1,3 +1,5 @@
+
+
 * dot-files repository
 
   All the dot-files for my Arch Linux installation with *i3-gaps* as the tiling
@@ -158,6 +160,13 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     + [[https://github.com/RazrFalcon/cargo-bloat][cargo-bloat]]: find out what takes the most space in your executable
     + [[https://github.com/nabijaczleweli/cargo-update][cargo-update]]: A cargo subcommand for checking and applying updates to
       installed executables
+
+*** Go
+    + Gopls
+    + Godef
+     
+*** Haskell
+    + HIE
 
 * Configure ntp
   - Install =ntp= package and enable the ntp service
@@ -355,7 +364,7 @@ sudo sytemctl enable teamviewerd.service --now
   
   + Install ~deadd-notification-center~ for getting notifications for  *i3*
   + Install ~rofi~ as the application launcher
-  + Use =i3blocks= as the bar for i3wm
+  + Use [[https://github.com/greshake/i3status-rust][i3status-rs]] as the bar for i3wm
   + Use =numlockx= to enable numlock functionality
   + [[https://github.com/jcs/xbanish][xbanish]]: banish the mouse cursor when typing, show it again when the mouse
     moves
