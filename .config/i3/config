@@ -110,6 +110,7 @@ assign [class="(?i)libreoffice-calc"] $ws7
 assign [class="(?i)libreoffice.*"] $ws7
 assign [class="TeamViewer"] $ws7
 assign [class="zoom"] $ws7
+assign [class="Riot"] $ws10
 
 # colors for borders
 client.focused          #906CFF #7054CB #ffffff #906CFF
@@ -241,11 +242,12 @@ mode  "Passthrough Mode - Press Alt+F12 to exit" {
 bindsym $mod+F12 mode "Passthrough Mode - Press Alt+F12 to exit"
 
 bar {
-    status_command i3blocks
+    status_command i3status-rs ~/.config/i3status-rust/config.toml
     position top
 
     colors {
         background #1E1C31
+        statusline #dddddd
         focused_workspace #906CFF #906CFF #ffffff
         active_workspace #333333 #333333 #ffffff
         inactive_workspace #12111E #12111E #717099

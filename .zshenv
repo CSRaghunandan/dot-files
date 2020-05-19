@@ -69,3 +69,4 @@ export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 # set paths for go
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
+export GOPATH="$HOME/Xerus/digital-factory/auto-quote/"
