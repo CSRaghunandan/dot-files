@@ -80,6 +80,10 @@ alias ls='lsd'
      Install it with =starship-bin= package in AUR. Also, install
      =powerline-fonts= as the dependency for starship prompt
    + [[https://github.com/watchexec/watchexec][watchexec]]: Executes commands in response to file modifications
+   + [[https://github.com/greshake/i3status-rust][i3status-rs:]] as the bar for i3wm
+   + [[https://github.com/chmln/enact][enact:]] to have automatic configuration of multiple monitors with
+     hotplug support
+     
 
 ** Useful command line utilities
 
@@ -410,8 +414,6 @@ gio mime x-scheme-handler/https firefox-developer-edition.desktop
 
   + Run =blueman-tray= to get a tray icon for bluetooth. This requires =blueman=
     to be installed
-  + Install [[https://github.com/v1cont/yad][yad]] to get dialog popups. This is used for calendar when pressing
-    date in i3bar
   + Install [[https://github.com/Airblader/xedgewarp][xedgewrap]] to allow mouse to wrap across multiple monitors
   + Install [[https://github.com/chmln/enact][enact]] to have automatic configuration of multiple monitors with
     hotplug support:
