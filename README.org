@@ -441,14 +441,16 @@ exec --no-startup-id enact --pos top --watch &
 
 * Appearance
 
-  + Use =arc-gtk-theme= as the default theme and =paper-icon-theme= as the
+  + Use =nordic= as the default GTK theme and =paper-icon-theme= as the
     default icons set
   + Font sets for arch: =noto-fonts=, =noto-fonts-extra=, =noto-fonts-cjk=,
-    =noto-fonts-emoji=, =otf-font-awesome=
+    =noto-fonts-emoji=, =otf-font-awesome=, =powerline-fonts=,
+    =awesome-terminal-fonts=
     
     To install all the necessary font packages to fonts from display various
     langauges and emoji
-  + Use =Iosevka SS08 Medium= as the default monospace font
+  + Use =Iosevka SS08 Medium= as the default monospace font. Install it by
+    running: =yay -S ttf-iosevka-ss08=
   + Use =lxappearence= to change the font, icons and theme
   + Install =redshift= to warn the screen during night times to reduce eye strain
     + Enable and start: ~redshift~ by running
