@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/csraghunandan/.gtkrc-2.0.mine"
-gtk-theme-name="Arc-Darker"
+gtk-theme-name="Arc-Dark"
 gtk-icon-theme-name="Paper-Mono-Dark"
 gtk-font-name="Cantarell 11"
 gtk-cursor-theme-name="Paper"
