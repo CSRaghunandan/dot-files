@@ -69,16 +69,16 @@ bindsym $mod+Shift+a focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 ">>"
-set $ws2 "WWW"
-set $ws3 "Emacs"
-set $ws4 "SSH"
-set $ws5 "Media"
-set $ws6 "Misc"
-set $ws7 "Office"
-set $ws8 "Books"
-set $ws9 "Prod"
-set $ws10 "Chat"
+set $ws1 "1. >>"
+set $ws2 "2. WWW"
+set $ws3 "3. Emacs"
+set $ws4 "4. SSH"
+set $ws5 "5. Media"
+set $ws6 "6. Misc"
+set $ws7 "7. Office"
+set $ws8 "8. Books"
+set $ws9 "9. Prod"
+set $ws10 "10. Chat"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -238,19 +238,43 @@ mode  "Passthrough Mode - Press Alt+F12 to exit" {
 }
 bindsym $mod+F12 mode "Passthrough Mode - Press Alt+F12 to exit"
 
+# Nord theme colors
+
+set $nord0   #2E3440
+set $nord1   #3B4252
+set $nord2   #434C5E
+set $nord3   #4C566A
+set $nord4   #D8DEE9
+set $nord5   #E5E9F0
+set $nord6   #ECEFF4
+set $nord7   #8FBCBB
+set $nord8   #88C0D0
+set $nord9   #81A1C1
+set $nord10  #5E81AC
+set $nord11  #BF616A
+set $nord12  #D08770
+set $nord13  #EBCB8B
+set $nord14  #A3BE8C
+set $nord15  #B48EAD
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
 bar {
     status_command i3status-rs ~/.config/i3status-rust/config.toml
     position top
 
     colors {
-        background #1E1C31
-        statusline #dddddd
-        focused_workspace #906CFF #906CFF #ffffff
-        active_workspace #333333 #333333 #ffffff
-        inactive_workspace #12111E #12111E #717099
-        urgent_workspace #2f343a #900000 #ffffff
-    }
+
+       background $nord0
+       statusline $nord8
+
+       focused_workspace  $nord3  $nord8
+       active_workspace   $nord3  $nord8
+       inactive_workspace $nord8  $nord3
+       urgent_workspace   $nord3 $nord15 
+       }
 }
+
 
 workspace_auto_back_and_forth yes
 force_display_urgency_hint 0 ms
