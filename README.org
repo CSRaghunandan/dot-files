@@ -452,7 +452,6 @@ exec --no-startup-id enact --pos top --watch &
   + Use =Iosevka SS08 Medium= as the default monospace font. Install it by
     running: =yay -S ttf-iosevka-ss08=
   + Use =lxappearence= to change the font, icons and theme
-  + 
   + Install =redshift= to warn the screen during night times to reduce eye strain
     + Enable and start: ~redshift~ by running
 
@@ -474,7 +473,7 @@ users=
     + Emacs using the =doom-nord= theme
     + =Alacritty= nord theme colors
     + GTK theme using: =nordic=
-    + =i3wm= bar theme
+    + =i3wm=, =i3bar= and =i3status-rust= Nord themes
     + =rg= using custom config file
     + =broot= using custom config file
     + =fd=, =lsd= using =dir_colors=
