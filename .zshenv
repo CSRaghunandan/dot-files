@@ -70,3 +70,5 @@ export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 export GOPATH="$HOME/Xerus/digital-factory/auto-quote/"
+
+export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config

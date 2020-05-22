@@ -1,0 +1,28 @@
+# Don't let ripgrep vomit really long lines to my terminal, and show a preview.
+--max-columns=150
+--max-columns-preview
+
+# Adjust the color styles for match the "Nord" theme.
+# Note that the "Nord" color palettes must be provided through the terminal.
+# Due to the format of this configuration file it is currently not possible to use shell syntax like
+# environment variables in order to dynamically pass color values.
+# See:
+#   1. https://www.nordtheme.com
+#   2. https://github.com/BurntSushi/ripgrep/issues/1548
+
+# Use `nord9` with an underlined font style for the column number of the matched line.
+# It will be displayed next to the line number separated by a colon when the `--column` flag has been set.
+--colors=column:none
+--colors=column:fg:4
+--colors=column:style:underline
+# Use `nord9` for the line number of the search pattern match.
+--colors=line:none
+--colors=line:fg:4
+# Use `nord1` as background and `nord8` as foreground color for the search pattern match.
+--colors=match:none
+--colors=match:bg:0
+--colors=match:fg:6
+# Use `nord7` with an bold font style for the file path of the search pattern match.
+--colors=path:none
+--colors=path:fg:14
+--colors=path:style:bold
