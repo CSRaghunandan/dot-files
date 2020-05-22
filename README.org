@@ -452,6 +452,7 @@ exec --no-startup-id enact --pos top --watch &
   + Use =Iosevka SS08 Medium= as the default monospace font. Install it by
     running: =yay -S ttf-iosevka-ss08=
   + Use =lxappearence= to change the font, icons and theme
+  + 
   + Install =redshift= to warn the screen during night times to reduce eye strain
     + Enable and start: ~redshift~ by running
 
@@ -459,12 +460,29 @@ exec --no-startup-id enact --pos top --watch &
   systemctl --user enable redshift-gtk.service --now  
   #+END_SRC
 
-
     + In order to allow access Redshift to use GeoClue2, add the following lines
       to ~/etc/geoclue/geoclue.conf~:
-    #+begin_src conf
+
+      #+begin_src conf
 [redshift]
 allowed=true
 system=false
 users=
-    #+end_src
+      #+end_src
+
+  + =Nord= themes for the following:
+    + Emacs using the =doom-nord= theme
+    + =Alacritty= nord theme colors
+    + GTK theme using: =nordic=
+    + =i3wm= bar theme
+    + =rg= using custom config file
+    + =broot= using custom config file
+    + =fd=, =lsd= using =dir_colors=
+    + =rofi= Nord theme using config file
+    + =procs= using custom config file
+    + =fzf= Nord theme by modifying the environment variables
+    + =bat= and =delta= in built Nord themes
+    + Colored =man= pages using =bat=
+    + =nano= UI Nord theme
+    + =tmux= Nord theme using tpm plugin
+    + =Xresources= Nord theme colors
