@@ -12,7 +12,7 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # Needed for i3-gaps
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 gaps inner 12
 gaps outer 8
 
