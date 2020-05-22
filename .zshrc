@@ -237,6 +237,9 @@ eval $(thefuck --alias)
 # initialize
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
+# activate nord dir-colours
+test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
+
 # start the shell with a new fortune cookie :)
 fortune
 echo
