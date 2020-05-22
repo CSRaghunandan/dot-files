@@ -49,7 +49,7 @@ export FZ_HISTORY_CD_CMD="_zlua"
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # colored man pages using bat
-export MANPAGER="sh -c 'col -bx | bat --theme=Nord -p -l man'"
+export MANPAGER="sh -c 'col -bx | bat -p -l man'"
 export MANROFFOPT='-c'
 
 ## FZF environment variables
@@ -71,4 +71,8 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 export GOPATH="$HOME/Xerus/digital-factory/auto-quote/"
 
+# path for ripgrep config
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config
+
+# path for bat config file
+export BAT_CONFIG_PATH=$HOME/.config/bat/config

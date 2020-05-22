@@ -17,8 +17,7 @@ alias ls='lsd --icon never --group-dirs first'
 alias ldir='ll -d */'
 
 # use bat instead of cat
-alias cat="bat -p --theme='Nord'"
-alias bat="bat --theme='Nord'"
+alias cat="bat -p"
 
 # use broot as the alias for tree
 alias tree=broot
