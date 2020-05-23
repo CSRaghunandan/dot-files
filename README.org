@@ -469,6 +469,13 @@ system=false
 users=
       #+end_src
 
+  + Use [[https://github.com/cylgom/ly][ly]] as a light weight display manager
+    + If you are getting an error =pam action aborted=, run the below command:
+
+      #+BEGIN_SRC bash
+sudo ln -s /usr/lib/security/pam_loginuid.so /lib  
+#+END_SRC
+
   + =Nord= themes for the following:
     + Emacs using the =doom-nord= theme
     + =Alacritty= nord theme colors
