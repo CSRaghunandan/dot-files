@@ -492,3 +492,5 @@ sudo ln -s /usr/lib/security/pam_loginuid.so /lib
     + =nano= UI Nord theme
     + =tmux= Nord theme using tpm plugin
     + =Xresources= Nord theme colors
+    + =Zathura= UI Nord color theme
+      
