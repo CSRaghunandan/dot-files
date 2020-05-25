@@ -1,5 +1,3 @@
-
-
 * dot-files repository
 
   All the dot-files for my Arch Linux installation with *i3-gaps* as the tiling
