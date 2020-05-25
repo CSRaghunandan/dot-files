@@ -54,3 +54,6 @@ alias \
 	mkd="mkdir -pv" \
 	yt="youtube-dl --add-metadata -i" \
 	ffmpeg="ffmpeg -hide_banner"
+
+# use dark color scheme for ncdu
+alias ncdu="ncdu --color dark"
