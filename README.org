@@ -486,7 +486,7 @@ sudo ln -s /usr/lib/security/pam_loginuid.so /lib
     + =rofi= Nord theme using config file
     + =procs= using custom config file
     + =fzf= Nord theme by modifying the environment variables
-    + =bat= and =delta= in built Nord themes
+    + =bat= in built Nord themes
     + Colored =man= pages using =bat=
     + =nano= UI Nord theme
     + =tmux= Nord theme using tpm plugin
