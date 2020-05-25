@@ -479,7 +479,8 @@ sudo ln -s /usr/lib/security/pam_loginuid.so /lib
   + =Nord= themes for the following:
     + Emacs using the =doom-nord= theme
     + =Alacritty= nord theme colors
-    + GTK theme using: =nordic=
+    + GTK theme using: =nordic= and use =gtk2= nordic theme for qt5 based
+      applications
     + =i3wm=, =i3bar= and =i3status-rust= Nord themes
     + =rg= using custom config file
     + =broot= using custom config file

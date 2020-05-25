@@ -76,3 +76,6 @@ export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config
 
 # path for bat config file
 export BAT_CONFIG_PATH=$HOME/.config/bat/config
+
+# set the qt theme config
+export QT_QPA_PLATFORMTHEME=gtk2
