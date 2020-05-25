@@ -76,7 +76,7 @@ set $ws4 "4. SSH"
 set $ws5 "5. Media"
 set $ws6 "6. Misc"
 set $ws7 "7. Office"
-set $ws8 "8. Books"
+set $ws8 "8. Read"
 set $ws9 "9. Prod"
 set $ws10 "10. Chat"
 
@@ -311,8 +311,8 @@ for_window [class="(?i)VirtualBox"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 for_window [class="Lxappearance"] floating enable
 
-# move libreoffice applications to workspace7
-for_window [class="libreoffice"] move to workspace $ws7
+# move libreoffice applications to workspace8
+for_window [class="libreoffice"] move to workspace $ws8
 
 # enable floating for xev application
 for_window [title="^Event Tester$"] floating enable
