@@ -6,6 +6,6 @@
 [core]
 	editor = /usr/local/bin/emacsclient -c -a ''
 	excludesfile = /home/csraghunandan/.gitignore_global
-	pager=delta --theme='Nord'
+	pager=delta --theme='Nord' --hunk-style="plain" -w 100
 [interactive]
 	diffFilter = delta --color-only 
