@@ -100,11 +100,7 @@ assign [class="Zeal"] $ws9
 assign [class="Sourcetrial"] $ws9
 assign [class="DBeaver"] $ws9
 assign [class="Zathura"] $ws8
-assign [class="discord"] $ws10
 assign [class="vlc"] $ws5
-assign [class="(?i)libreoffice-writer$"]$ ws7
-assign [class="(?i)libreoffice-calc"] $ws7
-assign [class="(?i)libreoffice.*"] $ws7
 assign [class="TeamViewer"] $ws7
 assign [class="zoom"] $ws7
 assign [class="Riot"] $ws10
@@ -314,6 +310,9 @@ for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
 for_window [class="(?i)VirtualBox"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 for_window [class="Lxappearance"] floating enable
+
+# move libreoffice applications to workspace7
+for_window [class="libreoffice"] move to workspace $ws7
 
 # enable floating for xev application
 for_window [title="^Event Tester$"] floating enable
