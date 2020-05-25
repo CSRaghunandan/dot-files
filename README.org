@@ -493,4 +493,5 @@ sudo ln -s /usr/lib/security/pam_loginuid.so /lib
     + =tmux= Nord theme using tpm plugin
     + =Xresources= Nord theme colors
     + =Zathura= UI Nord color theme
-      
+    + =git= Nord color theme by modifying =.gitconfig=
+    + =delta= diff Nord color theme by modifying =.gitconfig=

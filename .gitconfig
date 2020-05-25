@@ -1,11 +1,85 @@
 [user]
 	email = rnraghunandan@gmail.com
 	name = CSRaghunandan
+
 [credential]
 	helper = store
+
 [core]
+	repositoryFormatVersion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	whitespace = tab-in-indent
 	editor = /usr/local/bin/emacsclient -c -a ''
 	excludesfile = /home/csraghunandan/.gitignore_global
-	pager=delta --theme='Nord' --hunk-style="plain" -w 100
+	pager = delta --highlight-removed --file-style="box" --commit-color="#88c0d0" --file-color="#8fbcbb" --hunk-color="#81a1c1" --minus-color="#8b454b" --minus-emph-color="#bf616a" --plus-color="#4c6584" --plus-emph-color="#5e81ac" --theme="Nord"
+	autocrlf = input
+
 [interactive]
-	diffFilter = delta --color-only 
+	diffFilter = delta --color-only --highlight-removed --file-style="box" --commit-color="#88c0d0" --file-color="#8fbcbb" --hunk-color="#81a1c1" --minus-color="#8b454b" --minus-emph-color="#bf616a" --plus-color="#4c6584" --plus-emph-color="#5e81ac" --theme="Nord"
+
+[status]
+	showUntrackedFiles = all
+
+[color]
+	branch = always
+	diff = always
+	grep = always
+	pager = true
+	showbranch = always
+	status = always
+	ui = always
+
+[color "branch"]
+	current = "white blue bold"
+	local = "white bold"
+	plain = "white"
+	remote  = "blue bold"
+
+[color "decorate"]
+	branch = "blue bold"
+	HEAD = "white bold ul"
+	remoteBranch = "blue"
+	stash = "yellow"
+	tag = "cyan bold"
+
+[color "diff"]
+	commit = "blue bold"
+	frag = "blue bold"
+	func = "white"
+	meta = "cyan"
+	new = "green"
+	old = "red"
+	plain = "white"
+	whitespace = "white reverse"
+
+[color "diff-highlight"]
+	oldNormal = "red bold"
+	oldHighlight = "white red bold"
+	newNormal = "green bold"
+	newHighlight = "white green bold"
+
+[color "grep"]
+	context = "white"
+	filename = "white dim ul"
+	function = "white"
+	linenumber = "white dim bold"
+	match = "blue bold"
+	selected = "white"
+	separator = "white dim"
+
+[color "interactive"]
+	error = "red bold"
+	header = "blue bold"
+	help = "white dim"
+	prompt = "cyan"
+
+[color "status"]
+	added = "green bold"
+	changed = "yellow bold"
+	header = "white"
+	nobranch = "magenta bold"
+	unmerged = "blue"
+	untracked = "red bold"
+	updated = "cyan bold"
