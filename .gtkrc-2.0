@@ -4,8 +4,7 @@
 include "/home/csraghunandan/.gtkrc-2.0.mine"
 gtk-theme-name="Nordic"
 gtk-icon-theme-name="Paper-Mono-Dark"
-gtk-font-name="Iosevka SS08 Medium 9"
-gtk-cursor-theme-name="Paper"
+gtk-font-name="Iosevka SS08 Medium 10"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR

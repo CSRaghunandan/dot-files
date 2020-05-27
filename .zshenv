@@ -78,4 +78,5 @@ export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config
 export BAT_CONFIG_PATH=$HOME/.config/bat/config
 
 # set the qt theme config
-export QT_QPA_PLATFORMTHEME=gtk2
+# export QT_QPA_PLATFORMTHEME=gtk2
+export QT_STYLE_OVERRIDE=kvantum
