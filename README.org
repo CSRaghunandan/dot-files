@@ -473,12 +473,11 @@ users=
       #+BEGIN_SRC bash
 sudo ln -s /usr/lib/security/pam_loginuid.so /lib  
 #+END_SRC
-
+    
   + =Nord= themes for the following:
     + Emacs using the =doom-nord= theme
     + =Alacritty= nord theme colors
-    + GTK theme using: =nordic= and use =gtk2= nordic theme for qt5 based
-      applications
+    + GTK theme using: =nordic-theme-git=
     + =i3wm=, =i3bar= and =i3status-rust= Nord themes
     + =rg= using custom config file
     + =broot= using custom config file
@@ -488,9 +487,12 @@ sudo ln -s /usr/lib/security/pam_loginuid.so /lib
     + =fzf= Nord theme by modifying the environment variables
     + =bat= in built Nord themes
     + Colored =man= pages using =bat=
-    + =nano= UI Nord theme
+    + =nano= UI Nord theme by modifying =nanorc=
     + =tmux= Nord theme using tpm plugin
-    + =Xresources= Nord theme colors
-    + =Zathura= UI Nord color theme
+    + =Xresources= Nord theme colors by modifying =.Xresources= file
+    + =Zathura= UI Nord color theme by modifying config file
+    + Install =Nord= theme for =qt= applications
+      + =kvantum= and install =kvantum-theme-nordic-git=
+      + Open =kvantum-manager= and change default theme to =Nordic-Darker=
     + =git= Nord color theme by modifying =.gitconfig=
     + =delta= diff Nord color theme by modifying =.gitconfig=
