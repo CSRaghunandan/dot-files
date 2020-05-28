@@ -467,3 +467,4 @@ sudo ln -s /usr/lib/security/pam_loginuid.so /lib
       + Open =kvantum-manager= and change default theme to =Nordic-Darker=
     + =git= Nord color theme by modifying =.gitconfig=
     + =delta= diff Nord color theme by modifying =.gitconfig=
+    + Colored =sudo= and =grep= by modifying env variables

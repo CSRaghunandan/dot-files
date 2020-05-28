@@ -111,3 +111,40 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[01;34m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export MANPAGER='less -s -M +Gg'
+
+# colored sudo prompt
+export SUDO_PROMPT=$(printf "\e[34msudo\e[0m \e[36m%%u\e[0m@\e[34m%%h\e[m: ")
+
+# +--------+
+# + Colors +
+# +--------+
+# Set the terminfo capabilitiy substrings for the color environment variable interpreted by the "termcap" compatibility
+# application interface.
+#
+#   "sl"
+#     Whole selected lines. Default is empty.
+#   "cx"
+#     Whole context lines. Default is empty.
+#   "rv"
+#     Boolean value that reverses (swaps) the meanings of the "sl" and "cx" capabilities. Default is "false".
+#   "mt"
+#     Matching non-empty text in any matching line.
+#   "ms"
+#     Matching non-empty text in a selected line.
+#   "mc"
+#     Matching non-empty text in a context line.
+#   "fn"
+#     File names prefixing any content line.
+#   "ln"
+#     Line numbers prefixing any content line.
+#   "bn"
+#     Byte offsets prefixing any content line.
+#   "se"
+#     Separators that are inserted between
+#       - selected line fields (':')
+#       - context line fields ('-')
+#       - groups of adjacent lines when nonzero context is specified ("--")
+#   "ne"
+#     Boolean value that prevents clearing to the end of line using erase in line (EL) to Right ("\33[K") each time a
+#     colorized item ends.
+export GREP_COLORS="fn=34:mt=01;34:ln=01;30:se=30"
