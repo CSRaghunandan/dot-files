@@ -48,10 +48,6 @@ export FZ_HISTORY_CD_CMD="_zlua"
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# colored man pages using bat
-export MANPAGER="sh -c 'col -bx | bat -p -l man'"
-export MANROFFOPT='-c'
-
 ## FZF environment variables
 # Nord theme for fzf
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
@@ -80,3 +76,38 @@ export BAT_CONFIG_PATH=$HOME/.config/bat/config
 # set the qt theme config
 # export QT_QPA_PLATFORMTHEME=gtk2
 export QT_STYLE_OVERRIDE=kvantum
+
+# Sets the terminfo variables of the termcap compatibility application interface.
+# Provides colored output for the "man" command.
+#
+# Escape Sequences Comparision Table
+# ==================================
+# termcap  terminfo  function
+# -------  --------  --------
+# ks       smkx      Send commands via keypad
+# ke       rmkx      Send digits via keypad
+# vb       flash     Emit visual bell
+# mb       blink     Start blink
+# md       bold      Start bold
+# me       sgr0      Turn off bold, blink and underline
+# so       smso      Start standout (reverse video)
+# se       rmso      Stop standout
+# us       smul      Start underline
+# ue       rmul      Stop underline
+# +--- Blink ---+
+export LESS_TERMCAP_mb=$'\e[01;34m'
+
+# +--- Keywords ---+
+export LESS_TERMCAP_md=$'\e[01;34m'
+
+# +--- Mode Stop ---+
+export LESS_TERMCAP_me=$'\e[0m'
+
+# +--- Standout-Mode (Info Box) ---+
+export LESS_TERMCAP_so=$'\e[01;30m'
+export LESS_TERMCAP_se=$'\e[0m'
+
+# +--- Constants ---+
+export LESS_TERMCAP_us=$'\e[01;34m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export MANPAGER='less -s -M +Gg'

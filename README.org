@@ -29,37 +29,8 @@ export TERMINAL="alacritty"
      documents, zip, tar.gz, etc.
    + [[https://github.com/m4b/bingrep][bingrep]]: like ~grep~ UBER, but for binaries
    + [[https://github.com/XAMPPRocky/tokei][tokei]]: count lines of code
-   + Use [[https://github.com/sharkdp/bat][bat]]  as an alternative for =cat= and =less= to view files
-     + Replace =cat= with =bat= by using an alias:
-
-       #+BEGIN_SRC bash
-alias cat="bat -p --theme='Sublime Snazzy'"  
-#+END_SRC
-
-     + You can have colored man pages using =bat=:
-
-       #+BEGIN_SRC bash
-# add this to your .zshenv file
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANROFFOPT='-c'
-
-# below are modifications to less:
-# Modify the pager defaults: The -R option is needed to interpret ANSI colors
-# correctly. The second option (-F) instructs less to exit immediately if the
-# output size is smaller than the vertical size of the terminal.
-export PAGER="less -RF"
-
-# use UTF-8 charset for less
-export LESSCHARSET=utf-8
-#+END_SRC
-
+   + Use [[https://github.com/sharkdp/bat][bat]]  as an alternative for =cat=
    + Use [[https://github.com/Peltoche/lsd][lsd]] as a modern alternative to =ls=
-     + Use =lsd= as an alternative for =ls= using an alias:
-
-       #+BEGIN_SRC bash
-alias ls='lsd'  
-#+END_SRC
-
    + Use [[https://github.com/Canop/broot][broot]] as a modern alternative to tree
    + [[https://github.com/yaa110/nomino][nomino]]: batch rename files using regex
    + [[https://github.com/denisidoro/navi/][navi]]: An interactive cheatsheet tool for the command-line
@@ -486,7 +457,7 @@ sudo ln -s /usr/lib/security/pam_loginuid.so /lib
     + =procs= using custom config file
     + =fzf= Nord theme by modifying the environment variables
     + =bat= in built Nord themes
-    + Colored =man= pages using =bat=
+    + Colored =man= pages using =less=
     + =nano= UI Nord theme by modifying =nanorc=
     + =tmux= Nord theme using tpm plugin
     + =Xresources= Nord theme colors by modifying =.Xresources= file
