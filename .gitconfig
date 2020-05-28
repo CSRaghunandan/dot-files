@@ -13,11 +13,11 @@
 	whitespace = tab-in-indent
 	editor = /usr/local/bin/emacsclient -c -a ''
 	excludesfile = /home/csraghunandan/.gitignore_global
-	pager = delta --highlight-removed --file-style="box" --commit-color="#88c0d0" --file-color="#8fbcbb" --hunk-color="#81a1c1" --minus-color="#8b454b" --minus-emph-color="#bf616a" --plus-color="#4c6584" --plus-emph-color="#5e81ac" --theme="Nord"
+	pager = delta --highlight-removed --file-style="box" --theme="Nord"
 	autocrlf = input
 
 [interactive]
-	diffFilter = delta --color-only --highlight-removed --file-style="box" --commit-color="#88c0d0" --file-color="#8fbcbb" --hunk-color="#81a1c1" --minus-color="#8b454b" --minus-emph-color="#bf616a" --plus-color="#4c6584" --plus-emph-color="#5e81ac" --theme="Nord"
+	diffFilter = delta --highlight-removed --file-style="box" --theme="Nord"
 
 [status]
 	showUntrackedFiles = all
