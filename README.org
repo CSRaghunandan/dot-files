@@ -469,3 +469,4 @@ sudo ln -s /usr/lib/security/pam_loginuid.so /lib
     + =delta= diff Nord color theme by modifying =.gitconfig=
     + Colored =sudo= and =grep= by modifying env variables
     + =ncmpcpp= by modifying the config file
+    + Firefox [[https://www.deviantart.com/dpcdpc11/art/Nord-for-Firefox-837860916][Nord color]] theme
