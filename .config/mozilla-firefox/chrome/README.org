@@ -1,0 +1,8 @@
+
+* Installation Instructions
+  + Open =about:config= in your firefox
+  + Set =toolkit.legacyUserProfileCustomizations.stylesheets= to =true=
+  + Go to =Help --> Trouble shooting inforamtion= and copy the =profile
+    directory= path
+  + copy =chrome= directory into =profile directory= path copied above and
+    restart firefox. Chose the =default theme= in firefox for best results
