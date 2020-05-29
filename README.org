@@ -343,8 +343,8 @@ sudo sytemctl enable teamviewerd.service --now
     moves
   + Use =feh= to set the wallpaper background
   + Use =i3lock= as the locker for i3wm
-  + Use [[https://github.com/yshui/picom/][picom]] as the display compositor for i3. Install from =git=, for Archlinux,
-    install using =picom-git= from AUR.
+  + Use [[https://github.com/ibhagwan/picom][picom]] as the display compositor for i3. Install from =git=, for Archlinux,
+    install using =picom-ibhagwan-git= from AUR.
     + Use =experimental backends= option when running picom, otherwise the =glx=
       backend will not work.
 
