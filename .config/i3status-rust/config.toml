@@ -17,7 +17,6 @@ critical_bg = "#88C0D0"
 critical_fg = "#2E3440"
 # The rest of the theme settings are left at default.
 
-
 [[block]]
 block = "music"
 player = "mpd"
