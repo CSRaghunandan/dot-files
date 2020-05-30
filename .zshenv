@@ -52,7 +52,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # Nord theme for fzf
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
     --color=fg:#e5e9f0,hl:#81a1c1
-    --color=fg+:#e5e9f0,hl+:#81a1c1
+    --color=fg+:#e5e9f0,hl+:#81a1c1,bg+:#434C5E
     --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
     --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b'
 
