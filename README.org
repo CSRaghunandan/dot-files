@@ -106,6 +106,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     
    + [[https://github.com/mvdan/sh][shfmt]]: format shell files using =shfmt=
    + [[https://github.com/koalaman/shellcheck][shellcheck]]: ShellCheck, a static analysis tool for shell scripts
+   + [[https://github.com/bash-lsp/bash-language-server][bash-language-server]]: LSP server for bash written in TS
 
 *** C/Cpp
 
@@ -284,6 +285,20 @@ alias i3lock="i3lock && echo mem > /sys/power/state"
   + change the default DNS resolver to =1.1.1.1= by editing the =nameserver=
     entry in =/etc/resolv.conf= and make it unwritable by running the command:
     =chattr +i /etc/resolv.conf=
+  + SSH config for git
+    + Add ~SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"~ to
+      =~/.pam_environment= file
+    + If you are running =openssh= verison > 7.2, add these to =~/.ssh/config=
+      file: =AddKeysToAgent yes=. This will instruct the ssh client to always
+      add the key to a running agent, so there’s no need to ssh-add it
+      beforehand.
+    + Create a =~/.ssh/config= file and change permissions by: =chmod 600 ~/.ssh/config=
+    + Start the =ssh-agent= service:
+
+      #+BEGIN_SRC bash
+systemctl --user enable ssh-agent --now  
+#+END_SRC
+
 
 
 * Reader applications
