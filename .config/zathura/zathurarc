@@ -14,12 +14,8 @@ map R rotate
 # in the status bar
 set statusbar-home-tilde
 
-# Disables the status bar. CTRL+N to enable it.
-set guioptions ""
-
 # Set the background of zathura
 set default-bg "#000000"
-
 
 # In MuPDF, i is the keybinding to invert the color
 # and I rather stick with that binding
