@@ -16,6 +16,9 @@ for_window [class="^.*"] border pixel 2
 gaps inner 12
 gaps outer 8
 
+# hide border when there is only one window
+hide_edge_borders smart
+
 # change focus
 bindsym $mod2+h focus left
 bindsym $mod2+j focus down
