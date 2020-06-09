@@ -146,6 +146,21 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     + [[https://github.com/Microsoft/python-language-server][Microsoft Python Language Server]]
     + [[https://github.com/psf/black][black]]: code formatter for python
     + [[https://github.com/pyenv/pyenv][pyenv]]: simple python version management
+      + Install [[https://github.com/pyenv/pyenv-virtualenv][pyenv-virtualenv]] plugin for =pyenv= to get virtual environment
+        capabilities for pyenv
+      + In ~.envrc~ of a project, add the following code:
+
+        #+BEGIN_SRC bash
+# configure pyenv for the project
+export PYENV_ROOT="${HOME}/.pyenv"
+
+if [ -d "${PYENV_ROOT}" ]; then
+	export PATH="${PYENV_ROOT}/bin:${PATH}"
+	eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
+fi
+#+END_SRC
+
     + [[https://pypi.org/project/flake8/][flake8]]: pycodestyle, pyflakes, mccabe
 
       Install it with:
