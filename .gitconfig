@@ -83,3 +83,5 @@
 	unmerged = "blue"
 	untracked = "red bold"
 	updated = "cyan bold"
+[pull]
+	rebase = false
