@@ -142,6 +142,28 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 *** Haskell
     + HIE
 
+*** Python
+    + [[https://github.com/Microsoft/python-language-server][Microsoft Python Language Server]]
+    + [[https://github.com/psf/black][black]]: code formatter for python
+    + [[https://github.com/pyenv/pyenv][pyenv]]: simple python version management
+    + [[https://pypi.org/project/flake8/][flake8]]: pycodestyle, pyflakes, mccabe
+
+      Install it with:
+
+      #+BEGIN_SRC bash
+yay -S flake8
+#+END_SRC
+
+    + [[http://mypy-lang.org/][mypy]]: optional static type checker for python
+      Install it with:
+
+      #+BEGIN_SRC bash
+yay -S mypy
+#+END_SRC
+
+    + [[https://github.com/PyCQA/bandit][bandit]]: for finding common security flaws in python code
+
+
 * Configure ntp
   - Install =ntp= package and enable the ntp service
   - Run the following commands to disable =systemd-timesyncd=
