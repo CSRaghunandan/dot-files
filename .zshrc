@@ -129,10 +129,6 @@ if [ -f ~/.aliases ]; then
 	. ~/.aliases
 fi
 
-export PATH="/home/csraghunandan/.pyenv/bin:$PATH"
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
-
 # opam configuration
 # test -r /home/csraghunandan/.opam/opam-init/init.sh && . /home/csraghunandan/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
