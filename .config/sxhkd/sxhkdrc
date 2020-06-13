@@ -44,7 +44,7 @@ hyper + {F6,F7,F8}
       /usr/bin/pulseaudio-ctl {mute,down,up}
 
 # media controls for mpd, VLC, etc.
-XF86Audio{Prev,Play,Next, Stop}
+XF86Audio{Prev,Play,Next,Stop}
       playerctl {previous,play-pause,next,stop}
 hyper + {F9, F10, F11, F12}
       playerctl {previous,play-pause,next,stop}
