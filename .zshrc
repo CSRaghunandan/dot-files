@@ -197,9 +197,8 @@ source ~/src/clang/czmod/czmod.zsh
 # fix some docsets not rendering on Zeal. Run this command whenever you run into
 # an issue with zeal docsets
 zeal-docs-fix() {
-	pushd "$HOME/.local/share/Zeal/Zeal/docsets" >/dev/null || return
-	find . -iname 'react-main*.js' -exec rm '{}' \;
-	popd >/dev/null || exit
+	find ~/.local/share/Zeal/Zeal/docsets -name "react-main.*.js" \
+		-exec rm --force {} \;
 }
 
 # integration with zsh for navi
