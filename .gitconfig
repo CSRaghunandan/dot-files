@@ -13,11 +13,23 @@
 	whitespace = tab-in-indent
 	editor = /usr/local/bin/emacsclient -c -a ''
 	excludesfile = /home/csraghunandan/.gitignore_global
-	pager = delta --highlight-removed --file-style="box" --theme="Nord"
 	autocrlf = input
 
+[core]
+    pager = delta
+
+[delta]
+	theme = 'Nord'
+	features = unobtrusive-line-numbers decorations
+	whitespace-error-style = 22 reverse
+
 [interactive]
-	diffFilter = delta --highlight-removed --file-style="box" --theme="Nord"
+	diffFilter = delta --color-only	 --hilight-removed
+	
+[delta "unobtrusive-line-numbers"]
+    line-numbers = true
+    line-numbers-left-format = "{nm:>4}|"
+    line-numbers-right-format = "{np:>4}|"
 
 [status]
 	showUntrackedFiles = all
