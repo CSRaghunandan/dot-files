@@ -52,8 +52,9 @@ export TERMINAL="alacritty"
    + [[https://github.com/greshake/i3status-rust][i3status-rs:]] as the bar for i3wm
    + [[https://github.com/chmln/enact][enact:]] to have automatic configuration of multiple monitors with
      hotplug support
+   + [[https://github.com/tree-sitter/tree-sitter/][tree-sitter]]: An incremental parsing system for programming tools
+     https://tree-sitter.github.io
      
-
 ** Useful command line utilities
 
    + [[https://github.com/tmux/tmux][tmux]]:  a terminal multiplexer
@@ -134,6 +135,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     + [[https://github.com/RazrFalcon/cargo-bloat][cargo-bloat]]: find out what takes the most space in your executable
     + [[https://github.com/nabijaczleweli/cargo-update][cargo-update]]: A cargo subcommand for checking and applying updates to
       installed executables
+    + Rustfmt
+    + Clippy
 
 *** Go
     + Gopls
@@ -490,12 +493,7 @@ system=false
 users=
       #+end_src
 
-  + Use [[https://github.com/cylgom/ly][ly]] as a light weight display manager
-    + If you are getting an error =pam action aborted=, run the below command:
-
-      #+BEGIN_SRC bash
-sudo ln -s /usr/lib/security/pam_loginuid.so /lib  
-#+END_SRC
+    + Use [[https://github.com/sddm/sddm][sddm]] as the display manager for linux.
     
   + =Nord= themes for the following:
     + Emacs using the =doom-nord= theme
