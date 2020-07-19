@@ -24,13 +24,13 @@ lyrics_directory = ~/.lyrics
 
 mpd_host = localhost
 #
-# mpd_port = 6600
+mpd_port = 6600
 #
 #mpd_connection_timeout = 5
 #
 ## Needed for tag editor and file operations to work.
 ##
-mpd_music_dir = ~/Music
+mpd_music_dir = /home/Music
 #
 #mpd_crossfade_time = 5
 #
