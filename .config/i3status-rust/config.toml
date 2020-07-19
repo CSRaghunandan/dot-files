@@ -18,18 +18,14 @@ critical_fg = "#2E3440"
 
 [[block]]
 block = "music"
-player = "mpd"
+max_width = 50
 
 [[block]]
 block = "net"
 device = "wlp2s0"
-ssid = true
-signal_strength = true
+format = "{ssid} {signal_strength} {ip} {speed_down}"
 ip = true
-interval = 5
 use_bits = false
-speed_up = false
-speed_down = false
 
 [[block]]
 block = "load"

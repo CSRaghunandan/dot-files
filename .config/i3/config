@@ -256,6 +256,7 @@ set $base0F #B48EAD
 
 # Basic bar configuration using the Base16 variables.
 bar {
+    font pango: Iosevka SS08 Medium, FontAwesome 9
     status_command i3status-rs ~/.config/i3status-rust/config.toml
     position top
 
