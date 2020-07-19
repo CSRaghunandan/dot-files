@@ -106,7 +106,7 @@ assign [class="Zathura"] $ws8
 assign [class="vlc"] $ws5
 assign [class="TeamViewer"] $ws7
 assign [class="zoom"] $ws7
-assign [class="Riot"] $ws10
+assign [class="Element \(Riot\)"] $ws10
 
 # colors for borders
 client.focused          #906CFF #7054CB #ffffff #906CFF
