@@ -57,3 +57,6 @@ alias \
 
 # use dark color scheme for ncdu
 alias ncdu="ncdu --color dark"
+
+# use colors for ip commands
+ alias ip='ip -color=auto'
