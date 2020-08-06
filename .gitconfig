@@ -1,99 +1,99 @@
 [user]
-	email = rnraghunandan@gmail.com
-	name = CSRaghunandan
+    email = rnraghunandan@gmail.com
+    name = CSRaghunandan
 
 [credential]
-	helper = store
+    helper = store
 
 [core]
-	repositoryFormatVersion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-	whitespace = tab-in-indent
-	editor = /usr/local/bin/emacsclient -c -a ''
-	excludesfile = /home/csraghunandan/.gitignore_global
-	autocrlf = input
+    repositoryFormatVersion = 0
+    filemode = true
+    bare = false
+    logallrefupdates = true
+    whitespace = tab-in-indent
+    editor = /usr/local/bin/emacsclient -c -a ''
+    excludesfile = /home/csraghunandan/.gitignore_global
+    autocrlf = input
 
 [core]
     pager = delta
 
 [delta]
-	theme = 'Nord'
-	features = unobtrusive-line-numbers decorations
-	whitespace-error-style = 22 reverse
+    theme = 'Nord'
+    features = unobtrusive-line-numbers decorations
+    whitespace-error-style = 22 reverse
 
 [interactive]
-	diffFilter = delta --color-only	 --hilight-removed
-	
+    diffFilter = delta --color-only  --hilight-removed
+
 [delta "unobtrusive-line-numbers"]
     line-numbers = true
     line-numbers-left-format = "{nm:>4}|"
     line-numbers-right-format = "{np:>4}|"
 
 [status]
-	showUntrackedFiles = all
+    showUntrackedFiles = all
 
 [color]
-	branch = always
-	diff = always
-	grep = always
-	pager = true
-	showbranch = always
-	status = always
-	ui = always
+    branch = always
+    diff = always
+    grep = always
+    pager = true
+    showbranch = always
+    status = always
+    ui = always
 
 [color "branch"]
-	current = "white blue bold"
-	local = "white bold"
-	plain = "white"
-	remote  = "blue bold"
+    current = "white blue bold"
+    local = "white bold"
+    plain = "white"
+    remote  = "blue bold"
 
 [color "decorate"]
-	branch = "blue bold"
-	HEAD = "white bold ul"
-	remoteBranch = "blue"
-	stash = "yellow"
-	tag = "cyan bold"
+    branch = "blue bold"
+    HEAD = "white bold ul"
+    remoteBranch = "blue"
+    stash = "yellow"
+    tag = "cyan bold"
 
 [color "diff"]
-	commit = "blue bold"
-	frag = "blue bold"
-	func = "white"
-	meta = "cyan"
-	new = "green"
-	old = "red"
-	plain = "white"
-	whitespace = "white reverse"
+    commit = "blue bold"
+    frag = "blue bold"
+    func = "white"
+    meta = "cyan"
+    new = "green"
+    old = "red"
+    plain = "white"
+    whitespace = "white reverse"
 
 [color "diff-highlight"]
-	oldNormal = "red bold"
-	oldHighlight = "white red bold"
-	newNormal = "green bold"
-	newHighlight = "white green bold"
+    oldNormal = "red bold"
+    oldHighlight = "white red bold"
+    newNormal = "green bold"
+    newHighlight = "white green bold"
 
 [color "grep"]
-	context = "white"
-	filename = "white dim ul"
-	function = "white"
-	linenumber = "white dim bold"
-	match = "blue bold"
-	selected = "white"
-	separator = "white dim"
+    context = "white"
+    filename = "white dim ul"
+    function = "white"
+    linenumber = "white dim bold"
+    match = "blue bold"
+    selected = "white"
+    separator = "white dim"
 
 [color "interactive"]
-	error = "red bold"
-	header = "blue bold"
-	help = "white dim"
-	prompt = "cyan"
+    error = "red bold"
+    header = "blue bold"
+    help = "white dim"
+    prompt = "cyan"
 
 [color "status"]
-	added = "green bold"
-	changed = "yellow bold"
-	header = "white"
-	nobranch = "magenta bold"
-	unmerged = "blue"
-	untracked = "red bold"
-	updated = "cyan bold"
+    added = "green bold"
+    changed = "yellow bold"
+    header = "white"
+    nobranch = "magenta bold"
+    unmerged = "blue"
+    untracked = "red bold"
+    updated = "cyan bold"
 [pull]
-	rebase = false
+    rebase = false
