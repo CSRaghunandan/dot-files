@@ -1,8 +1,6 @@
 # Replace the "❯" symbol in the prompt with "➜"
 [character]
-symbol = "➜ "
-use_symbol_for_status = false
-style_failure = "bold red"
+success_symbol = "[➜ ](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 
 [directory]
 truncation_length = 3
