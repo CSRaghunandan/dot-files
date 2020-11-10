@@ -7,5 +7,6 @@ text/html=firefox-developer-edition.desktop
 image/jpeg=feh.desktop
 image/png=feh.desktop
 image/bmp=feh.desktop
+x-scheme-handler/postman=Postman.desktop
 
 [Added Associations]
