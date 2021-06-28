@@ -189,10 +189,8 @@ source /home/csraghunandan/.config/broot/launcher/bash/br
 # zsh-bd
 . $HOME/.zsh/plugins/bd/bd.zsh
 
-# initiate z.lua
-eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced once fzf)"
-# integrate z.lua with the native module for faster performance
-source ~/src/clang/czmod/czmod.zsh
+# init zoxide
+eval "$(zoxide init zsh)"
 
 # fix some docsets not rendering on Zeal. Run this command whenever you run into
 # an issue with zeal docsets

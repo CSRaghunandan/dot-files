@@ -10,3 +10,6 @@ image/bmp=feh.desktop
 x-scheme-handler/postman=Postman.desktop
 
 [Added Associations]
+application/pdf=libreoffice-startcenter.desktop;chromium.desktop;
+image/jpeg=gimp.desktop;
+application/octet-stream=com.github.johnfactotum.Foliate.desktop;

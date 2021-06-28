@@ -30,7 +30,7 @@ export TERMINAL="alacritty"
    + [[https://github.com/m4b/bingrep][bingrep]]: like ~grep~ UBER, but for binaries
    + [[https://github.com/XAMPPRocky/tokei][tokei]]: count lines of code
    + Use [[https://github.com/sharkdp/bat][bat]]  as an alternative for =cat=
-   + Use [[https://github.com/Peltoche/lsd][lsd]] as a modern alternative to =ls=
+   + Use [[https://github.com/ogham/exa][exa]] as a modern alternative to =ls=
    + Use [[https://github.com/Canop/broot][broot]] as a modern alternative to tree
    + [[https://github.com/yaa110/nomino][nomino]]: batch rename files using regex
    + [[https://github.com/denisidoro/navi/][navi]]: An interactive cheatsheet tool for the command-line
@@ -54,7 +54,12 @@ export TERMINAL="alacritty"
      hotplug support
    + [[https://github.com/tree-sitter/tree-sitter/][tree-sitter]]: An incremental parsing system for programming tools
      https://tree-sitter.github.io
-     
+   + [[https://github.com/dotenv-linter/dotenv-linter][dotenv-linter]]: lint dotenv files
+   + [[https://github.com/Morganamilo/paru][paru]]: AUR helper written in Rust
+   + yamllint
+   + pre-commit
+   + conform
+
 ** Useful command line utilities
 
    + [[https://github.com/tmux/tmux][tmux]]:  a terminal multiplexer
@@ -169,14 +174,14 @@ fi
       Install it with:
 
       #+BEGIN_SRC bash
-yay -S flake8
+paru -S flake8
 #+END_SRC
 
     + [[http://mypy-lang.org/][mypy]]: optional static type checker for python
       Install it with:
 
       #+BEGIN_SRC bash
-yay -S mypy
+paru -S mypy
 #+END_SRC
 
     + [[https://github.com/PyCQA/bandit][bandit]]: for finding common security flaws in python code
@@ -474,7 +479,7 @@ exec --no-startup-id enact --pos top --watch &
     To install all the necessary font packages to fonts from display various
     langauges and emoji
   + Use =Iosevka SS08 Medium= as the default monospace font. Install it by
-    running: =yay -S ttf-iosevka-ss08=
+    running: =paru -S ttf-iosevka-ss08=
   + Use =lxappearence= to change the font, icons and theme
   + Install =redshift= to warn the screen during night times to reduce eye strain
     + Enable and start: ~redshift~ by running
