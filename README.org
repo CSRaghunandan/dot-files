@@ -37,7 +37,7 @@ export TERMINAL="alacritty"
    + [[https://github.com/sharkdp/hyperfine][hyperfine]]: A command-line benchmarking tool
    + [[https://github.com/sharkdp/hexyl][hexyl]]: command-line hex viewer 
    + [[https://github.com/dalance/procs/][procs]]: A modern replacement for ps written in Rust
-   + [[https://github.com/cjbassi/ytop][ytop]]: A TUI system monitor written in Rust
+   + [[https://github.com/ClementTsang/bottom][bottom]]: cross platform graphical process/system monitor
    + [[https://github.com/SoptikHa2/desed][desed]]: Debugger for Sed: demystify and debug your sed scripts, from comfort
      of your terminal.
    + [[https://github.com/dandavison/delta][delta]]: A syntax-highlighter for git and diff output
@@ -57,16 +57,13 @@ export TERMINAL="alacritty"
      https://tree-sitter.github.io
    + [[https://github.com/dotenv-linter/dotenv-linter][dotenv-linter]]: lint dotenv files
    + [[https://github.com/Morganamilo/paru][paru]]: AUR helper written in Rust
-   + [[https://github.com/bootandy/dust][dust]]:  A more intuitive version of du in rust 
-   + yamllint
-   + pre-commit
-   + conform
+   + [[https://github.com/bootandy/dust][dust]]:  A more intuitive version of du in rust
+   + [[https://github.com/pemistahl/grex][grex]]: generate regex from user provided test cases
 
 ** Useful command line utilities
 
    + [[https://github.com/tmux/tmux][tmux]]:  a terminal multiplexer
    + [[https://github.com/zquestz/s][s]]: search from the command line
-   + [[https://github.com/nosarthur/gita][Gita]]: Manage multiple git repositories easily
    + [[https://dev.yorhel.nl/ncdu][ncdu]]: Ncdu is a disk usage analyzer with an ncurses interface.
    + [[https://lnav.org/][lnav]]: Watch and analyze your log files from a terminal.
    + [[https://salsa.debian.org/minicom-team/minicom][minicom]]: Serial communications program
@@ -100,6 +97,7 @@ alias ping=prettyping
    + [[https://github.com/nvbn/thefuck][thefuck]]: correct previous console command
    + [[https://github.com/junegunn/fzf/][fzf]]: A command-line fuzzy finder
    + [[https://github.com/cli/cli][github cli]]  GitHub’s official command line tool
+   + [[https://pre-commit.com/][pre-commit]] run pre-commit hooks for git
 
 ** Language specific tools
 
@@ -146,43 +144,24 @@ alias ping=prettyping
     + HIE
 
 *** Python
-    + [[https://github.com/Microsoft/python-language-server][Microsoft Python Language Server]]
     + [[https://github.com/psf/black][black]]: code formatter for python
-    + [[https://github.com/pyenv/pyenv][pyenv]]: simple python version management
-      + Install [[https://github.com/pyenv/pyenv-virtualenv][pyenv-virtualenv]] plugin for =pyenv= to get virtual environment
-        capabilities for pyenv
-      + In ~.envrc~ of a project, add the following code:
-
-        #+BEGIN_SRC bash
-# configure pyenv for the project
-export PYENV_ROOT="${HOME}/.pyenv"
-
-if [ -d "${PYENV_ROOT}" ]; then
-	export PATH="${PYENV_ROOT}/bin:${PATH}"
-	eval "$(pyenv init -)"
-	eval "$(pyenv virtualenv-init -)"
-fi
-#+END_SRC
-
-    + [[https://pypi.org/project/flake8/][flake8]]: pycodestyle, pyflakes, mccabe
-
-      Install it with:
-
-      #+BEGIN_SRC bash
-paru -S flake8
-#+END_SRC
-
+    + [[https://github.com/Microsoft/pyright][pyright]] python language server
+    + [[https://github.com/pypa/pipenv][pipenv]]: brings npm like functionality for python
     + [[http://mypy-lang.org/][mypy]]: optional static type checker for python
       Install it with:
 
       #+BEGIN_SRC bash
 paru -S mypy
 #+END_SRC
-
     + [[https://github.com/PyCQA/bandit][bandit]]: for finding common security flaws in python code
 
+*** yaml
+
++ [[https://github.com/redhat-developer/yaml-language-server][yaml-ls]] yaml language server
++ [[https://github.com/adrienverge/yamllint][yamllint]] linter for yaml files
 
 * Configure ntp
+
   - Install =ntp= package and enable the ntp service
   - Run the following commands to disable =systemd-timesyncd=
     #+begin_src bash
@@ -374,14 +353,8 @@ export READER="zathura"
   + Install LibreOffice from =libreoffice-fresh= (in AUR)
   + =Plantuml= for creating control flow and other diagrams
   + =dbeaver= (open source Database viewer)
-  + =TeamViewr= for remote control
-    + Enable and start teamviewer deamon in the background by:
-
-      #+BEGIN_SRC bash
-sudo sytemctl enable teamviewerd.service --now  
-#+END_SRC
   + =Wireshark= for network analyzing. Install it with the following packages:
-    =wireshark-qt=, =wireshark-cli=
+     =wireshark-qt=, =wireshark-cli=
   + [[https://github.com/editorconfig/editorconfig-core-c][editorconfig]]: EditorConfig helps maintain consistent coding styles for
     multiple developers working on the same project across various editors and
     IDEs.
