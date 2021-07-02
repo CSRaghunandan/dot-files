@@ -147,3 +147,6 @@ export SUDO_PROMPT=$(printf "\e[34msudo\e[0m \e[36m%%u\e[0m@\e[34m%%h\e[m: ")
 #     Boolean value that prevents clearing to the end of line using erase in line (EL) to Right ("\33[K") each time a
 #     colorized item ends.
 export GREP_COLORS="fn=34:mt=01;34:ln=01;30:se=30"
+
+# add the doom-emacs bin directory which contains the doom cli
+export PATH=$PATH:/home/csraghunandan/.emacs.d/bin

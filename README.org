@@ -56,6 +56,7 @@ export TERMINAL="alacritty"
      https://tree-sitter.github.io
    + [[https://github.com/dotenv-linter/dotenv-linter][dotenv-linter]]: lint dotenv files
    + [[https://github.com/Morganamilo/paru][paru]]: AUR helper written in Rust
+   + [[https://github.com/bootandy/dust][dust]]:  A more intuitive version of du in rust 
    + yamllint
    + pre-commit
    + conform
