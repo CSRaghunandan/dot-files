@@ -23,9 +23,7 @@ max_width = 50
 [[block]]
 block = "net"
 device = "wlp2s0"
-format = "{ssid} {signal_strength} {ip} {speed_down}"
-ip = true
-use_bits = false
+format = "{ssid}  {signal_strength}  {ip}"
 
 [[block]]
 block = "load"
