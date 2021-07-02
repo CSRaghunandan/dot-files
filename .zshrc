@@ -136,7 +136,6 @@ fi
 eval "$(starship init zsh)"
 
 # source fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # add keybinding for transpose char, since its overwritten by fzf
 bindkey '^X^T' transpose-chars
 

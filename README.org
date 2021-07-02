@@ -50,6 +50,7 @@ export TERMINAL="alacritty"
      =powerline-fonts= as the dependency for starship prompt
    + [[https://github.com/watchexec/watchexec][watchexec]]: Executes commands in response to file modifications
    + [[https://github.com/greshake/i3status-rust][i3status-rs:]] as the bar for i3wm
+   + [[   https://github.com/dbrgn/tealdeer][tealdeer]]: tldr client written in Rust
    + [[https://github.com/chmln/enact][enact:]] to have automatic configuration of multiple monitors with
      hotplug support
    + [[https://github.com/tree-sitter/tree-sitter/][tree-sitter]]: An incremental parsing system for programming tools
@@ -65,7 +66,6 @@ export TERMINAL="alacritty"
 
    + [[https://github.com/tmux/tmux][tmux]]:  a terminal multiplexer
    + [[https://github.com/zquestz/s][s]]: search from the command line
-   + [[https://github.com/isacikgoz/tldr][tldr++]]: quickly view cheatsheets for linux commands
    + [[https://github.com/nosarthur/gita][Gita]]: Manage multiple git repositories easily
    + [[https://dev.yorhel.nl/ncdu][ncdu]]: Ncdu is a disk usage analyzer with an ncurses interface.
    + [[https://lnav.org/][lnav]]: Watch and analyze your log files from a terminal.
@@ -98,14 +98,8 @@ alias ping=prettyping
    + [[https://launchpad.net/safe-rm][safe-rm]]: wrapper around rm to make it prevent accidental delete of
      important directories that should never be deleted
    + [[https://github.com/nvbn/thefuck][thefuck]]: correct previous console command
-   + [[https://github.com/junegunn/fzf/][fzf]]: A command-line fuzzy finder 
-     + Install it by:
-
-       #+BEGIN_SRC bash
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-# select completions and keybindings for fzf  
-#+END_SRC
+   + [[https://github.com/junegunn/fzf/][fzf]]: A command-line fuzzy finder
+   + [[https://github.com/cli/cli][github cli]]  GitHub’s official command line tool
 
 ** Language specific tools
 
@@ -147,7 +141,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 *** Go
     + Gopls
     + Godef
-     
+
 *** Haskell
     + HIE
 
