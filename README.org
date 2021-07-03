@@ -44,10 +44,8 @@ export TERMINAL="alacritty"
    + [[https://github.com/jD91mZM2/xidlehook][xidlehook]]: xidlehook is a general-purpose replacement for xautolock. It
      executes a command when the computer has been idle for a specified amount
      of time.
-   + [[https://starship.rs/config][starship]]: Customizable shell prompt written in Rust
-
-     Install it with =starship-bin= package in AUR. Also, install
-     =powerline-fonts= as the dependency for starship prompt
+     - [[https://github.com/rschmukler/caffeinate][caffeinate]]: This will pause xidlehook so that the system will not go to
+       sleep
    + [[https://github.com/watchexec/watchexec][watchexec]]: Executes commands in response to file modifications
    + [[https://github.com/greshake/i3status-rust][i3status-rs:]] as the bar for i3wm
    + [[   https://github.com/dbrgn/tealdeer][tealdeer]]: tldr client written in Rust
@@ -62,6 +60,7 @@ export TERMINAL="alacritty"
 
 ** Useful command line utilities
 
+   + [[https://github.com/romkatv/powerlevel10k][powerlevel10k]]: super fast prompt for zsh.
    + [[https://github.com/tmux/tmux][tmux]]:  a terminal multiplexer
    + [[https://github.com/zquestz/s][s]]: search from the command line
    + [[https://dev.yorhel.nl/ncdu][ncdu]]: Ncdu is a disk usage analyzer with an ncurses interface.
@@ -75,9 +74,9 @@ export TERMINAL="alacritty"
    + [[https://gstreamer.freedesktop.org/][Gstreamer]]: pipeline based multi-media framework
    + [[https://github.com/denilsonsa/prettyping][prettyping]]: is a wrapper around the standard =ping= tool, making the output
      prettier, more colorful, more compact, and easier to read.
-     + Replace =ping= with =prettyping= using an alias:
+   + Replace =ping= with =prettyping= using an alias:
 
-       #+BEGIN_SRC bash
+     #+BEGIN_SRC bash
 alias ping=prettyping  
 #+END_SRC
 
@@ -159,6 +158,13 @@ paru -S mypy
 
 + [[https://github.com/redhat-developer/yaml-language-server][yaml-ls]] yaml language server
 + [[https://github.com/adrienverge/yamllint][yamllint]] linter for yaml files
+
+*** javascript
+
++ [[https://github.com/prettier/prettier][prettier]] code formatter for JS/html/css
++ [[https://github.com/eslint/eslint][eslint]] linter for javascript and typescript
++ [[https://github.com/theia-ide/typescript-language-server][typescript-language-server]] LSP for typescript and JS
++ [[https://nodemon.io/][nodemon]] automatically reload server if changes were made to source code
 
 * Configure ntp
 

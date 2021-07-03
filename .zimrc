@@ -32,4 +32,6 @@ zmodule zdharma/fast-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 # add zsh autopairs
 zmodule hlissner/zsh-autopair
+# powerlevel10k prompt
+zmodule romkatv/powerlevel10k
 # }}} End configuration added by Zim install
