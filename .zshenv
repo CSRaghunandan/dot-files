@@ -19,8 +19,8 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # set default applications
-export TERM="alacritty"
-export TERMINAL="alacritty"
+export TERM="xterm-kitty"
+export TERMINAL="xterm-kitty"
 export BROWSER="firefox-developer-edition"
 export READER="zathura"
 export EDITOR="emacsclient -n -a \"\""
