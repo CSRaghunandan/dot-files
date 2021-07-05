@@ -60,6 +60,7 @@ export TERMINAL="alacritty"
 
 ** Useful command line utilities
 
+   + [[https://github.com/kovidgoyal/kitty][kitty]]: GPU based terminal emulator
    + [[https://github.com/romkatv/powerlevel10k][powerlevel10k]]: super fast prompt for zsh.
    + [[https://github.com/tmux/tmux][tmux]]:  a terminal multiplexer
    + [[https://github.com/zquestz/s][s]]: search from the command line
