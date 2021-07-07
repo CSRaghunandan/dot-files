@@ -16,7 +16,7 @@
 --theme="Nord"
 
 # Show Git modifications.
---style="changes"
+--style="full"
 
 # Use ".gitignore"-style highlighting for ".(docker|fd|rg)ignore" files
 --map-syntax ".dockerignore:Git Ignore"

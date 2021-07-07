@@ -12,7 +12,7 @@ alt + Tab
 
 # start a terminal
 super + Return
-      kitty
+      kitty --single-instance
 
 # make sxhkd reload its configuration files:
 super + Escape
