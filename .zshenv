@@ -42,9 +42,6 @@ export PAGER="less -RF"
 # use UTF-8 charset for less
 export LESSCHARSET=utf-8
 
-# use z.lua as the command for fz
-export FZ_HISTORY_CD_CMD="_zlua"
-
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 

@@ -139,7 +139,6 @@ fi
 # opam configuration
 # test -r /home/csraghunandan/.opam/opam-init/init.sh && . /home/csraghunandan/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
-# source fzf
 # add keybinding for transpose char, since its overwritten by fzf
 bindkey '^X^T' transpose-chars
 
@@ -182,6 +181,10 @@ fi
 
 # Change umask to make directory sharing easier
 umask 0002
+
+# source fzf keybindings and completions
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 # hook for direnv
 eval "$(direnv hook zsh)"
